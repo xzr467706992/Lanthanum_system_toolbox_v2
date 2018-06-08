@@ -1,0 +1,47 @@
+!model
+class=extra
+!view
+view=title
+text=指纹息屏唤醒
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=开启XIAOMI部分使用FPC指纹模块的熄屏指纹唤醒
+@show
+echo true
+@show
+
+!view
+
+!view
+view=switch
+text=开启
+
+@show
+if [ -e /sys/devices/soc/soc:fpc_fpc1020/enable_wakeup ]
+then
+echo true
+fi
+@show
+
+@current
+if [ `cat /sys/devices/soc/soc:fpc_fpc1020/enable_wakeup` == "1" ]
+then
+echo true
+fi
+@current
+
+core=true
+
+root=true
+
+@click
+echo $switch > /sys/devices/soc/soc:fpc_fpc1020/enable_wakeup
+@click
+!view
+
+!model

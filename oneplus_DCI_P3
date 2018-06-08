@@ -1,0 +1,47 @@
+!model
+class=extra
+!view
+view=title
+text=DCI_P3广色域
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=在一加3/3t上开启一加五的广色域，前提是你的屏幕支持。已知大多数一加三t与某些返厂换回屏的3支持。
+@show
+echo true
+@show
+
+!view
+
+!view
+view=switch
+text=开启广色域
+
+@show
+if [ -e /sys/devices/virtual/graphics/fb0/DCI_P3 ]
+then
+echo true
+fi
+@show
+
+@current
+if [ `cat /sys/devices/virtual/graphics/fb0/DCI_P3` == "1" ]
+then
+echo true
+fi
+@current
+
+core=true
+
+root=true
+
+@click
+echo $switch > /sys/devices/virtual/graphics/fb0/DCI_P3
+@click
+!view
+
+!model

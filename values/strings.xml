@@ -148,5 +148,11 @@
     <string name="supported_part">The device supports this function</string>
     <string name="result">Result</string>
     <string name="flashing">Flashing/extracting</string>
+    <string name="change_pwd">Change password</string>
+    <string name="old_pwd">Old password</string>
+    <string name="new_pwd">New password</string>
+    <string name="r_new_pwd">Repeat new password</string>
+    <string name="ok">OK</string>
+    <string name="change_pwd_success">Successfully changed password</string>
 
 </resources>

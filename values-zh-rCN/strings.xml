@@ -148,4 +148,10 @@
     <string name="result">结果</string>
     <string name="supported_part">设备支持此功能</string>
     <string name="flashing">正在刷入/提取</string>
+    <string name="change_pwd">修改密码</string>
+    <string name="old_pwd">旧密码</string>
+    <string name="new_pwd">新密码</string>
+    <string name="r_new_pwd">重复新密码</string>
+    <string name="ok">确定</string>
+    <string name="change_pwd_success">修改密码成功</string>
 </resources>

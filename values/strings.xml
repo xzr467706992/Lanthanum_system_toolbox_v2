@@ -117,5 +117,36 @@
     <string name="system_applications">System application</string>
     <string name="User_application_backuped">User application(backuped)</string>
     <string name="system_applications_backuped">System application(backuped)</string>
+    <string name="us_androidver">Too low Android version Not supported</string>
+    <string name="Already_system_application">Already is a system application</string>
+    <string name="restore_msg">To restore this software, uninstall it first. Then find its backup at the bottom of the list and restore it.</string>
+    <string name="delete_cur_backup">Delete the current backup</string>
+    <string name="plz_wait">Please wait...</string>
+    <string name="to_system_app">Switch to system application</string>
+    <string name="copied">Copied</string>
+    <string name="Reboot_complete_uninstall">Reboot to complete uninstall</string>
+    <string name="error">Error:</string>
+    <string name="Extraction_completed">Extraction completed</string>
+    <string name="Uninstalled_apps">Uninstalled app</string>
+    <string name="restore_msgg">Please uninstall the target software you want to restore and locate the restore target in \"Uninstalled Software\"</string>
+    <string name="done">Done</string>
+    <string name="no_backup_sf">No backup of this software..</string>
+    <string name="reboot_to_apply">Reboot to apply</string>
+    <string name="partition_do">Partition import, export, clear</string>
+    <string name="part_op">The partition to operate on:</string>
+    <string name="img_pth">Image path:</string>
+    <string name="start_file_msg">Start file manager to select a image</string>
+    <string name="part_msg1">Note: The image path will be filled in automatically when you export, and you need to fill it in manually when you do the brushing. Pay attention to the specific file and format. Such as /xxx/xxx/xxxx.img. In addition, the partition table is dynamically acquired and may become mmcblkxxx on some devices. At this time, restart this page to fix it.</string>
+    <string name="flash">Flash</string>
+    <string name="Export">Export</string>
+    <string name="in_out_img">Flash/export images</string>
+    <string name="clean_part">Clear selected partition</string>
+    <string name="part_ad">Partition advanced configuration</string>
+    <string name="fs_perfi">Improve file system performance</string>
+    <string name="exe_part">Execute on selected partition</string>
+    <string name="busybox_plz">The device does not support this feature, please install busybox</string>
+    <string name="supported_part">The device supports this function</string>
+    <string name="result">Result</string>
+    <string name="flashing">Flashing/extracting</string>
 
 </resources>

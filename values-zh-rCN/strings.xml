@@ -91,4 +91,13 @@
     <string name="test_on_boot_msg">测试开机应用是否能正常运行</string>
     <string name="test">测试</string>
     <string name="change_device">机型修改</string>
+    <string name="Display_settings">分辨率与像素密度</string>
+    <string name="partition_settings">分区管理</string>
+    <string name="select_file">选择文件</string>
+    <string name="screen_resolution">屏幕分辨率：</string>
+    <string name="Screen_pixel_density">屏幕像素密度：</string>
+    <string name="apply_pixel_and_resolution">同时修改分辨率与像素密度</string>
+    <string name="Restore_all_default">全部恢复默认</string>
+    <string name="Save_current_settings">保存当前设定</string>
+    <string name="saved_settings_density">保存的分辨率设定(长按删除)：</string>
 </resources>

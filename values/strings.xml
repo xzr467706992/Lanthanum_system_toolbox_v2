@@ -91,5 +91,14 @@
     <string name="test_on_boot_msg">Test if on boot applying runs normaly</string>
     <string name="test">Test</string>
     <string name="change_device">Device info editor</string>
+    <string name="Display_settings">Display settings</string>
+    <string name="partition_settings">Partition settings</string>
+    <string name="select_file">Select file</string>
+    <string name="screen_resolution">Screen Resolution:</string>
+    <string name="Screen_pixel_density">Screen pixel density:</string>
+    <string name="apply_pixel_and_resolution">Apply both</string>
+    <string name="Restore_all_default">Restore all default</string>
+    <string name="Save_current_settings">Save current settings</string>
+    <string name="saved_settings_density">Saved resolution settings (long press to delete)：</string>
 
 </resources>

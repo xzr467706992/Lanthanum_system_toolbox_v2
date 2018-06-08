@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=修改Android隐藏多窗口模式状态（适用于类原生系统）
+text=开启 / 关闭 Android Freeform（隐藏的多窗口模式，适用于类原生系统）
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=开启多窗口模式
+text=开启隐藏多窗口模式
 root=true
 core=true
 @show

@@ -90,4 +90,5 @@
     <string name="release_date">发行日期：</string>
     <string name="test_on_boot_msg">测试开机应用是否能正常运行</string>
     <string name="test">测试</string>
+    <string name="change_device">机型修改</string>
 </resources>

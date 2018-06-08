@@ -90,5 +90,6 @@
     <string name="release_date">Release date:</string>
     <string name="test_on_boot_msg">Test if on boot applying runs normaly</string>
     <string name="test">Test</string>
+    <string name="change_device">Device info editor</string>
 
 </resources>

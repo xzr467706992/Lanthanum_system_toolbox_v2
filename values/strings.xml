@@ -100,5 +100,22 @@
     <string name="Restore_all_default">Restore all default</string>
     <string name="Save_current_settings">Save current settings</string>
     <string name="saved_settings_density">Saved resolution settings (long press to delete)：</string>
+    <string name="deleted">Delected</string>
+    <string name="Default_resolution">Default resolution:</string>
+    <string name="Current_resolution">Current resolution：</string>
+    <string name="Default_screen_density">Default screen density:</string>
+    <string name="Current_screen_density">Current screen density:</string>
+    <string name="Copy_the_package_name">Copy the package name</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="freeze">Freeze</string>
+    <string name="unfreeze">Unfreeze</string>
+    <string name="Extract_APK">Extract APK</string>
+    <string name="Backup_experimental">Backup (experimental)</string>
+    <string name="Backup_apk_and_data">Backup apk and data</string>
+    <string name="restore_apk_and_data">Restore apk and data</string>
+    <string name="User_application">User application</string>
+    <string name="system_applications">System application</string>
+    <string name="User_application_backuped">User application(backuped)</string>
+    <string name="system_applications_backuped">System application(backuped)</string>
 
 </resources>

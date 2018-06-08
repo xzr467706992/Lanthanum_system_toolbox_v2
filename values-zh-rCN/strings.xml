@@ -100,4 +100,21 @@
     <string name="Restore_all_default">全部恢复默认</string>
     <string name="Save_current_settings">保存当前设定</string>
     <string name="saved_settings_density">保存的分辨率设定(长按删除)：</string>
+    <string name="deleted">已删除</string>
+    <string name="Default_resolution">默认分辨率：</string>
+    <string name="Current_resolution">当前分辨率：</string>
+    <string name="Default_screen_density">默认屏幕密度：</string>
+    <string name="Current_screen_density">当前屏幕密度：</string>
+    <string name="Copy_the_package_name">复制包名</string>
+    <string name="uninstall">卸载</string>
+    <string name="freeze">冻结</string>
+    <string name="unfreeze">解冻</string>
+    <string name="Extract_APK">提取apk</string>
+    <string name="Backup_experimental">镧备份(实验性)</string>
+    <string name="Backup_apk_and_data">备份软件和数据</string>
+    <string name="restore_apk_and_data">还原应用和数据</string>
+    <string name="User_application">用户应用</string>
+    <string name="system_applications">系统应用</string>
+    <string name="system_applications_backuped">系统应用（有备份）</string>
+    <string name="User_application_backuped">用户应用（有备份）</string>
 </resources>

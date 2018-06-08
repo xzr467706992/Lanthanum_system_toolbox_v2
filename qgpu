@@ -1,0 +1,44 @@
+!model
+class=cpua
+!view
+view=title
+text=高通GPU调度配置
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=调整高通GPU调度的激进程度
+@show
+echo true
+@show
+!view
+
+!view
+view=seekbar
+text=《——保守\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s激进——》
+@max
+cat /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+@max
+@show
+if [ -e /sys/class/kgsl/kgsl-3d0/default_pwrlevel ]
+then
+echo true
+fi
+@show
+@current
+r=`cat /sys/class/kgsl/kgsl-3d0/default_pwrlevel`
+let c=max-r
+echo $c
+@current
+#此处千万不能去掉调用前的$ 即使它在bash下可以被去掉
+@done
+let r=$max-$seekbar
+echo $r > /sys/class/kgsl/kgsl-3d0/default_pwrlevel
+@done
+core=true
+root=true
+!view
+!model

@@ -1,0 +1,40 @@
+!model
+class=extra
+!view
+view=title
+text=Ramdump
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=启用这个选项有助于调试系统崩溃 但是对于普通用户来说并没有什么卵用
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@current
+if [ `cat /sys/module/subsystem_restart/parameters/enable_ramdumps` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/module/subsystem_restart/parameters/enable_ramdumps
+@click
+root=true
+core=true
+@show
+if [ -e /sys/module/subsystem_restart/parameters/enable_ramdumps ]
+then
+echo true
+fi
+@show
+!view
+!model

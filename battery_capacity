@@ -1,0 +1,53 @@
+!model
+class=extra
+!view
+view=title
+text=修改当前电量
+@show
+if [ -e /sys/class/power_supply/battery/capacity ]
+then
+echo true
+fi
+@show
+core=true
+
+!view
+
+!view
+view=subtitle
+text=仅适用于部分高通设备
+@show
+echo true
+@show
+!view
+
+!view
+view=edittext
+text=当前电量
+@current
+cat /sys/class/power_supply/battery/capacity
+@current
+@show
+if [ -e /sys/class/power_supply/battery/capacity ]
+then
+echo true
+fi
+@show
+@done
+echo $edittext > /sys/class/power_supply/battery/capacity
+@done
+root=true
+!view
+
+!view
+view=button
+text=还原
+@show
+echo true
+@show
+@click
+echo -1 > /sys/class/power_supply/battery/capacity
+@click
+root=true
+!view
+!model

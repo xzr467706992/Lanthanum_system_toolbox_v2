@@ -1,0 +1,44 @@
+!model
+class=io
+!view
+view=title
+text=(存储I/O)RQ归属
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=控制CPU在遭遇I/O事件时的调度激进程度
+@show
+echo true
+@show
+!view
+
+!view
+view=seekbar
+text=《——保守\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s激进——》
+@show
+if [ -e /sys/block/mmcblk0/queue/rq_affinity ]
+then
+echo true
+fi
+@show
+core=true
+root=true
+
+@max
+echo 2
+@max
+
+@current
+cat /sys/block/mmcblk0/queue/rq_affinity
+@current
+
+@done
+echo $seekbar > /sys/block/mmcblk0/queue/rq_affinity
+@done
+!view
+
+!model

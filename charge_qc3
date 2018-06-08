@@ -1,0 +1,45 @@
+!model
+class=charge
+!view
+view=title
+text=QC3.0快充
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=选择是否启用QC3.0\n（不一定有效）
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/class/power_supply/battery/allow_hvdcp3 ]
+then
+echo true
+fi
+@show
+
+root=true
+core=true
+
+@current
+if [ `cat /sys/class/power_supply/battery/allow_hvdcp3` == 1 ]
+then
+echo true
+fi
+@current
+
+@click
+echo $switch > /sys/class/power_supply/battery/allow_hvdcp3
+@click
+
+!view
+
+!model

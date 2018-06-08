@@ -1,0 +1,62 @@
+!model
+class=extra
+!view
+view=title
+text=LMK(低内存管理)配置
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=配置内存不足时的内存清理机
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=自适应强度的LMK
+@current
+if [ `cat /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+@click
+root=true
+core=true
+@show
+if [ -e /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk ]
+then
+echo true
+fi
+@show
+!view
+
+!view
+view=switch
+text=LMK调试日志（禁用可提升性能）
+@current
+if [ `cat /sys/module/lowmemorykiller/parameters/debug_level` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/module/lowmemorykiller/parameters/debug_level
+@click
+root=true
+core=true
+@show
+if [ -e /sys/module/lowmemorykiller/parameters/debug_level ]
+then
+echo true
+fi
+@show
+!view
+!model

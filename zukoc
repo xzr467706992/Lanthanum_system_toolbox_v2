@@ -1,0 +1,38 @@
+!model
+class=cpua
+!view
+view=title
+text=处理器超频至2.3GHz+1.76GHz
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=开启超频
+
+@show
+if [ -e /sys/module/msm_performance/parameters/overfreq ]
+then
+echo true
+fi
+@show
+
+@current
+if [ `cat /sys/module/msm_performance/parameters/overfreq` == "1" ]
+then
+echo true
+fi
+@current
+
+core=true
+
+root=true
+
+@click
+echo $switch > /sys/module/msm_performance/parameters/overfreq
+@click
+!view
+
+!model

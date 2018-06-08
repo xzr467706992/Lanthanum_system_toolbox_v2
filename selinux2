@@ -1,0 +1,23 @@
+!model
+class=selinux
+!view
+view=switch
+core=true
+@show
+echo true
+@show
+@click
+setenforce $switch
+@click
+@current
+if [ `getenforce` == Enforcing ]
+then
+echo true
+else
+echo false
+fi
+@current
+root=true
+text=开启SELinux
+!view
+!model

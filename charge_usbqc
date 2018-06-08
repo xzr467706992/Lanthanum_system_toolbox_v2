@@ -1,0 +1,45 @@
+!model
+class=charge
+!view
+view=title
+text=USB快充
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=选择是否启用USB快充（由第三方内核提供）
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/kernel/fast_charge/force_fast_charge ]
+then
+echo true
+fi
+@show
+
+root=true
+core=true
+
+@current
+if [ `cat /sys/kernel/fast_charge/force_fast_charge` == 1 ]
+then
+echo true
+fi
+@current
+
+@click
+echo $switch > /sys/kernel/fast_charge/force_fast_charge
+@click
+
+!view
+
+!model

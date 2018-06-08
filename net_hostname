@@ -1,0 +1,42 @@
+!model
+class=io
+!view
+view=title
+text=(网络)主机名修改
+@show
+echo true
+@show
+!view
+
+!view
+view=title
+text=修改设备的主机名称
+@show
+echo true
+@show
+!view
+
+!view
+view=edittext
+text=主机名:
+core=true
+root=true
+onboot=true
+
+@show
+echo true
+@show
+
+@current
+getprop net.hostname
+@current
+
+@done
+setprop net.hostname $edittext
+@done
+
+!view
+
+
+
+!model

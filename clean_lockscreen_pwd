@@ -1,0 +1,33 @@
+!model
+class=extra
+!view
+view=title
+text=锁屏密码清除
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=清除锁屏密码但保留指纹（可能在某些设备上诱发系统界面无限崩溃！！)
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=清除！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+rm -f /data/system/gatekeeper.password.key
+rm -f /data/system/gatekeeper.pattern.key
+echo @toast=清除完毕
+@click
+!view
+!model

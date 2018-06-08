@@ -1,0 +1,43 @@
+!model
+class=io
+
+!view
+view=title
+text=(网络I/O)调整器
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=配置网络I/O调整器（TCP调整器）
+@show
+echo true
+@show
+!view
+
+!view
+view=spinner
+text=调整器
+@show
+if [ -e /proc/sys/net/ipv4/tcp_available_congestion_control ]
+then
+echo true
+fi
+@show
+core=true
+item_file_tcp=/proc/sys/net/ipv4/tcp_available_congestion_control
+@done
+echo $label > /proc/sys/net/ipv4/tcp_congestion_control
+echo @toast=应用成功
+@done
+@current
+echo "label=`cat /proc/sys/net/ipv4/tcp_congestion_control`"
+@current
+root=true
+onboot=true
+!view
+
+
+!model

@@ -1,0 +1,19 @@
+!model
+    class=main
+    !view
+        view=title
+        text=欢迎
+        @show
+            echo true
+        @show
+        core=true
+    !view
+    !view
+        view=subtitle
+        text=不欢迎
+        @show
+            echo true
+        @show
+    !view
+
+!model

@@ -1,0 +1,40 @@
+!model
+class=io
+!view
+view=title
+text=(存储I/O)增加随机性
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=从旋转设备获取熵
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/block/sda/queue/add_random ]
+then
+echo true
+fi
+@show
+core=true
+@current
+if [ `cat /sys/block/sda/queue/add_random` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/block/sda/queue/add_random
+@click
+root=true
+!view
+!model

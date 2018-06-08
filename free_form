@@ -1,0 +1,41 @@
+!model
+class=extra
+!view
+view=title
+text=多窗口模式
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=修改Android隐藏多窗口模式状态（适用于类原生系统）
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=开启多窗口模式
+root=true
+core=true
+@show
+if [ `getprop ro.build.version.sdk` -gt 24 ]
+then
+echo true
+fi
+@show
+@current
+if [ `settings get global enable_freeform_support` == 1 ]
+then
+echo true
+fi
+@current
+@click
+settings put global enable_freeform_support $switch
+echo @toast=重启生效
+@click
+!view
+!model

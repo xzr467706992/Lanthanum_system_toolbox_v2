@@ -1,0 +1,40 @@
+!model
+class=io
+!view
+view=title
+text=(存储I/O)统计
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=关闭可提高性能 但是部分依赖此项的应用可能不能正常运行
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/block/mmcblk0/queue/iostats ]
+then
+echo true
+fi
+@show
+core=true
+@current
+if [ `cat /sys/block/mmcblk0/queue/iostats` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/block/mmcblk0/queue/iostats
+@click
+root=true
+!view
+!model

@@ -1,0 +1,45 @@
+!model
+class=charge
+!view
+view=title
+text=允许充电
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=确认您的设备是否在接通电源时充电
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=允许
+@show
+if [ -e /sys/class/power_supply/battery/battery_charging_enabled ]
+then
+echo true
+fi
+@show
+
+root=true
+core=true
+
+@current
+if [ `cat /sys/class/power_supply/battery/battery_charging_enabled` == 1 ]
+then
+echo true
+fi
+@current
+
+@click
+echo $switch > /sys/class/power_supply/battery/battery_charging_enabled
+@click
+
+!view
+
+!model

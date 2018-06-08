@@ -1,0 +1,198 @@
+!model
+class=charge
+!view
+view=title
+text=充电电流控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=适用于部分高通设备的充电电流大小控制
+@show
+echo true
+@show
+!view
+
+!view
+view=text
+@text
+c1=0
+c2=0
+c3=0
+c4=0
+c5=0
+c6=0
+c7=0
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma ]
+then
+c1=`cat /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma`
+fi
+
+if [ -e /sys/module/dwc3_msm/parameters/dcp_max_current ]
+then
+c2=`cat /sys/module/dwc3_msm/parameters/dcp_max_current`
+fi
+
+if [ -e /sys/module/dwc3_msm/parameters/hvdcp_max_current ]
+then
+c3=`cat /sys/module/dwc3_msm/parameters/hvdcp_max_current`
+fi
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma ]
+then
+c4=`cat /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma`
+fi
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma ]
+then
+c5=`cat /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma`
+fi
+
+if [ -e /sys/class/power_supply/battery/constant_charge_current_max ]
+then
+c6=`cat /sys/class/power_supply/battery/constant_charge_current_max`
+fi
+
+if [ -e /sys/class/power_supply/battery/input_current_max ]
+then
+c7=`cat /sys/class/power_supply/battery/input_current_max`
+fi
+
+done=0
+c=0
+if [ $c1 -ne 0 ] && [ $done -ne 1 ]
+then
+c=$c1
+done=1
+fi
+
+if [ $c2 -ne 0 ] && [ $done -ne 1 ]
+then
+c=$c2
+done=1
+fi
+
+if [ $c3 -ne 0 ] && [ $done -ne 1 ]
+then
+c=$c3
+done=1
+fi
+
+if [ $c4 -ne 0 ] && [ $done -ne 1 ]
+then
+c=$c4
+done=1
+fi
+
+if [ $c5 -ne 0 ] && [ $done -ne 1 ]
+then
+c=$c5
+done=1
+fi
+
+if [ $c6 -ne 0 ] && [ $done -ne 1 ]
+then
+c=$c6
+done=1
+fi
+
+if [ $c7 -ne 0 ] && [ $done -ne 1 ]
+then
+c=$c7
+done=1
+fi
+
+if [ $c -gt 10000 ]
+then
+c=`expr $c / 1000`
+fi
+echo 当前电流：$c mA
+
+@text
+
+@show
+
+c=0
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma ]
+then
+c=1
+fi
+
+if [ -e /sys/module/dwc3_msm/parameters/dcp_max_current ]
+then
+c=1
+fi
+
+if [ -e /sys/module/dwc3_msm/parameters/hvdcp_max_current ]
+then
+c=1
+fi
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma ]
+then
+c=1
+fi
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma ]
+then
+c=1
+fi
+
+if [ -e /sys/class/power_supply/battery/constant_charge_current_max ]
+then
+c=1
+fi
+
+if [ -e /sys/class/power_supply/battery/input_current_max ]
+then
+c=1
+fi
+
+if [ $c == 1 ]
+then
+echo true
+fi
+
+@show
+
+core=true
+root=true
+
+!view
+
+!view
+view=spinner
+text=电流(mA)
+@show
+echo true
+@show
+root=true
+onboot=true
+item=触摸来配置|500|1000|1500|2000|2500|3000|3500|4000|4500|5000|10000
+@done
+if [ $label != "触摸来配置" ]
+then
+chmod 755 /sys/class/power_supply/battery/constant_charge_current_max
+echo `expr $label \* 1000` > /sys/class/power_supply/battery/constant_charge_current_max
+
+chmod 755 /sys/class/power_supply/battery/input_current_max
+echo `expr $label \* 1000` > /sys/class/power_supply/battery/input_current_max
+
+echo $label > /sys/module/dwc3_msm/parameters/dcp_max_current
+echo $label > /sys/module/dwc3_msm/parameters/hvdcp_max_current
+echo $label > /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma
+echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma
+echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma
+
+echo @toast=写入完成
+echo @refresh_ui
+fi
+@done
+
+!view
+!model

@@ -1,0 +1,32 @@
+!model
+class=extra
+!view
+view=title
+text=电池校准
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=通过清除batterystats.bin来实现
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=校准！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+rm -f /data/system/batterystats.bin
+echo @toast=校准完毕
+@click
+!view
+!model

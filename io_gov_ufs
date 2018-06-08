@@ -1,0 +1,43 @@
+!model
+class=io
+
+!view
+view=title
+text=(存储I/O)调整器
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=配置存储器I/O调整器
+@show
+echo true
+@show
+!view
+
+!view
+view=spinner
+text=调整器
+@show
+if [ -e /sys/block/sda/queue/scheduler ]
+then
+echo true
+fi
+@show
+core=true
+item_file_io=/sys/block/sda/queue/scheduler
+@done
+echo $label > /sys/block/sda/queue/scheduler
+echo @toast=应用成功
+@done
+@current
+echo "io_label=`cat /sys/block/sda/queue/scheduler`"
+@current
+root=true
+onboot=true
+!view
+
+
+!model

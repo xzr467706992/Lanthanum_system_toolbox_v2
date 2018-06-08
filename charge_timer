@@ -1,0 +1,45 @@
+!model
+class=charge
+!view
+view=title
+text=安全计时器
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=作用未知 也许是在一定程度上使电流变化变得更缓？
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/class/power_supply/battery/safety_timer_enabled ]
+then
+echo true
+fi
+@show
+
+root=true
+core=true
+
+@current
+if [ `cat /sys/class/power_supply/battery/safety_timer_enabled` == 1 ]
+then
+echo true
+fi
+@current
+
+@click
+echo $switch > /sys/class/power_supply/battery/safety_timer_enabled
+@click
+
+!view
+
+!model

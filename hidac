@@ -1,0 +1,62 @@
+!model
+class=extra
+!view
+view=title
+text=高通骁龙高保真音效(HI-DAC)配置
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=配置HI-DAC状态
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=开启HI-DAC
+@current
+if [ `cat /sys/module/snd_soc_wcd9330/parameters/high_perf_mode` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/module/snd_soc_wcd9330/parameters/high_perf_mode
+@click
+root=true
+core=true
+@show
+if [ -e /sys/module/snd_soc_wcd9330/parameters/high_perf_mode ]
+then
+echo true
+fi
+@show
+!view
+
+!view
+view=switch
+text=开启HI-DAC
+@current
+if [ `cat /sys/module/snd_soc_msm8x16_wcd/parameters/high_perf_mode` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/module/snd_soc_msm8x16_wcd/parameters/high_perf_mode
+@click
+root=true
+core=true
+@show
+if [ -e /sys/module/snd_soc_msm8x16_wcd/parameters/high_perf_mode ]
+then
+echo true
+fi
+@show
+!view
+!model

@@ -1,0 +1,136 @@
+!model
+class=cpua
+!view
+view=title
+text=联发科温控控制
+@show
+echo true
+@show
+!view
+
+!view
+view=spinner
+root=true
+core=true
+@show
+if [ -e /etc/.tp ]
+then
+echo true
+fi
+@show
+item=开启所有温控|关闭gpu温控|关闭所有温控
+@current
+if ! [ -e /data/data/xzr.La.systemtoolbox/backups/thermal.conf ]
+then
+cp -rf -p /etc/.tp/thermal.conf /data/data/xzr.La.systemtoolbox/backups
+cp -rf -p /etc/.tp/thermal.off.conf /data/data/xzr.La.systemtoolbox/backups
+cp -rf -p /etc/.tp/.ht120.mtc /data/data/xzr.La.systemtoolbox/backups
+fi
+
+
+
+if ! [ -e /data/data/xzr.La.systemtoolbox/config/mtk-thermal ]
+then
+touch  /data/data/xzr.La.systemtoolbox/config/mtk-thermal
+echo 0 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
+fi
+
+if [ `cat /data/data/xzr.La.systemtoolbox/config/mtk-thermal` == 0 ]
+then
+echo position=0
+fi
+
+if [ `cat /data/data/xzr.La.systemtoolbox/config/mtk-thermal` == 1 ]
+then
+echo position=2
+fi
+
+if [ `cat /data/data/xzr.La.systemtoolbox/config/mtk-thermal` == 2 ]
+then
+echo position=2
+fi
+
+@current
+@done
+
+if [ $position == 0 ]
+then
+cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal.conf /etc/.tp
+echo 0 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
+fi
+
+if [ $position == 1 ]
+then
+cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal.off.conf /etc/.tp
+echo 1 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
+fi
+
+if [ $position == 2 ]
+then
+cp -rf -p /data/data/xzr.La.systemtoolbox/backups/.ht120.mtc /etc/.tp
+echo 2 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
+fi
+@done
+!view
+!view
+view=subtitle
+text=*切换温控后需要重启生效！
+@show
+echo true
+@show
+!view
+
+!view
+view=title
+text=联发科杂项控制
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+root=true
+text=多核控制
+core=true
+@show
+if [ -e /proc/hps/enabled ]
+then
+echo true
+fi
+@show
+@current
+if [ `cat /proc/hps/enabled` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /proc/hps/enabled
+@click
+!view
+
+!view
+view=subtitle
+text=*若关闭此选项 发哥将会失去掌握核心的大权 理论上所有核心都会开启(核心数量由下一项定义)。并且调度方式与cpu0相同。
+!view
+
+!view
+view=edittext
+text=最大允许开启核心数：
+@current
+cat /proc/hps/num_limit_thermal
+@current
+@show
+if [ -e /proc/hps/num_limit_thermal ]
+then
+echo true
+fi
+@show
+@done
+echo $edittext > /proc/hps/num_limit_thermal
+@done
+root=true
+core=true
+!view
+!model

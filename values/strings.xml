@@ -84,5 +84,11 @@
     <string name="hello">Hello,</string>
     <string name="charge_ctl">Charge control</string>
     <string name="app_list">Applications</string>
+    <string name="version">Verison info</string>
+    <string name="version_msg">See what version you are using</string>
+    <string name="version_name">Version name:</string>
+    <string name="release_date">Release date:</string>
+    <string name="test_on_boot_msg">Test if on boot applying runs normaly</string>
+    <string name="test">Test</string>
 
 </resources>

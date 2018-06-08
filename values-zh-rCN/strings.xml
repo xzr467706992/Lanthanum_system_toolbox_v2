@@ -84,4 +84,10 @@
     <string name="hello">你好，</string>
     <string name="charge_ctl">充电控制</string>
     <string name="app_list">应用管理</string>
+    <string name="version">版本信息</string>
+    <string name="version_msg">查看正在使用的版本</string>
+    <string name="version_name">版本名称：</string>
+    <string name="release_date">发行日期：</string>
+    <string name="test_on_boot_msg">测试开机应用是否能正常运行</string>
+    <string name="test">测试</string>
 </resources>

@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=确认您的设备是否在接通电源时充电
+text=禁用 / 启用接通电源后的充电功能
 @show
 echo true
 @show

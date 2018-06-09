@@ -163,5 +163,18 @@
     <string name="undonate_ver">Normal version</string>
     <string name="version_lx">Version:</string>
     <string name="need_donate">Need donated version</string>
+    <string name="no_emali">No email address provided</string>
+    <string name="w_un_or_pwd">wrong user name or password</string>
+    <string name="Insufficient_permissions">Insufficient permissions</string>
+    <string name="em1">Users can only be created by registration and third-party logins are not allowed.</string>
+    <string name="em2">Third party account has been used</string>
+    <string name="em3">Please provide a mobile number</string>
+    <string name="em4">Phone number does not exist</string>
+    <string name="em5">Unverified phone number</string>
+    <string name="em6">Unverified email address</string>
+    <string name="em7">Invalid username</string>
+    <string name="em8">Invalid password</string>
+    <string name="em9">You have tried too many passwords Your account is temporarily locked</string>
+    <string name="em10">An error occurred Error code:</string>
 
 </resources>

@@ -163,4 +163,17 @@
     <string name="undonate_ver">普通版</string>
     <string name="version_lx">版本类型：</string>
     <string name="need_donate">需要捐赠版</string>
+    <string name="no_emali">没有提供邮箱地址</string>
+    <string name="w_un_or_pwd">用户名或密码错误</string>
+    <string name="Insufficient_permissions">权限不足</string>
+    <string name="em1">只能通过注册创建用户，不允许第三方登录。</string>
+    <string name="em2">第三方账号已经被使用</string>
+    <string name="em3">请提供手机号码</string>
+    <string name="em4">手机号不存在</string>
+    <string name="em5">未验证的手机号</string>
+    <string name="em6">未验证的邮箱地址</string>
+    <string name="em7">无效用户名</string>
+    <string name="em8">无效的密码</string>
+    <string name="em9">您尝试密码的次数过多 账户暂时被锁定</string>
+    <string name="em10">发生错误 错误代码:</string>
 </resources>

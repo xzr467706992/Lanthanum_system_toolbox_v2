@@ -154,5 +154,14 @@
     <string name="r_new_pwd">Repeat new password</string>
     <string name="ok">OK</string>
     <string name="change_pwd_success">Successfully changed password</string>
+    <string name="change_email">Change email</string>
+    <string name="cur_pwd">Current password</string>
+    <string name="new_email">New email address</string>
+    <string name="change_un">Change username</string>
+    <string name="new_un">New username</string>
+    <string name="donate_ver">Donated version</string>
+    <string name="undonate_ver">Normal version</string>
+    <string name="version_lx">Version:</string>
+    <string name="need_donate">Need donated version</string>
 
 </resources>

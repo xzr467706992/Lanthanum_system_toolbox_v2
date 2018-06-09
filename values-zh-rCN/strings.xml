@@ -154,4 +154,13 @@
     <string name="r_new_pwd">重复新密码</string>
     <string name="ok">确定</string>
     <string name="change_pwd_success">修改密码成功</string>
+    <string name="change_email">修改邮箱</string>
+    <string name="cur_pwd">当前密码</string>
+    <string name="new_email">新的邮箱地址</string>
+    <string name="change_un">修改用户名</string>
+    <string name="new_un">新的用户名</string>
+    <string name="donate_ver">捐赠版</string>
+    <string name="undonate_ver">普通版</string>
+    <string name="version_lx">版本类型：</string>
+    <string name="need_donate">需要捐赠版</string>
 </resources>

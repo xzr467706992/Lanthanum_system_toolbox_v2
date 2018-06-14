@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=修改当前电量
+text=Modify current battery level
 @show
 if [ -e /sys/class/power_supply/battery/capacity ]
 then
@@ -15,7 +15,7 @@ core=true
 
 !view
 view=subtitle
-text=仅适用于部分高通设备
+text=Only applicable on some Qualcomm devices
 @show
 echo true
 @show
@@ -23,7 +23,7 @@ echo true
 
 !view
 view=edittext
-text=当前电量
+text=Current battery level
 @current
 cat /sys/class/power_supply/battery/capacity
 @current
@@ -41,7 +41,7 @@ root=true
 
 !view
 view=button
-text=还原
+text=Restore
 @show
 echo true
 @show

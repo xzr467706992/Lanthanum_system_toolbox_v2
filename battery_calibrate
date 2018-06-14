@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=电池校准
+text=Battery calibrate
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=通过清除batterystats.bin来实现
+text=Implemented by clearing batterystats.bin
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=button
-text=校准！
+text=calibrate
 @show
 echo true
 @show
@@ -26,7 +26,7 @@ core=true
 root=true
 @click
 rm -f /data/system/batterystats.bin
-echo @toast=校准完毕
+echo @toast=done
 @click
 !view
 !model

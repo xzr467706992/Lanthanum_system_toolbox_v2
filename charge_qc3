@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=QC3.0快充
+text=QC3.0 fast charge
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=选择是否启用QC3.0\n（不一定有效）
+text=Choose whether to enable QC3.0\n(Not necessarily valid)
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/class/power_supply/battery/allow_hvdcp3 ]
 then

@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=充电电流控制
+text=Charge current control
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=适用于部分高通设备的充电电流大小控制
+text=Charge current size control for some Qualcomm devices
 @show
 echo true
 @show
@@ -110,7 +110,7 @@ if [ $c -gt 10000 ]
 then
 c=`expr $c / 1000`
 fi
-echo 当前电流：$c mA
+echo Current：$c mA
 
 @text
 
@@ -167,15 +167,15 @@ root=true
 
 !view
 view=spinner
-text=电流(mA)
+text=Current(mA)
 @show
 echo true
 @show
 root=true
 onboot=true
-item=触摸来配置|500|1000|1500|2000|2500|3000|3500|4000|4500|5000|10000
+item=Select|500|1000|1500|2000|2500|3000|3500|4000|4500|5000|10000
 @done
-if [ $label != "触摸来配置" ]
+if [ $label != "Select" ]
 then
 chmod 755 /sys/class/power_supply/battery/constant_charge_current_max
 echo `expr $label \* 1000` > /sys/class/power_supply/battery/constant_charge_current_max
@@ -189,7 +189,7 @@ echo $label > /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma
 echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma
 echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma
 
-echo @toast=写入完成
+echo @toast=Done!
 echo @refresh_ui
 fi
 @done

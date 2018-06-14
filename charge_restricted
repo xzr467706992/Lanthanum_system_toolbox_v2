@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=充电限流
+text=Restricted charging
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=这将会把电流限制在一个内核中预设的值\n事实上，是这样的：\n假如当前设置的电流大于充电限流的预设值，则使用充电限流提供的参数，否则，使用设置的值。
+text=This will limit the current to a preset value in the kernel
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/class/power_supply/battery/restricted_charging ]
 then

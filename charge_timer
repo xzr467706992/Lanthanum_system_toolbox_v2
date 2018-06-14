@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=安全计时器
+text=Charge timer
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=作用未知 也许是在一定程度上使电流变化变得更缓？
+text=The effect is unknown, perhaps to a certain extent, to make current changes more gradual
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/class/power_supply/battery/safety_timer_enabled ]
 then

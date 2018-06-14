@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=允许充电
+text=Allow charge
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=禁用 / 启用接通电源后的充电功能
+text=Disable/enable charging after power on
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=允许
+text=Allow charge
 @show
 if [ -e /sys/class/power_supply/battery/battery_charging_enabled ]
 then

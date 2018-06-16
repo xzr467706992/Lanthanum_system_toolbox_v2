@@ -1,0 +1,69 @@
+!model
+class=extra
+!view
+view=title
+text=完全自定义的过渡动画速度修改
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=完全自定义的系统动画速度
+@show
+echo true
+@show
+!view
+
+!view
+root=true
+core=true
+view=edittext
+text=窗口动画
+@show
+echo true
+@show
+@current
+settings get global window_animation_scale
+@current
+@done
+settings put global window_animation_scale $edittext
+@done
+!view
+
+!view
+root=true
+core=true
+view=edittext
+text=过渡动画
+@show
+echo true
+@show
+@current
+settings get global transition_animation_scale
+@current
+@done
+settings put global transition_animation_scale $edittext
+@done
+!view
+
+!view
+root=true
+core=true
+view=edittext
+text=动画时长调整程序
+@show
+echo true
+@show
+@current
+settings get global animator_duration_scale
+@current
+@done
+settings put global animator_duration_scale $edittext
+@done
+!view
+
+
+
+!model

@@ -176,4 +176,9 @@
     <string name="em8">无效的密码</string>
     <string name="em9">您尝试密码的次数过多 账户暂时被锁定</string>
     <string name="em10">发生错误 错误代码:</string>
+    <string name="settingsandabout">关于/设置</string>
+    <string name="Compatibility_mode">兼容模式</string>
+    <string name="Compatibility_mode_msg">使用独立shell进程代替合并的进程。这可以提高兼容性，但是会导致软件中模块加载速度慢三倍以上。假如你在使用工具箱时遇到了页面无限转圈的情况，请打开此选项。</string>
+    <string name="enable">启用</string>
+    <string name="small_tools">小工具</string>
 </resources>

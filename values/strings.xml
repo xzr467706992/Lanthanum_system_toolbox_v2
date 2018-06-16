@@ -176,5 +176,10 @@
     <string name="em8">Invalid password</string>
     <string name="em9">You have tried too many passwords Your account is temporarily locked</string>
     <string name="em10">An error occurred Error code:</string>
+    <string name="settingsandabout">Settings/About</string>
+    <string name="Compatibility_mode">Compatibility mode</string>
+    <string name="Compatibility_mode_msg">Better compatibility but take more time when loading.Enable this if you meet strange problem.</string>
+    <string name="enable">Enable</string>
+    <string name="small_tools">Tiny tools</string>
 
 </resources>

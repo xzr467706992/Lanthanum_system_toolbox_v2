@@ -15,7 +15,7 @@
     <string name="about">About</string>
     <string name="home">Home</string>
     <string name="selinux">SELinux settings</string>
-    <string name="cpu_nornal">Soc normal settings</string>
+    <string name="cpu_nornal">Soc basic settings</string>
     <string name="cpu_ad_settings">Soc advanced settings</string>
     <string name="apply_on_boot">Apply on boot</string>
     <string name="on_boot_complered">On boot completed !</string>

@@ -15,7 +15,7 @@
     <string name="home">首页</string>
     <string name="about">关于</string>
     <string name="selinux">SELinux配置</string>
-    <string name="cpu_nornal">处理器一般配置</string>
+    <string name="cpu_nornal">处理器基本配置</string>
     <string name="cpu_ad_settings">处理器高级配置</string>
     <string name="apply_on_boot">开机时应用</string>
     <string name="on_boot_complered">开机应用完成</string>

@@ -181,5 +181,6 @@
     <string name="Compatibility_mode_msg">Better compatibility but take more time when loading.Enable this if you meet strange problem.</string>
     <string name="enable">Enable</string>
     <string name="small_tools">Tiny tools</string>
+    <string name="user_out_of_date">User information is out of date,please login again!</string>
 
 </resources>

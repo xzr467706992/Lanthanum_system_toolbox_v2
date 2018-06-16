@@ -181,4 +181,5 @@
     <string name="Compatibility_mode_msg">使用独立shell进程代替合并的进程。这可以提高兼容性，但是会导致软件中模块加载速度慢三倍以上。假如你在使用工具箱时遇到了页面无限转圈的情况，请打开此选项。</string>
     <string name="enable">启用</string>
     <string name="small_tools">小工具</string>
+    <string name="user_out_of_date">用户身份过期，请重新登录！</string>
 </resources>

@@ -182,5 +182,8 @@
     <string name="enable">Enable</string>
     <string name="small_tools">Tiny tools</string>
     <string name="user_out_of_date">User information is out of date,please login again!</string>
+    <string name="load_externel_model">Load externel models</string>
+    <string name="load_externel_msg">Load unofficial models</string>
+    <string name="load">Load</string>
 
 </resources>

@@ -182,4 +182,7 @@
     <string name="enable">启用</string>
     <string name="small_tools">小工具</string>
     <string name="user_out_of_date">用户身份过期，请重新登录！</string>
+    <string name="load_externel_model">装载第三方模块</string>
+    <string name="load_externel_msg">使工具箱装载外部模块</string>
+    <string name="load">装载</string>
 </resources>

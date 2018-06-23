@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=禁用以提升文件系统性能 但是会提高在发生错误时数据损坏的概率\n（由第三方内核提供）
+text=Disable to improve file system performance but increase the probability of data corruption when an error occurs\n (provided by a third-party kernel)
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=switch
-text=开启
+text=Enable
 
 @show
 if [ -e /sys/module/sync/parameters/fsync_enabled ]

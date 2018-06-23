@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=多窗口模式
+text=Android Freeform
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=开启 / 关闭 Android Freeform（隐藏的多窗口模式，适用于类原生系统）
+text=Enable / Disable Android Freeform（Only support AOSP-like ROMs）
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=开启隐藏多窗口模式
+text=Enable free form
 root=true
 core=true
 @show
@@ -35,7 +35,7 @@ fi
 @current
 @click
 settings put global enable_freeform_support $switch
-echo @toast=重启生效
+echo @toast=Reboot to apply
 @click
 !view
 !module

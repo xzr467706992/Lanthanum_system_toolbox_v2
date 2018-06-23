@@ -189,5 +189,10 @@
     <string name="havent_install_any_mod">Haven\'t install any module</string>
     <string name="do_u_want_to_remove_this_module">Do you want to remove module:</string>
     <string name="remove_module">Remove module</string>
+    <string name="bad_module">Failed when loading modules!Check if theres some bad modules that can cause this problem.</string>
+    <string name="Safe_mode">Safe mode</string>
+    <string name="safe_mode_msg1">Will restart into safe mode</string>
+    <string name="safe_mode_msg2">Dont load unofficial modules</string>
+    <string name="unrooted">Cant get root permission.Plz google root+ur device</string>
 
 </resources>

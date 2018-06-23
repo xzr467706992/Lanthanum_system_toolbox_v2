@@ -189,4 +189,9 @@
     <string name="havent_install_any_mod">尚未安装任何模块</string>
     <string name="do_u_want_to_remove_this_module">你想要移除模块：</string>
     <string name="remove_module">移除模块</string>
+    <string name="bad_module">加载模块时发生错误！检查是否有导致问题的模块！</string>
+    <string name="Safe_mode">安全模式</string>
+    <string name="safe_mode_msg1">将重启以通过安全模式进入软件</string>
+    <string name="safe_mode_msg2">不加载第三方模块</string>
+    <string name="unrooted">无法获取root权限，请谷歌root+你的设备。</string>
 </resources>

@@ -185,4 +185,8 @@
     <string name="load_externel_model">装载第三方模块</string>
     <string name="load_externel_msg">使工具箱装载外部模块</string>
     <string name="load">装载</string>
+    <string name="module_management">管理已安装的模块</string>
+    <string name="havent_install_any_mod">尚未安装任何模块</string>
+    <string name="do_u_want_to_remove_this_module">你想要移除模块：</string>
+    <string name="remove_module">移除模块</string>
 </resources>

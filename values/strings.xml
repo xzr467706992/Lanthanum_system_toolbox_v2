@@ -185,5 +185,9 @@
     <string name="load_externel_model">Load externel models</string>
     <string name="load_externel_msg">Load unofficial models</string>
     <string name="load">Load</string>
+    <string name="module_management">Manage modules</string>
+    <string name="havent_install_any_mod">Haven\'t install any module</string>
+    <string name="do_u_want_to_remove_this_module">Do you want to remove module:</string>
+    <string name="remove_module">Remove module</string>
 
 </resources>

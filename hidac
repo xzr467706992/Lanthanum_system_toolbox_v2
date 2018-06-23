@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=高通骁龙高保真音效(HI-DAC)配置
+text=Qualcomm Snapdragon Hi-Fi Audio (HI-DAC) Configuration
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=配置HI-DAC状态
+text=Configure HI-DAC status
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=开启HI-DAC
+text=Enanle HI-DAC
 @current
 if [ `cat /sys/module/snd_soc_wcd9330/parameters/high_perf_mode` == 1 ]
 then
@@ -40,7 +40,7 @@ fi
 
 !view
 view=switch
-text=开启HI-DAC
+text=Enable HI-DAC
 @current
 if [ `cat /sys/module/snd_soc_msm8x16_wcd/parameters/high_perf_mode` == 1 ]
 then

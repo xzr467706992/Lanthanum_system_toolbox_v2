@@ -1,4 +1,4 @@
-!model
+!module
 class=cpua
 !view
 view=title
@@ -136,4 +136,4 @@ chmod 644 /dev/cpuset/camera-daemon/cpus
 echo $edittext > /dev/cpuset/camera-daemon/cpus
 @done
 !view
-!model
+!module

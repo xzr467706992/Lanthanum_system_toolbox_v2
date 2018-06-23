@@ -1,4 +1,4 @@
-!model
+!module
 class=extra
 !view
 view=title
@@ -38,4 +38,4 @@ settings put global enable_freeform_support $switch
 echo @toast=重启生效
 @click
 !view
-!model
+!module

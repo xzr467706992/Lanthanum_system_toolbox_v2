@@ -1,4 +1,4 @@
-!model
+!module
 class=io
 !view
 view=title
@@ -49,4 +49,4 @@ fi
 @click
 !view
 
-!model
+!module

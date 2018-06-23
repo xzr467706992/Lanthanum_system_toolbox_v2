@@ -1,4 +1,4 @@
-!model
+!module
 class=charge
 !view
 view=title
@@ -42,4 +42,4 @@ echo $switch > /sys/class/power_supply/battery/safety_timer_enabled
 
 !view
 
-!model
+!module

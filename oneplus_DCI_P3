@@ -1,4 +1,4 @@
-!model
+!module
 class=extra
 !view
 view=title
@@ -44,4 +44,4 @@ echo $switch > /sys/devices/virtual/graphics/fb0/DCI_P3
 @click
 !view
 
-!model
+!module

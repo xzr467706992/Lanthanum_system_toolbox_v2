@@ -1,4 +1,4 @@
-!model
+!module
 class=io
 !view
 view=title
@@ -39,4 +39,4 @@ setprop net.hostname $edittext
 
 
 
-!model
+!module

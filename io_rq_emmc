@@ -1,4 +1,4 @@
-!model
+!module
 class=io
 !view
 view=title
@@ -41,4 +41,4 @@ echo $seekbar > /sys/block/mmcblk0/queue/rq_affinity
 @done
 !view
 
-!model
+!module

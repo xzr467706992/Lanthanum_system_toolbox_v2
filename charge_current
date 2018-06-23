@@ -1,4 +1,4 @@
-!model
+!module
 class=charge
 !view
 view=title
@@ -195,4 +195,4 @@ fi
 @done
 
 !view
-!model
+!module

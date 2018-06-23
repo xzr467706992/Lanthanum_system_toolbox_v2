@@ -1,4 +1,4 @@
-!model
+!module
 class=charge
 !view
 view=title
@@ -42,4 +42,4 @@ echo $switch > /sys/kernel/fast_charge/force_fast_charge
 
 !view
 
-!model
+!module

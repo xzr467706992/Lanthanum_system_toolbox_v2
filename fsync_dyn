@@ -2,7 +2,7 @@
 class=io
 !view
 view=title
-text=动态Fsync
+text=Dynamic Fsync
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=启用后，在屏幕开启时Fsync操作为同步。当屏幕关闭后，Fsync将变为异步。\n（由第三方内核提供）
+text=When enabled, the Fsync operation is synchronized when the screen is turned on. When the screen is closed, Fsync will become asynchronous. \n (provided by a third-party kernel)
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=switch
-text=开启
+text=Enable
 
 @show
 if [ -e /sys/kernel/dyn_fsync/Dyn_fsync_active ]

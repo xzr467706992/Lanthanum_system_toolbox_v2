@@ -3,7 +3,7 @@ class=charge
 
 !view
 view=subtitle
-text=假如这个界面只显示了本消息，这说明你的设备完全不支持充电控制!
+text=If this interface shows only this message, this means that your device does not support charging control at all!
 @show
 echo true
 @show

@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=完全自定义的过渡动画速度修改
+text=Full custom transition animation speed modification
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=完全自定义的系统动画速度
+text=Fully custom system animation speed
 @show
 echo true
 @show
@@ -20,7 +20,7 @@ echo true
 root=true
 core=true
 view=edittext
-text=窗口动画
+text=Window animation
 @show
 echo true
 @show
@@ -36,7 +36,7 @@ settings put global window_animation_scale $edittext
 root=true
 core=true
 view=edittext
-text=过渡动画
+text=Transition animation
 @show
 echo true
 @show
@@ -52,7 +52,7 @@ settings put global transition_animation_scale $edittext
 root=true
 core=true
 view=edittext
-text=动画时长调整程序
+text=Animation duration adjustment procedure
 @show
 echo true
 @show

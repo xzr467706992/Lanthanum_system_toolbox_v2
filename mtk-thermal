@@ -1,4 +1,4 @@
-!model
+!module
 class=cpua
 !view
 view=title
@@ -133,4 +133,4 @@ echo $edittext > /proc/hps/num_limit_thermal
 root=true
 core=true
 !view
-!model
+!module

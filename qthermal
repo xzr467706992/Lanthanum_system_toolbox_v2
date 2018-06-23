@@ -1,4 +1,4 @@
-!model
+!module
 class=cpua
 !view
 view=title
@@ -169,4 +169,4 @@ fi
 @done
 !view
 
-!model
+!module

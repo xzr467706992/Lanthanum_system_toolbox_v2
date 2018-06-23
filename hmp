@@ -1,4 +1,4 @@
-!model
+!module
 class=cpua
 !view
 view=title
@@ -132,4 +132,4 @@ echo position=0
 !view
 
 
-!model
+!module

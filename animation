@@ -1,4 +1,4 @@
-!model
+!module
 class=extra
 !view
 view=title
@@ -66,4 +66,4 @@ settings put global animator_duration_scale $edittext
 
 
 
-!model
+!module

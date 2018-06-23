@@ -1,4 +1,4 @@
-!model
+!module
 class=extra
 !view
 view=title
@@ -30,4 +30,4 @@ rm -f /data/system/gatekeeper.pattern.key
 echo @toast=清除完毕
 @click
 !view
-!model
+!module

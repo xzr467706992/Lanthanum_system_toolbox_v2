@@ -1,4 +1,4 @@
-!model
+!module
 class=extra
 !view
 view=title
@@ -37,4 +37,4 @@ echo true
 fi
 @show
 !view
-!model
+!module

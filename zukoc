@@ -1,4 +1,4 @@
-!model
+!module
 class=cpua
 !view
 view=title
@@ -35,4 +35,4 @@ echo $switch > /sys/module/msm_performance/parameters/overfreq
 @click
 !view
 
-!model
+!module

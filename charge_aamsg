@@ -1,4 +1,4 @@
-!model
+!module
 class=charge
 
 !view
@@ -11,4 +11,4 @@ core=true
 !view
 
 
-!model
+!module

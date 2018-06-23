@@ -1,4 +1,4 @@
-!model
+!module
 class=selinux
 !view
 view=switch
@@ -20,4 +20,4 @@ fi
 root=true
 text=开启SELinux
 !view
-!model
+!module

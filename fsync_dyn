@@ -1,4 +1,4 @@
-!model
+!module
 class=io
 !view
 view=title
@@ -44,4 +44,4 @@ echo $switch > /sys/kernel/dyn_fsync/Dyn_fsync_active
 @click
 !view
 
-!model
+!module

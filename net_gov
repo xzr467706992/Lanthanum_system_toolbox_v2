@@ -1,4 +1,4 @@
-!model
+!module
 class=io
 
 !view
@@ -40,4 +40,4 @@ onboot=true
 !view
 
 
-!model
+!module

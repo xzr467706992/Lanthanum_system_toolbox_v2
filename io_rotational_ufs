@@ -1,4 +1,4 @@
-!model
+!module
 class=io
 !view
 view=title
@@ -37,4 +37,4 @@ echo $switch > /sys/block/sda/queue/rotational
 @click
 root=true
 !view
-!model
+!module

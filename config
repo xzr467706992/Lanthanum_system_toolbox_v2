@@ -1,0 +1,2 @@
+port <23333>
+allow_multiuser <false>

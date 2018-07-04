@@ -47,7 +47,7 @@ class Patch(object):
     def build_path(self, paths, dir_path=None):
         # 组合dir_path和paths路径(dir_path + paths)
         # 由于paths字符串已定并且使用"/"作为路径分割符
-        # 所以这样做可以使其同时兼容win平台了Linux平台
+        # 所以这样做可以使其同时兼容win平台和Linux平台
         if dir_path is None:
             # 如果可选参数dir_path没有提供 则使用self.dir_services
             # 再往上推 其实就是"services"目录
@@ -56,12 +56,15 @@ class Patch(object):
         # 例如：
         # path = r'D:\A\B\..\C'
         # 则 os.path.normpath(path) == r'D:\A\C'
-        path = os.path.normpath(dir_path)
+        # ~ path = os.path.normpath(dir_path)
         # ~ for x in paths.split("/"):
             # ~ path = os.path.join(path, x)
-        # 上面两行代码可以这样写吗？可以！
-        path = os.path.join(path, *paths.split("/"))
-        return path
+        # 上面两行代码可以像这样简写为一行吗？可以！
+        # ~ path = os.path.join(path, *paths.split("/"))
+        # ~ return path
+        
+        # 一行代码 简单粗暴
+        return os.path.join(os.path.normpath(dir_path), *paths.split("/"))
 
     def run(self):
         patched = 0
@@ -173,6 +176,7 @@ class Patch(object):
             sn = int(start[1:])
             en = int(end[1:])
             # 若argument的首尾参数不是以同一字母开头则抛出异常
+            # 字母？在smali语法中 p开头的寄存器为参数寄存器 v开头的寄存器为本地寄存器
             assert start[0] == end[0]
             prefix = start[0]
             arguments = []
@@ -223,6 +227,7 @@ class ActivityManagerService(Patch):
     methods = None
     pkg_deps = ''
     extra_count = 0
+    method_name_sp = ""
 
     # 使用大括号创建了一个仅包含键的字典 称之为集合
     # 特点: 检索迅速 不会有重复值
@@ -258,6 +263,7 @@ class ActivityManagerService(Patch):
 
         if line.startswith(".method"):
             method_signature = line_strip
+            self.method_name_sp = self.find_method_name(line_strip)
             # 如果method体第一行在self.methods里也有
             if method_signature in self.methods:
                 # 从self.methods中取出method名和method完整语句体
@@ -282,28 +288,30 @@ class ActivityManagerService(Patch):
                          " Lcom/android/server/am/PreventRunningUtils;->returnFalse()Z")
             output.write(os.linesep)
             # 此处patch比较特殊 故使用self.extra_count来特殊计数
-            # 为什么特殊？
-            # 正常情况下 Android 4.4需要打14处补丁 Android 5.0以上需要打15处补丁
-            # 所以...
+            # 为什么特殊？此处Patch在4.4下是打不上的
             self.extra_count += 1
             self.pkg_deps = ''
             return True
 
-        if line_strip.startswith('iget-object'):
-            # self.pkg_deps用来设置一个flag 因为此行之后的一行需要重写
-            # 对此行以"iget-object"开头的语句进行判断
-            if 'Lcom/android/server/am/ProcessRecord;->pkgDeps:Landroid/util/ArraySet;' in line_strip:
-                self.pkg_deps = line_strip
-            else:
-                self.pkg_deps = ''
+        # 此处Patch仅用于killPackageProcessesLocked方法
+        # 在8.x中 有可能会给getPackageProcessState方法也打上补丁
+        # 这样做是多余的 而且可能会导致明显的系统卡顿
+        # 所以这里添加一个额外的条件判断
+        if self.method_name_sp == "killPackageProcessesLocked":
+            if line_strip.startswith('iget-object'):
+                # self.pkg_deps用来设置一个flag 因为此行之后的一行需要重写
+                # 对此行以"iget-object"开头的语句进行判断
+                if 'Lcom/android/server/am/ProcessRecord;->pkgDeps:Landroid/util/ArraySet;' in line_strip:
+                    self.pkg_deps = line_strip
+                else:
+                    self.pkg_deps = ''
 
     def get_patch_count(self):
         # 4.4 必打 8+0 处补丁
-        # 5.x ~ 7.X 必打 8+1 处补丁
-        # 8.x 只打 7+1 或 7+2 处补丁 属于正常情况
-        # 此时 self.fixing == {'cleanUpRemovedTaskLocked'}
+        # 5.x ~ 7.x 必打 8+1 处补丁
+        # 8.x 只打 7+1 处补丁 属于正常情况
         global oreo_flag
-        if (self.fixing == {'cleanUpRemovedTaskLocked'}) and oreo_flag:
+        if oreo_flag:
             return 7 + self.extra_count
         else:
             return 8 + self.extra_count
@@ -417,6 +425,9 @@ class ActivityStackSupervisor(Patch):
                 if method_name in self.fixing:
                     output.write(method_body)
                     output.write(os.linesep)
+                    # 注意！
+                    # 这里不仅要把旧的method体的method名末尾加上"$Pr"
+                    # 还要在前面加上"private " 将其转为私有方法
                     output.write(line.replace(method_name, "private %s$Pr" % method_name))
                     self.fixing.remove(method_name)
                     self.patched += 1

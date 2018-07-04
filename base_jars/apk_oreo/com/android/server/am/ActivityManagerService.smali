@@ -584,9 +584,8 @@
     goto :goto_a
 .end method
 
-.method final startProcessLocked$Pr(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZIZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/String;)Lcom/android/server/am/ProcessRecord;
+.method final startProcessLocked$Pr(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZIZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/Runnable;)Lcom/android/server/am/ProcessRecord;
     .registers 16
-
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -595,8 +594,8 @@
     throw v0
 .end method
 
-.method final startProcessLocked$Pr(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZIZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/Runnable;)Lcom/android/server/am/ProcessRecord;
-    .registers 16
+.method final startProcessLocked$Pr(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZIZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/String;)Lcom/android/server/am/ProcessRecord;
+    .registers 18
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

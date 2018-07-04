@@ -1,22 +1,17 @@
-# 黑域一键补丁windows服务端
-- 版本v0.2beta
-## 搭建方法
+# 黑域一键补丁Linux服务端
+- 版本v0.2.1beta
 ### 原料
-- 一台windows服务器
-- python环境
-- jdk环境（不是jre）
-- 以上配置方法不做说明，自行谷歌
-- [发行版的镧·系统工具箱黑域一键补丁zip](https://github.com/xzr467706992/Lanthanum_system_toolbox_v2/releases)
-### 过程
-- 完成原料步骤里的要求
-- 解压服务端zip到某个目录（最好不要包含中文，虽然似乎不影响）
-- 打开config
-- config中第一行中的port决定服务端口
-- 第二行的allow_multiuser决定是(true)否(false)允许多用户同时补丁【小心崩服】
-- 保存并关闭config
-- 点击start.bat开启
-- 客户端使用“切换服务器”来配置服务器信息
+- 一台Linux服务器
+### 搭建过程
+- ssh连接
+- 依次运行下列命令(以下操作基于Debian9测试)
+- <code>apt-get update</code>
+- <code>apt install git</code>
+- <code>apt install openjdk-8-jdk-headless</code>
+- <code>git clone -b prevent_server_linux https://github.com/xzr467706992/Lanthanum_system_toolbox_v2.git prevent_server</code>
+- <code>cd prevent_server</code>
+- <code>./start.sh</code>
 - 尝试连接
-
+- 如需查看日志则在该目录中<code>cat output.log</code>
 ## Bug
 - You tell me (Github issue)

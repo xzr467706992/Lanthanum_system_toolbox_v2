@@ -14,5 +14,7 @@
 - <code>./start.sh</code>
 - 尝试连接
 - 如需查看日志则在该目录中<code>cat output.log</code>
+### 获取最新服务端
+- 在服务器文件夹中使用<code>git pull</code>
 ## Bug
 - You tell me (Github issue)

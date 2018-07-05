@@ -1,0 +1,6 @@
+!device
+name=华为保时捷RS
+ro.product.model=NEO-AL00
+ro.product.brand=HUAWEI
+ro.product.manufacturer=HUAWEI
+!device

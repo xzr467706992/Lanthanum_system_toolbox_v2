@@ -1,0 +1,6 @@
+!device
+name=黑鲨游戏手机
+ro.product.model=SKR-A0
+ro.product.brand=blackshark
+ro.product.manufacturer=blackshark
+!device

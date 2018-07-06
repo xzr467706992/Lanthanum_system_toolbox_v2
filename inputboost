@@ -1,0 +1,85 @@
+!module
+class=cpua
+!view
+view=title
+text=输入升频
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=在有一定量任务输入时提升CPU频率
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=开启输入升频
+@show
+if [ -e /sys/module/cpu_boost/parameters/input_boost_enabled ]
+then
+echo true
+fi
+@show
+@click
+echo $switch > /sys/module/cpu_boost/parameters/input_boost_enabled
+@click
+@current
+if [ `cat /sys/module/cpu_boost/parameters/input_boost_enabled` == 1 ]
+then
+echo true
+fi
+@current
+core=true
+root=true
+!view
+
+!view
+view=edittext
+text=频率：
+@show
+if [ -e /sys/module/cpu_boost/parameters/input_boost_freq ]
+then
+echo true
+fi
+@show
+
+@current
+cat /sys/module/cpu_boost/parameters/input_boost_freq
+@current
+
+@done
+echo $edittext > /sys/module/cpu_boost/parameters/input_boost_freq
+@done
+
+core=true
+root=true
+!view
+
+!view
+view=edittext
+text=延迟(ms)：
+@show
+if [ -e /sys/module/cpu_boost/parameters/input_boost_ms ]
+then
+echo true
+fi
+@show
+
+@current
+cat /sys/module/cpu_boost/parameters/input_boost_ms
+@current
+
+@done
+echo $edittext > /sys/module/cpu_boost/parameters/input_boost_ms
+@done
+
+core=true
+root=true
+!view
+
+!module

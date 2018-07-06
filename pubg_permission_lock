@@ -1,0 +1,51 @@
+!module
+class=extra
+
+!view
+view=title
+text=刺激战场画质锁
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=锁定刺激战场的画质文件权限使其无法被重写
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=锁定画质文件
+@show
+if [ -e /data/media/0/Android/data/com.tencent.tmgp.pubgmhd/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini ]
+then
+echo true
+fi
+@show
+
+@current
+if [ `stat -c%a /data/media/0/Android/data/com.tencent.tmgp.pubgmhd/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini` == 444 ]
+then
+echo true
+fi
+@current
+
+@click
+if [ $switch == 1 ]
+then
+chmod 444 /data/media/0/Android/data/com.tencent.tmgp.pubgmhd/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini
+else
+chmod 664 /data/media/0/Android/data/com.tencent.tmgp.pubgmhd/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini
+fi
+@click
+
+core=true
+root=true
+
+!view
+
+!module

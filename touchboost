@@ -1,0 +1,41 @@
+!module
+class=cpua
+!view
+view=title
+text=触摸升频
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=激活内核中的触摸升频接口。（假如它要完整启用，需要device tree中提供相应接口支持）\n（由第三方内核提供）
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=开启
+@show
+if [ -e /sys/module/msm_performance/parameters/touchboost ]
+then
+echo true
+fi
+@show
+@click
+echo $switch > /sys/module/msm_performance/parameters/touchboost
+@click
+@current
+if [ `cat /sys/module/msm_performance/parameters/touchboost` == 1 ]
+then
+echo true
+fi
+@current
+core=true
+root=true
+!view
+
+!module

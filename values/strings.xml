@@ -194,5 +194,16 @@
     <string name="safe_mode_msg1">Will restart into safe mode</string>
     <string name="safe_mode_msg2">Dont load unofficial modules</string>
     <string name="unrooted">Cant get root permission.Plz google root+ur device</string>
+    <string name="install_frm_net">Install from internet</string>
+    <string name="address">Address</string>
+    <string name="fetch">Fetch</string>
+    <string name="name_saveonly">Name(only use to save)</string>
+    <string name="confirm_module_install">Confirm to install this module?</string>
+    <string name="installed_module_name">Name it as：</string>
+    <string name="error_input">Error input!</string>
+    <string name="check_ur_internet">Check your net connection</string>
+    <string name="fetch_error">Error while fetching!</string>
+    <string name="fetched">Fetched:</string>
+    <string name="cpu_online">Online</string>
 
 </resources>

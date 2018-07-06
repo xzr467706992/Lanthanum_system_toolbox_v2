@@ -194,4 +194,15 @@
     <string name="safe_mode_msg1">将重启以通过安全模式进入软件</string>
     <string name="safe_mode_msg2">不加载第三方模块</string>
     <string name="unrooted">无法获取root权限，请谷歌root+你的设备。</string>
+    <string name="install_frm_net">从网络安装</string>
+    <string name="address">地址</string>
+    <string name="fetch">解析</string>
+    <string name="name_saveonly">名称（仅用来保存）</string>
+    <string name="confirm_module_install">确认要继续安装吗？</string>
+    <string name="installed_module_name">会将这个模块命名为：</string>
+    <string name="error_input">错误的输入</string>
+    <string name="check_ur_internet">检查网络连接！</string>
+    <string name="fetch_error">获取错误</string>
+    <string name="fetched">获取到了：</string>
+    <string name="cpu_online">启用</string>
 </resources>

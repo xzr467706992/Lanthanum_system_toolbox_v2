@@ -1,0 +1,50 @@
+!module
+class=extra
+!view
+view=title
+text=Mac地址修改
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=修改本机网络的mac地址
+@show
+echo true
+@show
+!view
+
+!view
+view=edittext
+width=500
+text=Mac地址：
+@show
+if [ -e /sys/class/net/wlan0/address ]
+then
+echo true
+fi
+@show
+
+@current
+cat /sys/class/net/wlan0/address
+@current
+
+@done
+if [ `cat /sys/class/net/wlan0/address` != $edittext ]
+then
+chmod 644 /sys/class/net/wlan0/address
+svc wifi disable
+ifconfig wlan0 down
+echo "$edittext" > /sys/class/net/wlan0/address
+ifconfig wlan0 hw ether "$edittext"
+ifconfig wlan0 up
+svc wifi enable
+fi
+@done
+root=true
+core=true
+
+!view
+!module

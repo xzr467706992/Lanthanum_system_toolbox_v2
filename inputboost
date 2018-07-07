@@ -41,6 +41,7 @@ root=true
 !view
 view=edittext
 text=频率：
+width=600
 @show
 if [ -e /sys/module/cpu_boost/parameters/input_boost_freq ]
 then

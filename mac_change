@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=修改本机网络的mac地址
+text=修改本机网络的mac地址（假如在修改后出现无法连接wifi的情况，请重启解决，并且不再使用本功能）
 @show
 echo true
 @show

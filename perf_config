@@ -1,0 +1,57 @@
+!module
+class=cpua
+!view
+view=title
+text=Performance boost配置文件状态控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=调整是否启用Performance boost。启用它（也许）能在有突发任务输入时提高性能，但是处理器调整器的配置内容参数将会被改变。假如你想要固定的调整器参数，请关闭它。
+@show
+echo true
+@show
+
+!view
+
+!view
+view=switch
+text=开启
+
+@show
+if [ -e /system/vendor/etc/perf/perfboostsconfig.xml ]
+then
+echo true
+fi
+@show
+
+@current
+if [ `stat -c%a /system/vendor/etc/perf/perfboostsconfig.xml` == 644 ]
+then
+echo true
+fi
+@current
+
+core=true
+
+root=true
+
+@click
+mount -o rw,remount /system
+mount -o rw,remount /vendor
+if [ $switch == 1 ]
+then
+chmod 644 /system/vendor/etc/perf/perfboostsconfig.xml
+else
+chmod 0 /system/vendor/etc/perf/perfboostsconfig.xml
+fi
+mount -o ro,remount /system
+mount -o ro,remount /vendor
+echo @toast=建议刷新页面检查是否更改成功，一切更改将在重启后生效。
+@click
+!view
+
+!module

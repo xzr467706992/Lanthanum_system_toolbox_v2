@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=高通Big.Little负载平衡
+text=Qualcomm Big.Little load balancing
 @show
 echo true
 @show
@@ -13,7 +13,7 @@ view=edittext
 @current
 cat /proc/sys/kernel/sched_upmigrate
 @current
-text=小核>大核所需负载
+text=Small cluster > large cluster required load
 @done
 until [ `cat /proc/sys/kernel/sched_upmigrate` == $edittext ]
 do
@@ -35,7 +35,7 @@ view=edittext
 @current
 cat /proc/sys/kernel/sched_downmigrate
 @current
-text=大核>小核负载
+text=Big cluster>Small cluster load
 @done
 echo $edittext > /proc/sys/kernel/sched_downmigrate
 @done
@@ -51,7 +51,7 @@ root=true
 
 !view
 view=subtitle
-text=以下配置何时强制将任务丢到小核：
+text=When does the following configuration force the task to be dropped into the small core:
 root=true
 !view
 
@@ -60,7 +60,7 @@ view=edittext
 @current
 cat /proc/sys/kernel/sched_spill_nr_run
 @current
-text=一定时间内任务数
+text=Number of tasks in a certain period of time:
 @done
 echo $edittext > /proc/sys/kernel/sched_spill_nr_run
 @done
@@ -79,7 +79,7 @@ view=edittext
 @current
 cat /proc/sys/kernel/sched_spill_load
 @current
-text=负载
+text=Load:
 @done
 echo $edittext > /proc/sys/kernel/sched_spill_load
 @done
@@ -95,8 +95,8 @@ root=true
 
 !view
 view=spinner
-text=预置配置：
-item=触摸写入一个预置模式|大核优先负载模式|小核活跃模式
+text=Preset configuration:
+item=Touch write to a preset mode | Large core priority load mode | Small core active mode
 @show
 echo true
 @show
@@ -112,7 +112,7 @@ echo 10 > /proc/sys/kernel/sched_spill_nr_run
 echo 85 > /proc/sys/kernel/sched_spill_load
 done
 echo "@refresh_ui"
-echo @toast=大核优先负载应用完毕
+echo @toast=Large core priority load application completed
 fi
 
 if [ $position == 2 ]
@@ -122,7 +122,7 @@ echo 95 > /proc/sys/kernel/sched_downmigrate
 echo 4 > /proc/sys/kernel/sched_spill_nr_run
 echo 85 > /proc/sys/kernel/sched_spill_load
 echo "@refresh_ui"
-echo @toast=小核活跃模式应用完毕
+echo @toast=Small core active mode is applied
 fi
 
 @done

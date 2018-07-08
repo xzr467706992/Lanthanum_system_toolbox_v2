@@ -52,7 +52,9 @@ root=true
 !view
 view=subtitle
 text=以下配置何时强制将任务丢到小核：
-root=true
+@show
+echo true
+@show
 !view
 
 !view

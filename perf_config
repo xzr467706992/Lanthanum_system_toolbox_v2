@@ -51,6 +51,7 @@ fi
 mount -o ro,remount /system
 mount -o ro,remount /vendor
 echo @toast=建议刷新页面检查是否更改成功，一切更改将在重启后生效。
+echo @ierror
 @click
 !view
 

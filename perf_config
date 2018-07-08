@@ -22,14 +22,14 @@ view=switch
 text=开启
 
 @show
-if [ -e /system/vendor/etc/perf/perfboostsconfig.xml ]
+if [ -e /system/vendor/etc/perf/perfboostsconfig.xml ] || [ -e /system/vendor/etc/perf/perfboostsconfig.xml.bak ]
 then
 echo true
 fi
 @show
 
 @current
-if [ `stat -c%a /system/vendor/etc/perf/perfboostsconfig.xml` == 644 ]
+if [ -e /system/vendor/etc/perf/perfboostsconfig.xml ]
 then
 echo true
 fi
@@ -44,9 +44,9 @@ mount -o rw,remount /system
 mount -o rw,remount /vendor
 if [ $switch == 1 ]
 then
-chmod 644 /system/vendor/etc/perf/perfboostsconfig.xml
+mv /system/vendor/etc/perf/perfboostsconfig.xml.bak /system/vendor/etc/perf/perfboostsconfig.xml
 else
-chmod 0 /system/vendor/etc/perf/perfboostsconfig.xml
+mv /system/vendor/etc/perf/perfboostsconfig.xml /system/vendor/etc/perf/perfboostsconfig.xml.bak
 fi
 mount -o ro,remount /system
 mount -o ro,remount /vendor

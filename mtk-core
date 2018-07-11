@@ -1,0 +1,57 @@
+!module
+class=cpua
+
+!view
+view=title
+text=联发科杂项控制
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+root=true
+text=多核控制
+core=true
+@show
+if [ -e /proc/hps/enabled ]
+then
+echo true
+fi
+@show
+@current
+if [ `cat /proc/hps/enabled` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /proc/hps/enabled
+@click
+!view
+
+!view
+view=subtitle
+text=*若关闭此选项 发哥将会失去掌握核心的大权 理论上所有核心都会开启(核心数量由下一项定义)。并且调度方式与cpu0相同。
+!view
+
+!view
+view=edittext
+text=最大允许开启核心数：
+@current
+cat /proc/hps/num_limit_thermal
+@current
+@show
+if [ -e /proc/hps/num_limit_thermal ]
+then
+echo true
+fi
+@show
+@done
+echo $edittext > /proc/hps/num_limit_thermal
+@done
+root=true
+core=true
+!view
+!module

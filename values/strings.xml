@@ -205,5 +205,26 @@
     <string name="fetch_error">Error while fetching!</string>
     <string name="fetched">Fetched:</string>
     <string name="cpu_online">Online</string>
+    <string name="perf_monitor">Performance monitor</string>
+    <string name="perf_monitor_dep">See cpu load,temperature and even load of adreno gpu</string>
+    <string name="start">Start</string>
+    <string name="exit">Exit</string>
+    <string name="offline">offline</string>
+    <string name="current_monitor">Current monitor</string>
+    <string name="current_monitor_dep">See the current of battery right now</string>
+    <string name="need_overlay_permission">Need overlay permission</string>
+    <string name="confirm">Confirm</string>
+    <string name="show_current_msg">Show current information while charging</string>
+    <string name="charger_voltage">Charger voltage</string>
+    <string name="charger_voltage_msg">Please provide the voltage of your charge,and we will use it to calculate the power.If you dont know it at all,please enter 0.</string>
+    <string name="charging">Charging...</string>
+    <string name="info">Info:</string>
+    <string name="back_alive_msg">This will help the app stay alive on android oreo+</string>
+    <string name="battery_ig_msg">Please confirm to make this app alive in background!</string>
+    <string name="jump_root_check">Don\'t check root when starting</string>
+    <string name="jump_root_check_msg">This will improve starting time but may cause some problem</string>
+    <string name="disable_root_check">Disable root check</string>
+    <string name="find_new_version">New version aviliable</string>
+    <string name="new_version_msg">Click this card to download</string>
 
 </resources>

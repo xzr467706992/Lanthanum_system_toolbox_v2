@@ -205,4 +205,25 @@
     <string name="fetch_error">获取错误</string>
     <string name="fetched">获取到了：</string>
     <string name="cpu_online">启用</string>
+    <string name="perf_monitor">性能监视器</string>
+    <string name="perf_monitor_dep">查看处理器负载、处理器温度，甚至是adreno GPU的工作状况</string>
+    <string name="start">开始</string>
+    <string name="exit">退出</string>
+    <string name="offline">离线</string>
+    <string name="current_monitor">电池电流监控</string>
+    <string name="current_monitor_dep">查看当前电池电流</string>
+    <string name="need_overlay_permission">需要授权悬浮窗权限</string>
+    <string name="confirm">确定</string>
+    <string name="show_current_msg">充电时显示电流信息</string>
+    <string name="charger_voltage">充电器电压</string>
+    <string name="charger_voltage_msg">请提供充电器电压。它将被用于计算功率。假如你不清楚，请写0.</string>
+    <string name="charging">正在充电</string>
+    <string name="info">信息：</string>
+    <string name="back_alive_msg">这将帮助软件在安卓oreo+保持正常运行</string>
+    <string name="battery_ig_msg">请允许来保证应用能正常运行！</string>
+    <string name="jump_root_check">跳过root检查</string>
+    <string name="jump_root_check_msg">这可以减少启动时间，但是可能导致一些问题。</string>
+    <string name="disable_root_check">禁用root检查</string>
+    <string name="find_new_version">发现新版本</string>
+    <string name="new_version_msg">点击本卡片来下载更新！</string>
 </resources>

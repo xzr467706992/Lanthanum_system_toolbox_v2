@@ -52,7 +52,9 @@ root=true
 !view
 view=subtitle
 text=When does the following configuration force the task to be dropped into the small core:
-root=true
+@show
+echo true
+@show
 !view
 
 !view

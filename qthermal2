@@ -1,0 +1,79 @@
+!module
+class=cpua
+
+!view
+view=title
+text=高通温控驱动
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=核心控制
+@current
+if [ `cat /sys/module/msm_thermal/core_control/enabled` == 1 ]
+then
+echo true
+fi
+@current
+@show
+if [ -e /sys/module/msm_thermal/core_control/enabled ]
+then
+echo true
+fi
+@show
+@click
+echo $switch > /sys/module/msm_thermal/core_control/enabled
+@click
+core=true
+root=true
+!view
+
+!view
+view=switch
+text=VDD限制
+@current
+if [ `cat /sys/module/msm_thermal/vdd_restriction/enabled` == 1 ]
+then
+echo true
+fi
+@current
+@show
+if [ -e /sys/module/msm_thermal/vdd_restriction/enabled ]
+then
+echo true
+fi
+@show
+@click
+echo $switch > /sys/module/msm_thermal/vdd_restriction/enabled
+@click
+core=true
+root=true
+!view
+
+
+!view
+view=switch
+text=SOC温度限制门限
+@current
+if [ `cat /sys/module/msm_thermal/parameters/enabled` == Y ]
+then
+echo true
+fi
+@current
+@show
+if [ -e /sys/module/msm_thermal/parameters/enabled ]
+then
+echo true
+fi
+@show
+@click
+echo $switch > /sys/module/msm_thermal/parameters/enabled
+@click
+core=true
+root=true
+!view
+
+!module

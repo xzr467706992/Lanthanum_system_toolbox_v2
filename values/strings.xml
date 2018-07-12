@@ -226,5 +226,12 @@
     <string name="disable_root_check">Disable root check</string>
     <string name="find_new_version">New version aviliable</string>
     <string name="new_version_msg">Click this card to download</string>
+    <string name="timetask">Time task</string>
+    <string name="timetask_msg">Set a time and set a task and let your phone to do it.</string>
+    <string name="jh_donate_ver">Active donated version</string>
+    <string name="jhm">Active code</string>
+    <string name="jh_dot_ver">Active donated version</string>
+    <string name="jh_dot_ver_msg">Input your code to active donated version</string>
+    <string name="act_fali">Failed!</string>
 
 </resources>

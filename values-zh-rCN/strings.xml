@@ -226,4 +226,11 @@
     <string name="disable_root_check">禁用root检查</string>
     <string name="find_new_version">发现新版本</string>
     <string name="new_version_msg">点击本卡片来下载更新！</string>
+    <string name="timetask">定时任务</string>
+    <string name="timetask_msg">设定按一定规律执行的任务。</string>
+    <string name="jh_donate_ver">激活捐赠版</string>
+    <string name="jhm">激活码</string>
+    <string name="jh_dot_ver">激活捐赠版</string>
+    <string name="jh_dot_ver_msg">输入激活码来激活捐赠版</string>
+    <string name="act_fali">激活失败</string>
 </resources>

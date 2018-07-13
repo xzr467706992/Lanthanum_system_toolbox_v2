@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=控制CPU在遭遇I/O事件时的调度激进程度
+text=控制CPU在遭遇I/O事件时的调度激进程度(emmc)
 @show
 echo true
 @show

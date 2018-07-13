@@ -11,7 +11,7 @@ echo true
 
 !view
 view=subtitle
-text=配置存储器I/O调整器
+text=配置存储器I/O调整器(emmc)
 @show
 echo true
 @show

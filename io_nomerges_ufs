@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=禁用可提高性能
+text=禁用可提高性能(ufs)
 @show
 echo true
 @show

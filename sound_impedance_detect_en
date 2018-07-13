@@ -1,0 +1,42 @@
+!module
+class=extra
+!view
+view=title
+text=阻抗检测
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=玄学声音效果提升，似乎对高阻抗耳机有提升。
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/module/snd_soc_wcd9xxx/parameters/impedance_detect_en ]
+then
+echo true
+fi
+@show
+root=true
+core=true
+@click
+echo $switch > /sys/module/snd_soc_wcd9xxx/parameters/impedance_detect_en
+@click
+@current
+if [ `cat /sys/module/snd_soc_wcd9xxx/parameters/impedance_detect_en` == 1 ]
+then
+echo true
+fi
+@current
+
+!view
+
+!module

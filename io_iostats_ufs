@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=关闭可提高性能 但是部分依赖此项的应用可能不能正常运行
+text=关闭可提高性能 但是部分依赖此项的应用可能不能正常运行(ufs)
 @show
 echo true
 @show

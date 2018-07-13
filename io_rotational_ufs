@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=将设备视作硬盘存储
+text=将设备视作硬盘存储(ufs)
 @show
 echo true
 @show

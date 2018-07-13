@@ -1,0 +1,42 @@
+!module
+class=cpua
+!view
+view=title
+text=Arch Power
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=开启架构特有的节能\n（由第三方内核提供）
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/kernel/sched/arch_power ]
+then
+echo true
+fi
+@show
+root=true
+core=true
+@click
+echo $switch > /sys/kernel/sched/arch_power
+@click
+@current
+if [ `cat /sys/kernel/sched/arch_power` == 1 ]
+then
+echo true
+fi
+@current
+
+!view
+
+!module

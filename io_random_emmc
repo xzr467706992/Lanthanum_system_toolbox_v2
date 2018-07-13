@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=从旋转设备获取熵
+text=从旋转设备获取熵(emmc)
 @show
 echo true
 @show

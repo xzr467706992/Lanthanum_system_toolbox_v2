@@ -233,4 +233,9 @@
     <string name="jh_dot_ver">激活捐赠版</string>
     <string name="jh_dot_ver_msg">输入激活码来激活捐赠版</string>
     <string name="act_fali">激活失败</string>
+    <string name="brightness_ctl">屏幕亮度高级调整</string>
+    <string name="brc_msg">完全控制屏幕亮度</string>
+    <string name="rompackup">ROM打包</string>
+    <string name="rom_packup_msg">打包你的当前ROM</string>
+    <string name="random">熵池管理</string>
 </resources>

@@ -233,5 +233,10 @@
     <string name="jh_dot_ver">Active donated version</string>
     <string name="jh_dot_ver_msg">Input your code to active donated version</string>
     <string name="act_fali">Failed!</string>
+    <string name="brightness_ctl">Brightness control</string>
+    <string name="brc_msg">Control your screen brightness</string>
+    <string name="rompackup">Rom pack-up</string>
+    <string name="rom_packup_msg">Pack-up your current ROM</string>
+    <string name="random">Entropy</string>
 
 </resources>

@@ -52,7 +52,7 @@ fi
 
 @current
 @done
-
+mount -o rw,remount /system
 if [ $position == 0 ]
 then
 cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal.conf /etc/.tp
@@ -70,6 +70,7 @@ then
 cp -rf -p /data/data/xzr.La.systemtoolbox/backups/.ht120.mtc /etc/.tp
 echo 2 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
 fi
+mount -o ro,remount /system
 @done
 !view
 !view

@@ -189,6 +189,7 @@ echo $label > /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma
 echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma
 echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma
 
+echo @ierror
 echo @toast=写入完成
 echo @refresh_ui
 fi

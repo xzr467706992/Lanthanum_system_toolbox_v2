@@ -238,5 +238,21 @@
     <string name="rompackup">Rom pack-up</string>
     <string name="rom_packup_msg">Pack-up your current ROM</string>
     <string name="random">Entropy</string>
+    <string name="adb_sm">Analog adb</string>
+    <string name="init_sm">Simulated init.d</string>
+    <string name="theme">Theme</string>
+    <string name="theme_msg">Choose a color you want</string>
+    <string name="th_1">Stock</string>
+    <string name="th_2">Blue</string>
+    <string name="get_key">Get a key</string>
+    <string name="tap_to">Tap there</string>
+    <string name="install_from_repo">Install from repo</string>
+    <string name="module_repo">Module repo</string>
+    <string name="author">author:</string>
+    <string name="repo_ins_title">Module install</string>
+    <string name="repo_module_install_msg">Are you sure to install module:</string>
+    <string name="cant_get_current_info">Cant get info.Please disable selinux and try again</string>
+    <string name="update_module">Module already exist,do you want to update it?</string>
+    <string name="again_press">Press back again to exit</string>
 
 </resources>

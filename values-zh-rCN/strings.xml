@@ -238,4 +238,20 @@
     <string name="rompackup">ROM打包</string>
     <string name="rom_packup_msg">打包你的当前ROM</string>
     <string name="random">熵池管理</string>
+    <string name="adb_sm">模拟adb</string>
+    <string name="init_sm">模拟init.d</string>
+    <string name="theme">主题</string>
+    <string name="theme_msg">选择一个你喜欢的颜色</string>
+    <string name="th_1">钦定橙</string>
+    <string name="th_2">靛蓝</string>
+    <string name="get_key">获取激活码</string>
+    <string name="tap_to">点我前往</string>
+    <string name="install_from_repo">从模块仓库安装</string>
+    <string name="module_repo">模块仓库</string>
+    <string name="author">作者：</string>
+    <string name="repo_ins_title">模块安装</string>
+    <string name="repo_module_install_msg">你确认要安装模块：</string>
+    <string name="cant_get_current_info">无法获取电流信息，请关闭SELinux并重试。</string>
+    <string name="update_module">模块已经存在，你想要更新它吗？</string>
+    <string name="again_press">再按一次返回键来退出</string>
 </resources>

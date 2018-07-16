@@ -1,0 +1,58 @@
+!module
+class=cpua
+!view
+view=title
+text=骁龙652核心全开
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=解决骁龙652只有两个a72在线的问题
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=运行
+
+@show
+echo true
+@show
+
+
+core=true
+
+root=true
+
+@click
+chmod 0666 /sys/module/msm_thermal/core_control/enabled
+echo 0 > /sys/module/msm_thermal/core_control/enabled
+for max_cpus in /sys/devices/system/cpu/cpu*/core_ctl/max_cpus
+do
+chmod 0666 $max_cpus
+echo 4 > $max_cpus
+done
+for min_cpus in /sys/devices/system/cpu/cpu*/core_ctl/min_cpus
+do
+chmod 0666 $min_cpus
+echo 4 > $min_cpus
+done
+chmod 0666 /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
+echo 1 1 1 1 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
+chmod 0666 /sys/devices/system/cpu/cpu4/core_ctl/not_preferred
+echo 1 1 1 1 > /sys/devices/system/cpu/cpu4/core_ctl/not_preferred
+for online in /sys/devices/system/cpu/cpu*/online
+do
+chmod 0666 $online
+echo 1 > $online
+done
+echo @toast=命令执行完毕
+@click
+!view
+
+!module

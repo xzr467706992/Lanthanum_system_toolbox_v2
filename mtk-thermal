@@ -42,7 +42,7 @@ fi
 
 if [ `cat /data/data/xzr.La.systemtoolbox/config/mtk-thermal` == 1 ]
 then
-echo position=2
+echo position=1
 fi
 
 if [ `cat /data/data/xzr.La.systemtoolbox/config/mtk-thermal` == 2 ]
@@ -55,22 +55,23 @@ fi
 mount -o rw,remount /system
 if [ $position == 0 ]
 then
-cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal.conf /etc/.tp
+cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal.conf /etc/.tp/thermal.conf
 echo 0 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
 fi
 
 if [ $position == 1 ]
 then
-cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal.off.conf /etc/.tp
+cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal.off.conf /etc/.tp/thermal.conf
 echo 1 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
 fi
 
 if [ $position == 2 ]
 then
-cp -rf -p /data/data/xzr.La.systemtoolbox/backups/.ht120.mtc /etc/.tp
+cp -rf -p /data/data/xzr.La.systemtoolbox/backups/.ht120.mtc /etc/.tp/thermal.conf
 echo 2 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
 fi
 mount -o ro,remount /system
+echo @toast=切换温控完成，重启生效！
 @done
 !view
 !view

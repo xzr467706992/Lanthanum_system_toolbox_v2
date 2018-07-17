@@ -8,5 +8,13 @@ name=sd652_corectl
 link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/sd652_corectl
 !module
 
+!module
+title=【高级重启】9008模式
+subtitle=[适用于工具箱2.0.0B3+]为高通设备重启到9008（edl）模式提供接口
+author=@xzr467706992
+name=reboot_edl
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/reboot_edl
+!module
+
 
 !repo

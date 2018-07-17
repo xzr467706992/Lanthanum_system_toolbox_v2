@@ -1,0 +1,33 @@
+!module
+class=reboot
+!view
+view=title
+text=重启到高通9008（edl）模式
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=此操作可能具有一定危险性 请确保在已经学会如何使用9008后再进入该模式 部分机型可能会出现卡住无法改出的情况
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+reboot edl
+@click
+
+!view
+
+
+!module

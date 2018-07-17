@@ -1,0 +1,38 @@
+!module
+class=cpua
+!view
+view=title
+text=高通热插拔驱动控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=适用于骁龙80x 81x 600的热插拔驱动控制
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=停用热插拔驱动
+
+@show
+echo true
+@show
+
+
+core=true
+
+root=true
+
+@click
+stop mpdecision
+echo @toast=命令执行完毕
+@click
+!view
+
+!module

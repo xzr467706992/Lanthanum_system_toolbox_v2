@@ -1,0 +1,33 @@
+!module
+class=reboot
+!view
+view=title
+text=重启到Bootloader模式（fastboot)
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=快速重新启动并进入Bootloader模式
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+reboot bootloader
+@click
+
+!view
+
+
+!module

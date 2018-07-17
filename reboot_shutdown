@@ -1,0 +1,33 @@
+!module
+class=reboot
+!view
+view=title
+text=关机
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=跳过关机过程直接断电关机
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+reboot -p
+@click
+
+!view
+
+
+!module

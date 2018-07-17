@@ -1,0 +1,6 @@
+!device
+name=Samsung s9+
+ro.product.model=SM-G9650
+ro.product.brand=samsung
+ro.product.manufacturer=samsung
+!device

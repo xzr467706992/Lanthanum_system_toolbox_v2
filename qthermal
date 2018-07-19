@@ -22,6 +22,7 @@ root=true
 onboot=true
 @click
 stop thermal-engine
+echo @toast=执行完毕
 @click
 @show
 if [ `which thermal-engine` != "" ]

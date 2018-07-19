@@ -1,0 +1,59 @@
+!module
+class=charge
+!view
+view=title
+text=电池温度阈值控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=这些参数将会决定在什么情况下减缓电池的充电速度
+@show
+echo true
+@show
+!view
+
+!view
+view=edittext
+text=电池高温温值：
+@show
+if [ -e /sys/class/power_supply/bms/temp_warm ]
+then
+echo true
+fi
+@show
+@current
+cat /sys/class/power_supply/bms/temp_warm
+@current
+@done
+echo $edittext >/sys/class/power_supply/bms/temp_warm
+@done
+core=true
+root=true
+!view
+
+!view
+view=edittext
+text=电池低温温值：
+@show
+if [ -e /sys/class/power_supply/bms/temp_cool ]
+then
+echo true
+fi
+@show
+@current
+cat /sys/class/power_supply/bms/temp_cool
+@current
+@done
+echo $edittext >/sys/class/power_supply/bms/temp_cool
+@done
+core=true
+root=true
+!view
+
+
+
+!module

@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=Charge current control
+text=充电电流控制
 @show
 echo true
 @show
@@ -10,15 +10,63 @@ echo true
 
 !view
 view=subtitle
-text=Charge current size control for some Qualcomm devices
+text=适用于部分高通设备的充电电流大小控制
 @show
 echo true
 @show
 !view
 
 !view
-view=text
-@text
+view=edittext
+@show
+
+c=0
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma ]
+then
+c=1
+fi
+
+if [ -e /sys/module/dwc3_msm/parameters/dcp_max_current ]
+then
+c=1
+fi
+
+if [ -e /sys/module/dwc3_msm/parameters/hvdcp_max_current ]
+then
+c=1
+fi
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma ]
+then
+c=1
+fi
+
+if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma ]
+then
+c=1
+fi
+
+if [ -e /sys/class/power_supply/battery/constant_charge_current_max ]
+then
+c=1
+fi
+
+if [ -e /sys/class/power_supply/battery/input_current_max ]
+then
+c=1
+fi
+
+if [ $c == 1 ]
+then
+echo true
+fi
+
+@show
+core=true
+root=true
+text=当前电流(mA)：
+@current
 c1=0
 c2=0
 c3=0
@@ -110,89 +158,24 @@ if [ $c -gt 10000 ]
 then
 c=`expr $c / 1000`
 fi
-echo Current：$c mA
+echo $c
 
-@text
-
-@show
-
-c=0
-
-if [ -e /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma ]
-then
-c=1
-fi
-
-if [ -e /sys/module/dwc3_msm/parameters/dcp_max_current ]
-then
-c=1
-fi
-
-if [ -e /sys/module/dwc3_msm/parameters/hvdcp_max_current ]
-then
-c=1
-fi
-
-if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma ]
-then
-c=1
-fi
-
-if [ -e /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma ]
-then
-c=1
-fi
-
-if [ -e /sys/class/power_supply/battery/constant_charge_current_max ]
-then
-c=1
-fi
-
-if [ -e /sys/class/power_supply/battery/input_current_max ]
-then
-c=1
-fi
-
-if [ $c == 1 ]
-then
-echo true
-fi
-
-@show
-
-core=true
-root=true
-
-!view
-
-!view
-view=spinner
-text=Current(mA)
-@show
-echo true
-@show
-root=true
-onboot=true
-item=Select|500|1000|1500|2000|2500|3000|3500|4000|4500|5000|10000
+@current
 @done
-if [ $label != "Select" ]
-then
 chmod 755 /sys/class/power_supply/battery/constant_charge_current_max
-echo `expr $label \* 1000` > /sys/class/power_supply/battery/constant_charge_current_max
+echo `expr $edittext \* 1000` > /sys/class/power_supply/battery/constant_charge_current_max
 
 chmod 755 /sys/class/power_supply/battery/input_current_max
-echo `expr $label \* 1000` > /sys/class/power_supply/battery/input_current_max
+echo `expr $edittext \* 1000` > /sys/class/power_supply/battery/input_current_max
 
-echo $label > /sys/module/dwc3_msm/parameters/dcp_max_current
-echo $label > /sys/module/dwc3_msm/parameters/hvdcp_max_current
-echo $label > /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma
-echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma
-echo $label > /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma
+echo $edittext > /sys/module/dwc3_msm/parameters/dcp_max_current
+echo $edittext > /sys/module/dwc3_msm/parameters/hvdcp_max_current
+echo $edittext > /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma
+echo $edittext > /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma
+echo $edittext > /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma
 
-echo @toast=Done!
-echo @refresh_ui
-fi
+echo @ierror
+echo @toast=写入完成
 @done
-
 !view
 !module

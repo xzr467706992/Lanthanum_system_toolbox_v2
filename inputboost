@@ -54,7 +54,7 @@ cat /sys/module/cpu_boost/parameters/input_boost_freq
 @current
 
 @done
-echo $edittext > /sys/module/cpu_boost/parameters/input_boost_freq
+echo "$edittext" > /sys/module/cpu_boost/parameters/input_boost_freq
 @done
 
 core=true

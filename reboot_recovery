@@ -1,0 +1,33 @@
+!module
+class=reboot
+!view
+view=title
+text=重启到恢复模式（Recovery）
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=快速重新启动并进入恢复模式
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+reboot recovery
+@click
+
+!view
+
+
+!module

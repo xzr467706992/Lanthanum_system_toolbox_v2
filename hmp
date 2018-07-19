@@ -15,10 +15,7 @@ cat /proc/sys/kernel/sched_upmigrate
 @current
 text=Small cluster > large cluster required load
 @done
-until [ `cat /proc/sys/kernel/sched_upmigrate` == $edittext ]
-do
 echo $edittext > /proc/sys/kernel/sched_upmigrate
-done
 @done
 core=true
 @show

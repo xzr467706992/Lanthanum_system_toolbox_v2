@@ -254,5 +254,30 @@
     <string name="cant_get_current_info">Cant get info.Please disable selinux and try again</string>
     <string name="update_module">Module already exist,do you want to update it?</string>
     <string name="again_press">Press back again to exit</string>
+    <string name="reboot">reboot</string>
+    <string name="one_key_lockscreen">One tap lock screen</string>
+    <string name="bypass_android_secure">Bypass android secure settings</string>
+    <string name="add_it_now_sc">Add shortcuts now</string>
+    <string name="add_white_sc">Add white shortcut</string>
+    <string name="add_black_sc">Add black shortcut</string>
+    <string name="output_log">Output debug log</string>
+    <string name="debuglog_msg">This can give more information to the developer for solving problems</string>
+    <string name="report_bug">Report problem(bug)</string>
+    <string name="report_bug_msg">Using github issue(Tap here to go to github)</string>
+    <string name="join_group">Join our group</string>
+    <string name="join_group_msg">Get more information and contact us</string>
+    <string name="notice">Notice</string>
+    <string name="obn_msg">The following will tell you the operation logic of the "Apply at Power On" button: \n1. Please set the configuration you want before opening the Apply button. \n2. When you apply the button when you turn it on, your configuration will be saved. \n3. Any changes you make after applying the button on at startup will not change the configuration saved at that time. \n4. If you want to modify the content of the application at boot time, please turn off the Apply button at boot time, then modify the configuration you want, then open the button. \n5. Before submitting any bugs applied during boot, please make sure your operation logic is correct, otherwise your problem will not be solved, you may also be considered a zz.</string>
+    <string name="dont_show_again">Don\'t show next time</string>
+    <string name="profile">Profile</string>
+    <string name="add_profile">Add new profile</string>
+    <string name="from_onboot">From current on boot settings</string>
+    <string name="none_chosed">You must choose one of the radiobutton</string>
+    <string name="on_boot_list_is_empty">On-boot list is empty now</string>
+    <string name="name_none_null">Name cant be null</string>
+    <string name="profile_added">Profile added</string>
+    <string name="whatuwant">What you want?</string>
+    <string name="delete">Delete</string>
+    <string name="run">Run</string>
 
 </resources>

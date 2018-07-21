@@ -1,5 +1,4 @@
 #!/system/bin/sh
-#!/system/bin/sh
 #Author: Asiier
 #Settings By: Asiier
 #Device: One Plus 3
@@ -17,7 +16,6 @@ echo -----------------------------------------------
 
 echo Author: Asiier
 echo Settings By: Asiier
-echo "Device: One Plus 3T &amp; SD821 Devices"
 echo Codename: 'GhostPepper'
 echo Build Status: BETA
 echo Last Updated: 09/02/2017

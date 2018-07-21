@@ -1,0 +1,89 @@
+!module
+class=extra
+!view
+view=title
+text=Xposed框架日志禁用
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=禁用xposed框架的日志以提高性能\n（这可能导致一些xposed模块崩溃）
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=禁用日志
+core=true
+root=true
+@show
+if [ -e /data/user_de/0/de.robv.android.xposed.installer/log ]
+then
+echo true
+fi
+@show
+
+@current
+if [ -f /data/user_de/0/de.robv.android.xposed.installer/log ]
+then
+echo true
+fi
+@current
+
+@click
+if [ $switch == 1 ]
+then
+rm -rf /data/user_de/0/de.robv.android.xposed.installer/log
+touch /data/user_de/0/de.robv.android.xposed.installer/log
+else
+rm -f /data/user_de/0/de.robv.android.xposed.installer/log
+mkdir /data/user_de/0/de.robv.android.xposed.installer/log
+fi
+
+
+@click
+
+!view
+
+
+!view
+view=switch
+text=禁用日志
+core=true
+root=true
+@show
+if [ -e /data/data/de.robv.android.xposed.installer/log ]
+then
+echo true
+fi
+@show
+
+@current
+if [ -f /data/data/de.robv.android.xposed.installer/log ]
+then
+echo true
+fi
+@current
+
+@click
+if [ $switch == 1 ]
+then
+rm -rf /data/data/de.robv.android.xposed.installer/log
+touch /data/data/de.robv.android.xposed.installer/log
+else
+rm -f /data/data/de.robv.android.xposed.installer/log
+mkdir /data/data/de.robv.android.xposed.installer/log
+fi
+
+
+@click
+
+!view
+
+
+!module

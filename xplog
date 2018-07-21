@@ -43,6 +43,7 @@ touch /data/user_de/0/de.robv.android.xposed.installer/log
 else
 rm -f /data/user_de/0/de.robv.android.xposed.installer/log
 mkdir /data/user_de/0/de.robv.android.xposed.installer/log
+chmod 777 /data/user_de/0/de.robv.android.xposed.installer/log
 fi
 
 
@@ -78,6 +79,7 @@ touch /data/data/de.robv.android.xposed.installer/log
 else
 rm -f /data/data/de.robv.android.xposed.installer/log
 mkdir /data/data/de.robv.android.xposed.installer/log
+chmod 777 /data/data/de.robv.android.xposed.installer/log
 fi
 
 

@@ -1,0 +1,11 @@
+!repo
+
+!profile
+title=禁用Xposed框架日志
+subtitle=禁用日志以提高性能
+author=@xzr467706992
+name=xplog
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/profile_repo/test.sh
+!profile
+
+!repo

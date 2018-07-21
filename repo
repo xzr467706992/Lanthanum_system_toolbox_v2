@@ -24,4 +24,12 @@ name=msm_hotplug
 link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/msm_hotplug
 !module
 
+!module
+title=旧版的高通删温控
+subtitle=直接删除温控二进制文件
+author=@xzr467706992
+name=qthermal_old
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/qthermal_old
+!module
+
 !repo

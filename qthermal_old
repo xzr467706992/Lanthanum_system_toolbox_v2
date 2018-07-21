@@ -1,0 +1,66 @@
+!module
+class=cpua
+!view
+view=title
+text=高通删温控（旧版）
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=这可能在某些内核上造成意想不到的后果；比如可能导致内核中的备用温控方案被激活，温控更加严格 手动滑稽。
+@show
+echo true
+@show
+!view
+
+!view
+view=text
+@text
+echo 当前温控引擎：`which thermal-engine`
+@text
+@show
+echo true
+@show
+!view
+
+!view
+view=spinner
+text=选择一个操作
+item=触摸此处选择一个操作|备份温控引擎|删除温控引擎|还原温控引擎
+@show
+echo true
+@show
+@current
+echo position=0
+@current
+root=true
+core=true
+@done
+if [ $position == 1 ]
+then
+cp -rf -p `which thermal-engine` /data/data/xzr.La.systemtoolbox/backups
+echo @toast=温控备份完成
+fi
+
+if [ $position == 2 ]
+then
+mount -o rw,remount /system
+rm -rf `which thermal-engine`
+mount -o ro,remount /system
+echo @toast=温控已被删除
+fi
+
+if [ $position == 3 ]
+then
+mount -o rw,remount /system
+cp -rf -p /data/data/xzr.La.systemtoolbox/backups/thermal-engine /vendor/bin
+mount -o ro,remount /system
+echo @toast=温控还原完成
+fi
+@done
+!view
+
+!module

@@ -279,5 +279,17 @@
     <string name="whatuwant">What you want?</string>
     <string name="delete">Delete</string>
     <string name="run">Run</string>
+    <string name="export">Export</string>
+    <string name="exported_to">Exported to:</string>
+    <string name="frm_profile_repo">From profile repo</string>
+    <string name="profile_ins_title">Profile install</string>
+    <string name="profile_ins_msg">Are you sure to install profile </string>
+    <string name="profile_repo">Profile repo</string>
+    <string name="profile_exist">Profile already exist.Do you want to update it?</string>
+    <string name="yup">Yes</string>
+    <string name="profile_applied">Profile applied</string>
+    <string name="running_settings">Running settings</string>
+    <string name="running_settings_msg">You can enter additional parameters on the runtime band here. \"Such as balance,fast,performance can be used for YC scheduling compatible with the vtools.\"</string>
+    <string name="install_frm_storage">Install from storage</string>
 
 </resources>

@@ -199,7 +199,7 @@
     <string name="fetch">解析</string>
     <string name="name_saveonly">名称（仅用来保存）</string>
     <string name="confirm_module_install">确认要继续安装吗？</string>
-    <string name="installed_module_name">会将这个模块命名为：</string>
+    <string name="installed_module_name">会将它命名为：</string>
     <string name="error_input">错误的输入</string>
     <string name="check_ur_internet">检查网络连接！</string>
     <string name="fetch_error">获取错误</string>
@@ -279,4 +279,16 @@
     <string name="whatuwant">你想要干什么？</string>
     <string name="delete">删除</string>
     <string name="run">运行</string>
+    <string name="export">导出</string>
+    <string name="exported_to">导出到了：</string>
+    <string name="frm_profile_repo">从配置文件仓库获取</string>
+    <string name="profile_ins_title">安装配置文件</string>
+    <string name="profile_ins_msg">"你确定要安装配置文件 "</string>
+    <string name="profile_repo">配置文件仓库</string>
+    <string name="profile_exist">配置文件已经存在，你想要更新它吗？</string>
+    <string name="yup">是</string>
+    <string name="profile_applied">配置文件已经应用</string>
+    <string name="running_settings">运行配置</string>
+    <string name="running_settings_msg">你可以在这里输入运行时带上的附加参数。【比如balance,fast,performance等可用于兼容适用于微工具箱的yc调度】</string>
+    <string name="install_frm_storage">从存储器安装</string>
 </resources>

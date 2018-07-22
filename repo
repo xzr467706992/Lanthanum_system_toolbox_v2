@@ -11,7 +11,7 @@ link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/
 !profile
 title=【骁龙820】NamelessKernel内核调度
 subtitle=提取自ZUK Z2的NamelessKernel内核，内嵌修改版Ghostpepper调度。理论适用于所有骁龙820机型。
-author=Asiier@xda-developer
+author=@xzr467706992
 name=sd820_namelessKernel
 link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/profile_repo/sd820_namelessKernel.sh
 !profile

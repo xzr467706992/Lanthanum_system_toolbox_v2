@@ -1,0 +1,95 @@
+!module
+class=io
+!view
+view=title
+text=内核同页合并(KSM)
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/kernel/mm/ksm/run ]
+then
+echo true
+fi
+@show
+core=true
+@current
+if [ `cat /sys/kernel/mm/ksm/run` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/kernel/mm/ksm/run
+@click
+root=true
+!view
+
+!view
+view=switch
+text=延迟定时器
+@show
+if [ -e /sys/kernel/mm/ksm/deferred_timer ]
+then
+echo true
+fi
+@show
+core=true
+@current
+if [ `cat /sys/kernel/mm/ksm/deferred_timer` == 1 ]
+then
+echo true
+fi
+@current
+@click
+echo $switch > /sys/kernel/mm/ksm/deferred_timer
+@click
+root=true
+!view
+
+!view
+view=edittext
+@current
+cat /sys/kernel/mm/ksm/pages_to_scan
+@current
+text=要扫描的页面
+@done
+echo $edittext > /sys/kernel/mm/ksm/pages_to_scan
+@done
+core=true
+@show
+if [ -e /sys/kernel/mm/ksm/pages_to_scan ]
+then
+echo true
+fi
+@show
+root=true
+!view
+
+!view
+view=edittext
+@current
+cat /sys/kernel/mm/ksm/sleep_millisecs
+@current
+text=扫描间隔(ms)
+@done
+echo $edittext > /sys/kernel/mm/ksm/sleep_millisecs
+@done
+core=true
+@show
+if [ -e /sys/kernel/mm/ksm/sleep_millisecs ]
+then
+echo true
+fi
+@show
+root=true
+!view
+
+
+
+!module

@@ -163,10 +163,10 @@ echo $c
 @current
 @done
 chmod 755 /sys/class/power_supply/battery/constant_charge_current_max
-echo `expr $edittext \* 1000` > /sys/class/power_supply/battery/constant_charge_current_max
+echo `expr $edittext * 1000` > /sys/class/power_supply/battery/constant_charge_current_max
 
 chmod 755 /sys/class/power_supply/battery/input_current_max
-echo `expr $edittext \* 1000` > /sys/class/power_supply/battery/input_current_max
+echo `expr $edittext * 1000` > /sys/class/power_supply/battery/input_current_max
 
 echo $edittext > /sys/module/dwc3_msm/parameters/dcp_max_current
 echo $edittext > /sys/module/dwc3_msm/parameters/hvdcp_max_current

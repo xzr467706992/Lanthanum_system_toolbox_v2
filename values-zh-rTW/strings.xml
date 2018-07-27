@@ -137,7 +137,7 @@
 <string name="install_from_repo">从模塊倉庫安装</string>
 <string name="installed_module_name">會將它命名為：</string>
 <string name="invalid_input">無效的輸入</string>
-<string name="io">I/O配置</string>
+<string name="io">I/O&amp;&amp;MEM配置</string>
 <string name="jh_donate_ver">激活捐贈版</string>
 <string name="jh_dot_ver">激活捐贈版</string>
 <string name="jh_dot_ver_msg">輸入激活碼來激活捐贈版</string>

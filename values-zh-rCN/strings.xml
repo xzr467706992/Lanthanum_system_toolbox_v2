@@ -52,7 +52,7 @@
     <string name="build_restore_msg">你需要恢复上次备份的build.prop备份吗？（如果有备份过）</string>
     <string name="restore_done">恢复完成</string>
     <string name="prevent_patch">黑域一键补丁</string>
-    <string name="io">I/O配置</string>
+    <string name="io">I/O&amp;&amp;MEM 配置</string>
     <string name="login_or_register">登录/注册</string>
     <string name="login">登录</string>
     <string name="login_dep">登录来使用更多功能</string>
@@ -291,4 +291,15 @@
     <string name="running_settings">运行配置</string>
     <string name="running_settings_msg">你可以在这里输入运行时带上的附加参数。【比如balance,fast,performance等可用于兼容适用于微工具箱的yc调度】</string>
     <string name="install_frm_storage">从存储器安装</string>
+    <string name="clear_pt">你确认要清空这个分区吗？</string>
+    <string name="sky_blue">天蓝</string>
+    <string name="aosp_dark">暗色原生</string>
+    <string name="th4">浅绿</string>
+    <string name="th5">基佬紫</string>
+    <string name="th6">RE管理器</string>
+    <string name="th7">水鸭青</string>
+    <string name="th8">粉色</string>
+    <string name="th9">AICP</string>
+    <string name="sys_err_1">无法写入/system分区</string>
+    <string name="sys_err_1_msg">这可能导致软件的部分功能无法正常使用。请检查system锁，或重启设备尝试解决。</string>
 </resources>

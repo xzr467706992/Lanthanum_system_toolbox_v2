@@ -11,15 +11,15 @@ echo true
 !view
 view=edittext
 @current
-cat /proc/sys/kernel/sched_downmigrate
+cat /proc/sys/kernel/sched_upmigrate
 @current
-text=Big cluster>small cluster required load
+text=Big cluster->small cluster required load
 @done
-echo $edittext > /proc/sys/kernel/sched_downmigrate
+echo $edittext > /proc/sys/kernel/sched_upmigrate
 @done
 core=true
 @show
-if [ -e /proc/sys/kernel/sched_downmigrate ]
+if [ -e /proc/sys/kernel/sched_upmigrate ]
 then
 echo true
 fi
@@ -30,15 +30,15 @@ root=true
 !view
 view=edittext
 @current
-cat /proc/sys/kernel/sched_upmigrate
+cat /proc/sys/kernel/sched_downmigrate
 @current
-text=small cluster>big cluster load
+text=small cluster->big cluster load
 @done
-echo $edittext > /proc/sys/kernel/sched_upmigrate
+echo $edittext > /proc/sys/kernel/sched_downmigrate
 @done
 core=true
 @show
-if [ -e /proc/sys/kernel/sched_upmigrate ]
+if [ -e /proc/sys/kernel/sched_downmigrate ]
 then
 echo true
 fi

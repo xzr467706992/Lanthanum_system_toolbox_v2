@@ -1,0 +1,92 @@
+!module
+class=io
+
+!view
+view=title
+text=Hugepage配置
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=管理Transparent Hugepage的状态
+@show
+echo true
+@show
+!view
+
+!view
+view=spinner
+text=启用状态
+@show
+if [ -e /sys/kernel/mm/transparent_hugepage/enabled ]
+then
+echo true
+fi
+@show
+core=true
+item_file_thp=/sys/kernel/mm/transparent_hugepage/enabled
+@done
+echo $label > /sys/kernel/mm/transparent_hugepage/enabled
+echo @toast=应用成功
+@done
+@current
+echo "thp_label=`cat /sys/kernel/mm/transparent_hugepage/enabled`"
+@current
+root=true
+onboot=true
+!view
+
+!view
+view=spinner
+text=碎片整理
+@show
+if [ -e /sys/kernel/mm/transparent_hugepage/defrag ]
+then
+echo true
+fi
+@show
+core=true
+item_file_thp=/sys/kernel/mm/transparent_hugepage/defrag
+@done
+echo $label > /sys/kernel/mm/transparent_hugepage/defrag
+echo @toast=应用成功
+@done
+@current
+echo "thp_label=`cat /sys/kernel/mm/transparent_hugepage/defrag`"
+@current
+root=true
+onboot=true
+!view
+
+!view
+view=switch
+text=使用“零页面”
+@show
+if [ -e /sys/kernel/mm/transparent_hugepage/use_zero_page ]
+then
+echo true
+fi
+@show
+
+root=true
+core=true
+
+@current
+if [ `cat /sys/kernel/mm/transparent_hugepage/use_zero_page` == 1 ]
+then
+echo true
+fi
+@current
+
+@click
+echo $switch > /sys/kernel/mm/transparent_hugepage/use_zero_page
+@click
+
+!view
+
+
+
+!module

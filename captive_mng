@@ -1,0 +1,255 @@
+!module
+class=extra
+!view
+view=title
+text=叹号杀手
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=消灭状态栏上由于无法连接谷歌产生的叹号
+@show
+echo true
+@show
+!view
+
+!view
+view=text
+@show
+echo true
+@show
+
+@text
+settings get global captive_portal_https_url
+@text
+root=true
+!view
+
+!view
+view=switch
+text=启用网络检测
+@show
+v=`getprop ro.build.version.release`
+if [ $v == "7.1.1" ] || [ $v == "7.1" ] || [ $v == "7.0" ] || [ $v == "6.0.1" ] || [ $v == "6.0" ] || [ $v == "5.1.1" ] || [ $v == "5.1" ] || [ $v == "5.0.2" ] || [ $v == "5.0.1" ] || [ $v == "5.0" ]
+then
+echo true
+fi
+@show
+@click
+settings put global captive_portal_detection_enabled $switch
+@click
+
+@current
+k=`settings get global captive_portal_detection_enabled`
+if [ $k == 1 ] || [ $k == null ]
+then
+echo true
+fi
+@current
+
+root=true
+core=true
+!view
+
+!view
+view=spinner
+text=网络检测模式
+@show
+v=`getprop ro.build.version.release`
+if [ $v == "7.1.2" ] || [ $v == "8.0.0" ] || [ $v == "8.1.0" ] || [ $v == "9" ]
+then
+echo true
+fi
+@show
+
+@done
+settings put global captive_portal_mode $position
+@done
+
+@current
+c=`settings get global captive_portal_mode`
+if [ $c == "null" ]
+then
+echo position=1
+else
+echo position=$c
+fi
+@current
+
+item=禁用检测|网络不可用时显示警告|不连接不可用的网络
+
+root=true
+core=true
+!view
+
+
+!view
+view=switch
+text=使用https
+@show
+v=`getprop ro.build.version.release`
+if [ $v == "7.0" ] || [ $v == "7.1" ] || [ $v == "7.1.1" ] || [ $v == "7.1.2" ] || [ $v == "8.0.0" ] || [ $v == "8.1.0" ] || [ $v == "9" ]
+then
+echo true
+fi
+@show
+@click
+settings put global captive_portal_use_https $switch
+@click
+
+@current
+k=`settings get global captive_portal_use_https`
+if [ $k == 1 ] || [ $k == null ]
+then
+echo true
+fi
+@current
+
+root=true
+core=true
+!view
+
+
+
+!view
+view=edittext
+text=http检测地址：
+@show
+v=`getprop ro.build.version.release`
+if [ $v == "7.1.1" ] || [ $v == "7.1.2" ] || [ $v == "8.0.0" ] || [ $v == "8.1.0" ] || [ $v == "9" ]
+then
+echo true
+fi
+@show
+
+@current
+c=`settings get global captive_portal_http_url`
+if [ $c == null ]
+then
+echo 默认
+else
+echo $c
+fi
+@current
+
+root=true
+
+@done
+if [ -n "$edittext" ]
+then
+if [ $edittext == "默认" ]
+then
+settings delete global captive_portal_http_url
+else
+settings put global captive_portal_http_url $edittext
+fi
+else
+settings delete global captive_portal_http_url
+fi
+@done
+
+!view
+
+
+!view
+view=edittext
+text=https检测地址：
+@show
+v=`getprop ro.build.version.release`
+if [ $v == "7.1.1" ] || [ $v == "7.1.2" ] || [ $v == "8.0.0" ] || [ $v == "8.1.0" ] || [ $v == "9" ]
+then
+echo true
+fi
+@show
+
+@current
+c=`settings get global captive_portal_https_url`
+if [ $c == null ]
+then
+echo 默认
+else
+echo $c
+fi
+@current
+
+root=true
+
+@done
+if [ -n "$edittext" ]
+then
+if [ $edittext == "默认" ]
+then
+settings delete global captive_portal_https_url
+else
+settings put global captive_portal_https_url $edittext
+fi
+else
+settings delete global captive_portal_https_url
+fi
+@done
+
+!view
+
+
+!view
+view=edittext
+text=检测地址：
+@show
+v=`getprop ro.build.version.release`
+if [ $v == "5.0" ] || [ $v == "5.0.1" ] || [ $v == "5.0.2" ] || [ $v == "5.1" ] || [ $v == "5.1.1" ] || [ $v == "6.0" ] || [ $v == "6.0.1" ] || [ $v == "7.0" ] || [ $v == "7.1" ]
+then
+echo true
+fi
+@show
+
+@current
+c=`settings get global captive_portal_server`
+if [ $c == null ]
+then
+echo 默认
+else
+echo $c
+fi
+@current
+
+root=true
+
+@done
+if [ -n "$edittext" ]
+then
+if [ $edittext == "默认" ]
+then
+settings delete global captive_portal_server
+else
+settings put global captive_portal_server $edittext
+fi
+else
+settings delete global captive_portal_server
+fi
+@done
+
+!view
+
+!view
+view=button
+text=一键清除叹号
+@show
+echo true
+@show
+root=true
+@click
+settings put global captive_portal_https_url https://google.cn/generate_204
+settings put global captive_portal_http_url http://google.cn/generate_204
+settings put global captive_portal_server google.cn
+echo @toast=开关飞行模式来生效
+@click
+
+
+!view
+
+
+
+!module

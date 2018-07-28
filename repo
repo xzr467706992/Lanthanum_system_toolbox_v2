@@ -1,6 +1,14 @@
 !repo
 
 !module
+title=叹号杀手
+subtitle=调整叹号相关配置
+author=@xzr467706992
+name=captive_mng
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/captive_mng
+!module
+
+!module
 title=禁用Xposed框架日志
 subtitle=禁用日志以提高性能
 author=@xzr467706992

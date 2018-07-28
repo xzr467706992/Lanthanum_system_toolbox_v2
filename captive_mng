@@ -17,18 +17,6 @@ echo true
 !view
 
 !view
-view=text
-@show
-echo true
-@show
-
-@text
-settings get global captive_portal_https_url
-@text
-root=true
-!view
-
-!view
 view=switch
 text=启用网络检测
 @show

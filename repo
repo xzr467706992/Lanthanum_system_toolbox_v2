@@ -17,6 +17,14 @@ link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/
 !module
 
 !module
+title=efs写入接口配置
+subtitle=配置用于写入efs分区的接口状态
+author=@永义王
+name=efs_interface
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/efs_interface
+!module
+
+!module
 title=骁龙652核心全开
 subtitle=解决骁龙652只有两个a72在线的问题
 author=@xzr467706992

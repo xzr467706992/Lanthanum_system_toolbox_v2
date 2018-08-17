@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=高通Big.Little负载平衡
+text=高通HMP负载平衡
 @show
 echo true
 @show

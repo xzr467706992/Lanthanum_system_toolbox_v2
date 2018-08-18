@@ -1,0 +1,44 @@
+!module
+class=extra
+!view
+view=title
+text=efs写入接口配置
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=开启/关闭 efs写入接口
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=开启
+@show
+echo true
+@show
+root=true
+core=true
+@current
+if [ `getprop sys.usb.config` == "diag,adb" ]
+then
+echo true
+fi
+@current
+@click
+if [ $switch == 1 ]
+then
+setprop sys.usb.config "diag,adb"
+else
+setprop sys.usb.config "mtp,adb"
+fi
+@click
+
+!view
+
+!module

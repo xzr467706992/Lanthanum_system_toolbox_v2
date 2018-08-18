@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=HMP任务分配机制
+text=cpuset任务分配机制
 @show
 echo true
 @show

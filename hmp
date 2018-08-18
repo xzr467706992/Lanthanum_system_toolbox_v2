@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=Qualcomm Big.Little load balancing
+text=Qualcomm HMP load balancing
 @show
 echo true
 @show

@@ -1,0 +1,79 @@
+!module
+class=cpua
+!view
+view=title
+text=EAS调度激进程度控制
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=配置内核层的EAS调度激进程度（数值范围 -100--100）（越大越激进）
+@show
+echo true
+@show
+!view
+
+!view
+view=edittext
+text=后台任务：
+root=true
+@show
+if [ -e /dev/stune/background/schedtune.boost ]
+then
+echo true
+fi
+@show
+core=true
+@current
+cat /dev/stune/background/schedtune.boost
+@current
+@done
+chmod 644 /dev/stune/background/schedtune.boost
+echo $edittext > /dev/stune/background/schedtune.boost
+@done
+!view
+
+!view
+view=edittext
+text=前台任务：
+root=true
+@show
+if [ -e /dev/stune/foreground/schedtune.boost ]
+then
+echo true
+fi
+@show
+core=true
+@current
+cat /dev/stune/foreground/schedtune.boost
+@current
+@done
+chmod 644 /dev/stune/foreground/schedtune.boost
+echo $edittext > /dev/stune/foreground/schedtune.boost
+@done
+!view
+
+
+!view
+view=edittext
+text=当前界面的任务：
+root=true
+@show
+if [ -e /dev/stune/top-app/schedtune.boost ]
+then
+echo true
+fi
+@show
+core=true
+@current
+cat /dev/stune/top-app/schedtune.boost
+@current
+@done
+chmod 644 /dev/stune/top-app/schedtune.boost
+echo $edittext > /dev/stune/top-app/schedtune.boost
+@done
+!view
+
+!module

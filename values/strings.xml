@@ -302,5 +302,8 @@
     <string name="th9">AICP</string>
     <string name="sys_err_1">Unable to write /system</string>
     <string name="sys_err_1_msg">This may cause some of the functionality of the software to not work properly. Please check the system lock or reboot the device to try to resolve it.</string>
+    <string name="add_to_screen">Add shortcut</string>
+    <string name="onboot_preparing">Preparing to apply</string>
+    <string name="lc">CPU core lock</string>
 
 </resources>

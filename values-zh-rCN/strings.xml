@@ -302,4 +302,7 @@
     <string name="th9">AICP</string>
     <string name="sys_err_1">无法写入/system分区</string>
     <string name="sys_err_1_msg">这可能导致软件的部分功能无法正常使用。请检查system锁，或重启设备尝试解决。</string>
+    <string name="add_to_screen">增加桌面快捷方式</string>
+    <string name="onboot_preparing">正在准备开机应用</string>
+    <string name="lc">处理器锁核心</string>
 </resources>

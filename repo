@@ -48,4 +48,12 @@ name=qthermal_old
 link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/qthermal_old
 !module
 
+!module
+title=旧版的高通锁核心
+subtitle=启动旧版的高通锁核心页面（需要工具箱B7+)
+author=@xzr467706992
+name=lockcore_old
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/lockcore_old
+!module
+
 !repo

@@ -1,0 +1,33 @@
+!module
+class=cpua
+!view
+view=title
+text=旧版高通锁核心
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=启动旧版的高通锁核心界面
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+echo "@intent=xzr.La.systemtoolbox,xzr.La.systemtoolbox.ui.activities.LockCoreActivity"
+@click
+
+!view
+
+
+!module

@@ -1,0 +1,33 @@
+!module
+class=extra
+!view
+view=title
+text=隐藏的通知日志页面
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=启动隐藏的通知日志页面
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+echo "@intent=com.android.settings,com.android.settings.Settings\$NotificationStationActivity"
+@click
+
+!view
+
+
+!module

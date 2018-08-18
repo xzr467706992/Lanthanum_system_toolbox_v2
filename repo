@@ -17,6 +17,14 @@ link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/
 !module
 
 !module
+title=启动P-sGSI上的设置向导
+subtitle=再次启动P-sGSI上的设置向导[假如你错过了指纹设置]（需要工具箱B7+)
+author=@xzr467706992
+name=pixelsetup
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/pixelsetup
+!module
+
+!module
 title=efs写入接口配置
 subtitle=配置用于写入efs分区的接口状态
 author=@永义王

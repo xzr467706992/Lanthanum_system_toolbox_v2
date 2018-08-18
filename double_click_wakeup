@@ -1,0 +1,42 @@
+!module
+class=cpua
+!view
+view=title
+text=双击唤醒
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=开启/关闭设备的双击唤醒功能
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /sys/devices/virtual/touch/tp_dev/gesture_on ]
+then
+echo true
+fi
+@show
+root=true
+core=true
+@click
+echo $switch > /sys/devices/virtual/touch/tp_dev/gesture_on
+@click
+@current
+if [ `cat /sys/devices/virtual/touch/tp_dev/gesture_on` == 1 ]
+then
+echo true
+fi
+@current
+
+!view
+
+!module

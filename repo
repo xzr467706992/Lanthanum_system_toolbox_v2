@@ -25,6 +25,14 @@ link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/
 !module
 
 !module
+title=MIUI刘海屏控制
+subtitle=配置刘海屏开关
+author=@xzr467706992
+name=miui_notch
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/miui_notch
+!module
+
+!module
 title=启动P-sGSI上的设置向导
 subtitle=再次启动P-sGSI上的设置向导[假如你错过了指纹设置]（需要工具箱B7+)
 author=@xzr467706992

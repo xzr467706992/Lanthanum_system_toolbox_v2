@@ -1,0 +1,60 @@
+!module
+class=extra
+!view
+view=title
+text=MIUI刘海屏开关
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=也许只在米8上有效吧
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+echo true
+@show
+root=true
+core=true
+@click
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/ro.miui.notch=/'d $target > $cache
+cp $cache $target
+if [ $switch == 1 ]
+then
+echo "ro.miui.notch=1" >> $target
+else
+echo "ro.miui.notch=0" >> $target
+fi
+rm -f $cache
+mount -o ro,remount /system
+echo "@toast=重启来应用！"
+@click
+
+@current
+line=`grep "ro.miui.notch" "/system/build.prop"`
+result=false
+if [ ${line#*=} == 1 ]
+then
+result=true
+fi
+if [ ${line#*=} == 0 ]
+then
+result=false
+fi
+echo $result
+@current
+
+!view
+
+!module

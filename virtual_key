@@ -1,0 +1,107 @@
+!module
+class=extra
+!view
+view=title
+text=屏幕虚拟按键
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=开启/关闭虚拟键（miui全面屏功能）
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ ! -e /vendor/build.prop ]
+then
+echo true
+fi
+@show
+root=true
+core=true
+@click
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/qemu.hw.mainkeys=/'d $target > $cache
+cp $cache $target
+if [ $switch == 1 ]
+then
+echo "qemu.hw.mainkeys=0" >> $target
+else
+echo "qemu.hw.mainkeys=1" >> $target
+fi
+rm -f $cache
+mount -o ro,remount /system
+echo "@toast=重启来应用！"
+@click
+
+@current
+line=`grep "qemu.hw.mainkeys" "/system/build.prop"`
+result=true
+if [ ${line#*=} == 0 ]
+then
+result=true
+fi
+if [ ${line#*=} == 1 ]
+then
+result=false
+fi
+echo $result
+@current
+
+!view
+
+!view
+view=switch
+text=启用
+@show
+if [ -e /vendor/build.prop ]
+then
+echo true
+fi
+@show
+root=true
+core=true
+@click
+cache="/data/build.cache.prop"
+target="/vendor/build.prop"
+mount -o rw,remount /vendor
+sed '/qemu.hw.mainkeys=/'d $target > $cache
+cp $cache $target
+if [ $switch == 1 ]
+then
+echo "qemu.hw.mainkeys=0" >> $target
+else
+echo "qemu.hw.mainkeys=1" >> $target
+fi
+rm -f $cache
+mount -o ro,remount /vendor
+echo "@toast=重启来应用！"
+@click
+
+@current
+line=`grep "qemu.hw.mainkeys" "/vendor/build.prop"`
+result=true
+if [ ${line#*=} == 0 ]
+then
+result=true
+fi
+if [ ${line#*=} == 1 ]
+then
+result=false
+fi
+echo $result
+@current
+
+!view
+
+!module

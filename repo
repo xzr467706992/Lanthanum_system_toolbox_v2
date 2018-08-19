@@ -1,6 +1,14 @@
 !repo
 
 !module
+title=虚拟键/MIUI全面屏手势控制
+subtitle=调整虚拟键相关配置
+author=@xzr467706992
+name=virtual_key
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/virtual_key
+!module
+
+!module
 title=叹号杀手
 subtitle=调整叹号相关配置
 author=@xzr467706992

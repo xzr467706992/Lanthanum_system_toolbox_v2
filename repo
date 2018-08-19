@@ -17,6 +17,14 @@ link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/
 !module
 
 !module
+title=动态链接库优化警告开关
+subtitle=某些应用在打开时会显示一个奇怪的弹窗（内容包含：detected problems with app native libraries）。使用这个模块可以开启/关闭它。
+author=@xzr467706992
+name=solib_warning
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/solib_warning
+!module
+
+!module
 title=禁用Xposed框架日志
 subtitle=禁用日志以提高性能
 author=@xzr467706992

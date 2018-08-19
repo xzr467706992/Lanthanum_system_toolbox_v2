@@ -1,0 +1,60 @@
+!module
+class=extra
+!view
+view=title
+text=动态链接库优化警告开关
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=某些应用在打开时会显示一个奇怪的弹窗（内容包含：detected problems with app native libraries）。使用这个模块可以开启/关闭它。
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用
+@show
+echo true
+@show
+root=true
+core=true
+@click
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/ro.bionic.ld.warning=/'d $target > $cache
+cp $cache $target
+if [ $switch == 1 ]
+then
+echo "ro.bionic.ld.warning=1" >> $target
+else
+echo "ro.bionic.ld.warning=0" >> $target
+fi
+rm -f $cache
+mount -o ro,remount /system
+echo "@toast=重启来应用！"
+@click
+
+@current
+line=`grep "ro.bionic.ld.warning" "/system/build.prop"`
+result=false
+if [ ${line#*=} == 1 ]
+then
+result=true
+fi
+if [ ${line#*=} == 0 ]
+then
+result=false
+fi
+echo $result
+@current
+
+!view
+
+!module

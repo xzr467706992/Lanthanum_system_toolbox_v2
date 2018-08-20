@@ -2,14 +2,14 @@
 class=reboot
 !view
 view=title
-text=快速重启
+text=Fast reboot
 @show
 echo true
 @show
 !view
 !view
 view=subtitle
-text=跳过关机过程直接重启设备
+text=Directly reboot the device without regular power-off
 @show
 echo true
 @show
@@ -17,7 +17,7 @@ echo true
 
 !view
 view=button
-text=执行！
+text=Execute!
 @show
 echo true
 @show

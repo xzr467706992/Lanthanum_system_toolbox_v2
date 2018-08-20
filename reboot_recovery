@@ -2,14 +2,14 @@
 class=reboot
 !view
 view=title
-text=重启到恢复模式（Recovery）
+text=Reboot to Recovery Mode
 @show
 echo true
 @show
 !view
 !view
 view=subtitle
-text=快速重新启动并进入恢复模式
+text=Fast reboot and go to Recovery
 @show
 echo true
 @show
@@ -17,7 +17,7 @@ echo true
 
 !view
 view=button
-text=执行！
+text=Execute!
 @show
 echo true
 @show

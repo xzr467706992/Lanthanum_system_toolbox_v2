@@ -2,7 +2,7 @@
 class=io
 !view
 view=title
-text=(存储I/O)硬盘存储
+text=Hard Drive (Storage I/O)
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=将设备视作硬盘存储(ufs)
+text=(UFS)Regard device as a hard drive.
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/block/sda/queue/rotational ]
 then

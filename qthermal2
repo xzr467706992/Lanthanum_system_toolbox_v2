@@ -3,7 +3,7 @@ class=cpua
 
 !view
 view=title
-text=高通温控驱动
+text=Qualcomm Thermal Drivers
 @show
 echo true
 @show
@@ -11,7 +11,7 @@ echo true
 
 !view
 view=switch
-text=核心控制
+text=Core control
 @current
 if [ `cat /sys/module/msm_thermal/core_control/enabled` == 1 ]
 then
@@ -33,7 +33,7 @@ root=true
 
 !view
 view=switch
-text=VDD限制
+text=VDD Restriction
 @current
 if [ `cat /sys/module/msm_thermal/vdd_restriction/enabled` == 1 ]
 then
@@ -56,7 +56,7 @@ root=true
 
 !view
 view=switch
-text=SOC温度限制门限
+text=SoC Temperature Threshold
 @current
 if [ `cat /sys/module/msm_thermal/parameters/enabled` == Y ]
 then

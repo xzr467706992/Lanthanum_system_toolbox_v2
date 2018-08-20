@@ -3,7 +3,7 @@ class=extra
 
 !view
 view=title
-text=刺激战场画质锁
+text=PUBG File Lock
 @show
 echo true
 @show
@@ -11,7 +11,7 @@ echo true
 
 !view
 view=subtitle
-text=锁定刺激战场的画质文件权限使其无法被重写
+text=Lock the graphics config file of PUBG Mobile to prevent it from being recovered
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=switch
-text=锁定画质文件
+text=Lock config file
 @show
 if [ -e /data/media/0/Android/data/com.tencent.tmgp.pubgmhd/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini ]
 then

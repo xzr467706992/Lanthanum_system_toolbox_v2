@@ -2,14 +2,14 @@
 class=reboot
 !view
 view=title
-text=重启到Bootloader模式（fastboot)
+text=Reboot to Bootloader(fastboot)
 @show
 echo true
 @show
 !view
 !view
 view=subtitle
-text=快速重新启动并进入Bootloader模式
+text=Fast reboot and go to Bootloader Mode
 @show
 echo true
 @show
@@ -17,7 +17,7 @@ echo true
 
 !view
 view=button
-text=执行！
+text=Execute!
 @show
 echo true
 @show

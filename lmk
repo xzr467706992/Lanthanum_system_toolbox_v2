@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=LMK(低内存管理)配置
+text=LMK(Low Memory Killer) Configuration
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=配置内存不足时的内存清理机
+text=Configure LMK
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=自适应强度的LMK
+text=Self-adaptive LMK
 @current
 if [ `cat /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk` == 1 ]
 then
@@ -40,7 +40,7 @@ fi
 
 !view
 view=switch
-text=LMK调试日志（禁用可提升性能）
+text=LMK Debugging Log（Boost performance if disabled）
 @current
 if [ `cat /sys/module/lowmemorykiller/parameters/debug_level` == 1 ]
 then

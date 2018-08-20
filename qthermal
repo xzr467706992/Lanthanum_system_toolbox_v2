@@ -2,14 +2,14 @@
 class=cpua
 !view
 view=title
-text=高通温控方案
+text=Qualcomm Thermal Control
 @show
 echo true
 @show
 !view
 !view
 view=subtitle
-text=控制高通温控引擎
+text=control Qualcomm thermal-engine
 @show
 echo true
 @show
@@ -17,12 +17,12 @@ echo true
 
 !view
 view=button
-text=停用温控引擎
+text=Disable thermal engine
 root=true
 onboot=true
 @click
 stop thermal-engine
-echo @toast=执行完毕
+echo @toast=Executed.
 @click
 @show
 if [ `which thermal-engine` != "" ]

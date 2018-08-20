@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=启用这个选项有助于调试系统崩溃 但是对于普通用户来说并没有什么卵用
+text=It is useful for debugging system crash, but almost useless for a user.
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @current
 if [ `cat /sys/module/subsystem_restart/parameters/enable_ramdumps` == 1 ]
 then

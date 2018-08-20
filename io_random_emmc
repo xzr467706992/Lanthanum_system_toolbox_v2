@@ -2,7 +2,7 @@
 class=io
 !view
 view=title
-text=(存储I/O)增加随机性
+text=Add Randomness (Storage I/O)
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=从旋转设备获取熵(emmc)
+text=(EMMC)Get entropy from rotational device
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/block/mmcblk0/queue/add_random ]
 then

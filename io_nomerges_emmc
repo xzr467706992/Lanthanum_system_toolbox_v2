@@ -2,7 +2,7 @@
 class=io
 !view
 view=title
-text=(存储I/O)调试帮助
+text=(Storage I/O) Debug Helper
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=禁用可提高性能(emmc)
+text=(EMMC)Boost performance if disabled
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/block/mmcblk0/queue/nomerges ]
 then

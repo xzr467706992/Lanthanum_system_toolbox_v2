@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=Performance boost配置文件状态控制
+text=Performance boost config status controller
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=调整是否启用Performance boost。启用它（也许）能在有突发任务输入时提高性能，但是处理器调整器的配置内容参数将会被改变。假如你想要固定的调整器参数，请关闭它。
+text=whether to enable Performance boost。Maybe boost performance on sudden peak jobs, but the parameter in processor adjustment will also be changed. Disable if you want static parameters.
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=switch
-text=开启
+text=On
 
 @show
 if [ -e /system/vendor/etc/perf/perfboostsconfig.xml ] || [ -e /system/vendor/etc/perf/perfboostsconfig.xml.bak ]
@@ -50,7 +50,7 @@ mv /system/vendor/etc/perf/perfboostsconfig.xml /system/vendor/etc/perf/perfboos
 fi
 mount -o ro,remount /system
 mount -o ro,remount /vendor
-echo @toast=建议刷新页面检查是否更改成功，一切更改将在重启后生效。
+echo @toast=Refresh the page is recommended to check if succeed. Applied after reboot.
 echo @ierror
 @click
 !view

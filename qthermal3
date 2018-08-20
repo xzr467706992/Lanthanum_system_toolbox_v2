@@ -4,7 +4,7 @@ class=cpua
 
 !view
 view=title
-text=高通删温控（实验性）
+text=Remove Qualcomm Thermal Manager（EXPERIMENTAL）
 @show
 echo true
 @show
@@ -13,7 +13,7 @@ root=true
 
 !view
 view=subtitle
-text=这可能在某些内核上造成意想不到的后果；比如可能导致内核中的备用温控方案被激活，温控更加严格 手动滑稽。\n现在，工具将不会真正移除温控二进制文件，但是我们通过玄学方法使之失效。
+text=Unexpected results may happen on some kernels, e.g. backport thermal manager, maybe more conservative, will be activated.\nNow we disable them without removing actually.
 @show
 echo true
 @show
@@ -22,7 +22,7 @@ root=true
 
 !view
 view=switch
-text=启用温控二进制文件
+text=Enable thermal engine binary file
 @show
 if [ -e /vendor/bin/thermal-engine ]
 then
@@ -52,7 +52,7 @@ fi
 mount -o ro,remount /system
 mount -o ro,remount /vendor
 echo @ierror
-echo @toast=建议刷新页面检查是否更改成功，一切更改将在重启后生效。
+echo @toast=Refresh the page is recommended to check if succeed. Applied after reboot.
 @click
 
 !view

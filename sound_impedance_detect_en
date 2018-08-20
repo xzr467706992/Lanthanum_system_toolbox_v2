@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=阻抗检测
+text=Inpedance Detect
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=玄学声音效果提升，似乎对高阻抗耳机有提升。
+text=Seemed able to improve the sound quality of a high-inpedance headset.
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/module/snd_soc_wcd9xxx/parameters/impedance_detect_en ]
 then

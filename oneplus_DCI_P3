@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=DCI_P3广色域
+text=DCI_P3 wide color range
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=在一加3/3t上开启一加五的广色域，前提是你的屏幕支持。已知大多数一加三t与某些返厂换回屏的3支持。
+text=Enable DCI-P3 on OnePlus 3/3t if supported. Known that most OP 3T and some OP 3 with their screen replaced support this mode.
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=switch
-text=开启广色域
+text=Enable DCI-P3
 
 @show
 if [ -e /sys/devices/virtual/graphics/fb0/DCI_P3 ]

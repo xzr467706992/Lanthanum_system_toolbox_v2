@@ -2,14 +2,14 @@
 class=reboot
 !view
 view=title
-text=关机
+text=Power off
 @show
 echo true
 @show
 !view
 !view
 view=subtitle
-text=跳过关机过程直接断电关机
+text=Power-off directly skipping cutting down the battery supply
 @show
 echo true
 @show
@@ -17,7 +17,7 @@ echo true
 
 !view
 view=button
-text=执行！
+text=Execute!
 @show
 echo true
 @show

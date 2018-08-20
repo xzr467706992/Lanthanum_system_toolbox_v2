@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=联发科温控控制
+text=MediaTek Thermal Control
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ then
 echo true
 fi
 @show
-item=开启所有温控|关闭gpu温控|关闭所有温控
+item=Open all thermal controller|Disable GPU thermal controller|Disable All
 @current
 if ! [ -e /data/data/xzr.La.systemtoolbox/backups/thermal.conf ]
 then
@@ -71,12 +71,12 @@ cp -rf -p /data/data/xzr.La.systemtoolbox/backups/.ht120.mtc /etc/.tp/thermal.co
 echo 2 > /data/data/xzr.La.systemtoolbox/config/mtk-thermal
 fi
 mount -o ro,remount /system
-echo @toast=切换温控完成，重启生效！
+echo @toast=Switched and will be applied on next boot.
 @done
 !view
 !view
 view=subtitle
-text=*切换温控后需要重启生效！
+text=*Needs to reboot after switching thermal manager!
 @show
 echo true
 @show

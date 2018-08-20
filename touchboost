@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=触摸升频
+text=Tap to increase frequency
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=激活内核中的触摸升频接口。（假如它要完整启用，需要device tree中提供相应接口支持）\n（由第三方内核提供）
+text=Activate the interface in kernel to get tap to increase frequency(full support in device tree is required for a complete enabling)\n（By third-party kernels）
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=开启
+text=Enable
 @show
 if [ -e /sys/module/msm_performance/parameters/touchboost ]
 then

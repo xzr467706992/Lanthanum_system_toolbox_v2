@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=Mac地址修改
+text=Change your MAC Address
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=修改本机网络的mac地址（假如在修改后出现无法连接wifi的情况，请重启解决，并且不再使用本功能）
+text=Change this device's MAC Address. (Reboot to restore if you cannot connect any AP after performing a change. AND DO NOT USE THIS FEATURE AGAIN.)
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 !view
 view=edittext
 width=500
-text=Mac地址：
+text=MAC Address：
 @show
 if [ -e /sys/class/net/wlan0/address ]
 then

@@ -2,7 +2,7 @@
 class=selinux
  !view
  view=title
- text=关于SELinux
+ text=About SELinux
     core=true
  @show
  echo true
@@ -13,6 +13,8 @@ class=selinux
  @show
  echo true
  @show
- text=什么是SELinux?\n说白了就是安卓系统的一个保护机制，可以使应用之间更加互不干扰。比如你用re去修改adm下载线程数，提示修改成功打开adm却没有效果，回去看文件却已经变回去了，就是这东西在作怪。还有就是用性能监视器查看频率时显示0mhz，也是因为权限不足，读不出数据。关掉它似乎是没什么后果，扯淡点讲就是更容易被一个恶意应用席卷全机，应用数据更容易被篡改。某些系统禁用后会无限软重启，所以..慎重！
+ text=What is SELinux?\n In simple words, it is a protection of Android, which makes an app more independent from others.
+ For example, when you use RE to modify the thread quantity of ADM, you get a success response but actuall never make it, then you find the file has been recovered. That is just what SELinux has done.
+ Another case is the 0MHz in a perfomance monitor, it failed to read data due to not enough permission. Generally it is OK to disable it, as for aftercoming, exaggeratingly, more vulnerable to a malware and easier to get your data falsified. On some ROM this can cause a bootloop, so TAKE GREAT CARE!!!
  !view
 !module

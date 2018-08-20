@@ -2,14 +2,14 @@
 class=cpua
 !view
 view=title
-text=EAS调度激进程度控制
+text=EAS Schetune Boost
 @show
 echo true
 @show
 !view
 !view
 view=subtitle
-text=配置内核层的EAS调度激进程度（数值范围 -100--100）（越大越激进）
+text=Kernel-level EAS Scheduler(-100 to 100)(More radical if bigger)
 @show
 echo true
 @show
@@ -17,7 +17,7 @@ echo true
 
 !view
 view=edittext
-text=后台任务：
+text=Background jobs：
 root=true
 @show
 if [ -e /dev/stune/background/schedtune.boost ]
@@ -37,7 +37,7 @@ echo $edittext > /dev/stune/background/schedtune.boost
 
 !view
 view=edittext
-text=前台任务：
+text=Foreground jobs：
 root=true
 @show
 if [ -e /dev/stune/foreground/schedtune.boost ]
@@ -58,7 +58,7 @@ echo $edittext > /dev/stune/foreground/schedtune.boost
 
 !view
 view=edittext
-text=当前界面的任务：
+text=Current page's job：
 root=true
 @show
 if [ -e /dev/stune/top-app/schedtune.boost ]

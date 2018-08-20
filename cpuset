@@ -2,14 +2,14 @@
 class=cpua
 !view
 view=title
-text=cpuset任务分配机制
+text=cpuset job-allocating method
 @show
 echo true
 @show
 !view
 !view
 view=subtitle
-text=配置该如何分配处理器核心
+text=configure how to allocate cores of processor
 @show
 echo true
 @show
@@ -17,7 +17,7 @@ echo true
 
 !view
 view=edittext
-text=后台任务：
+text=Background jobs：
 root=true
 @show
 if [ -e /dev/cpuset/background/cpus ]
@@ -37,7 +37,7 @@ echo $edittext > /dev/cpuset/background/cpus
 
 !view
 view=edittext
-text=前台任务：
+text=foreground jobs：
 root=true
 @show
 if [ -e /dev/cpuset/foreground/cpus ]
@@ -58,7 +58,7 @@ echo $edittext > /dev/cpuset/foreground/cpus
 
 !view
 view=edittext
-text=在有前台任务时Boost：
+text=Boost when there are foreground jobs：
 root=true
 @show
 if [ -e /dev/cpuset/foreground/boost/cpus ]
@@ -78,7 +78,7 @@ echo $edittext > /dev/cpuset/foreground/boost/cpus
 
 !view
 view=edittext
-text=当前界面的任务：
+text=Jobs at current interface：
 root=true
 @show
 if [ -e /dev/cpuset/top-app/cpus ]
@@ -98,7 +98,7 @@ echo $edittext > /dev/cpuset/top-app/cpus
 
 !view
 view=edittext
-text=系统级后台任务：
+text=System-level background jobs：
 root=true
 @show
 if [ -e /dev/cpuset/system-background/cpus ]
@@ -119,7 +119,7 @@ echo $edittext > /dev/cpuset/system-background/cpus
 
 !view
 view=edittext
-text=相机预留：
+text=Reserverd for camera:
 root=true
 @show
 if [ -e /dev/cpuset/camera-daemon/cpus ]

@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=输入升频
+text=Input Boost
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=在有一定量任务输入时提升CPU频率
+text=Boost CPU on set quantities of jobs.
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=开启输入升频
+text=Enable input boost
 @show
 if [ -e /sys/module/cpu_boost/parameters/input_boost_enabled ]
 then
@@ -40,7 +40,7 @@ root=true
 
 !view
 view=edittext
-text=频率：
+text=Frequency：
 width=600
 @show
 if [ -e /sys/module/cpu_boost/parameters/input_boost_freq ]
@@ -63,7 +63,7 @@ root=true
 
 !view
 view=edittext
-text=延迟(ms)：
+text=Delay(ms)：
 @show
 if [ -e /sys/module/cpu_boost/parameters/input_boost_ms ]
 then

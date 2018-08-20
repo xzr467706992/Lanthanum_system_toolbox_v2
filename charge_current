@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=充电电流控制
+text=Current control
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=适用于部分高通设备的充电电流大小控制
+text=Fit for some Qualcomm's devices, to control the current while charging
 @show
 echo true
 @show

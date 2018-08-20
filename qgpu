@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=高通GPU调度配置
+text=Qualcomm GPU
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=调整高通GPU调度的激进程度
+text=Adjust how radical to utilizethe GPU
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=seekbar
-text=《——保守\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s激进——》
+text=《——more conservative\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\s\smore radical——》
 @max
 cat /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 @max

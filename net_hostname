@@ -2,7 +2,7 @@
 class=io
 !view
 view=title
-text=(网络)主机名修改
+text=Edit hostname
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=title
-text=修改设备的主机名称
+text=Edit device host name
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=edittext
-text=主机名:
+text=Hostname:
 core=true
 root=true
 onboot=true

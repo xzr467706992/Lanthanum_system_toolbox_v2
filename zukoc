@@ -2,7 +2,7 @@
 class=cpua
 !view
 view=title
-text=处理器超频至2.3GHz+1.76GHz
+text=Overclock the processor to 2.3GHz+ 1.76GHz
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=switch
-text=开启超频
+text=Enable overclocking
 
 @show
 if [ -e /sys/module/msm_performance/parameters/overfreq ]

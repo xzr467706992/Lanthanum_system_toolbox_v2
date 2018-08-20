@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=开启架构特有的节能\n（由第三方内核提供）
+text=Enable arch-specific power save\n（Provided by third-party kernels）
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/kernel/sched/arch_power ]
 then

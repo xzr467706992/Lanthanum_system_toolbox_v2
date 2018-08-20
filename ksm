@@ -2,7 +2,7 @@
 class=io
 !view
 view=title
-text=内核同页合并(KSM)
+text=Kernel Samepage Merging(KSM)
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=switch
-text=启用
+text=Enable
 @show
 if [ -e /sys/kernel/mm/ksm/run ]
 then
@@ -32,7 +32,7 @@ root=true
 
 !view
 view=switch
-text=延迟定时器
+text=Deferred Timer
 @show
 if [ -e /sys/kernel/mm/ksm/deferred_timer ]
 then
@@ -57,7 +57,7 @@ view=edittext
 @current
 cat /sys/kernel/mm/ksm/pages_to_scan
 @current
-text=要扫描的页面
+text=Pages to scan
 @done
 echo $edittext > /sys/kernel/mm/ksm/pages_to_scan
 @done
@@ -76,7 +76,7 @@ view=edittext
 @current
 cat /sys/kernel/mm/ksm/sleep_millisecs
 @current
-text=扫描间隔(ms)
+text=Scanning interval(ms)
 @done
 echo $edittext > /sys/kernel/mm/ksm/sleep_millisecs
 @done

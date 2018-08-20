@@ -2,7 +2,7 @@
 class=extra
 !view
 view=title
-text=指纹息屏唤醒
+text=Off-screen wake up on fingerprint
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=开启XIAOMI部分使用FPC指纹模块的熄屏指纹唤醒
+text=Enable off-scrren wakeup on fingerprint on some of Xiaomi phones using FPC.
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=switch
-text=开启
+text=Enable
 
 @show
 if [ -e /sys/devices/soc/soc:fpc_fpc1020/enable_wakeup ]

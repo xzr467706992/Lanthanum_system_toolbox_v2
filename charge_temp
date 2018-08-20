@@ -2,7 +2,7 @@
 class=charge
 !view
 view=title
-text=电池温度阈值控制
+text=Battery temperature threshold
 @show
 echo true
 @show
@@ -10,7 +10,7 @@ echo true
 
 !view
 view=subtitle
-text=这些参数将会决定在什么情况下减缓电池的充电速度
+text=These parameters decides when to slow down the charging speed.
 @show
 echo true
 @show
@@ -18,7 +18,7 @@ echo true
 
 !view
 view=edittext
-text=电池高温温值：
+text=Battert too-high-temperature threshold:
 @show
 if [ -e /sys/class/power_supply/bms/temp_warm ]
 then
@@ -37,7 +37,7 @@ root=true
 
 !view
 view=edittext
-text=电池低温温值：
+text=Battery too-low-temperature threshold：
 @show
 if [ -e /sys/class/power_supply/bms/temp_cool ]
 then

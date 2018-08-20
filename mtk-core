@@ -3,7 +3,7 @@ class=cpua
 
 !view
 view=title
-text=联发科杂项控制
+text=MediaTek Misc controller
 @show
 echo true
 @show
@@ -12,7 +12,7 @@ echo true
 !view
 view=switch
 root=true
-text=多核控制
+text=Multi-core control
 core=true
 @show
 if [ -e /proc/hps/enabled ]
@@ -33,12 +33,12 @@ echo $switch > /proc/hps/enabled
 
 !view
 view=subtitle
-text=*若关闭此选项 发哥将会失去掌握核心的大权 理论上所有核心都会开启(核心数量由下一项定义)。并且调度方式与cpu0相同。
+text=*Thermal manager will be unable to control cores and all cores(quatity is defined in next item) should be enabled, all sharing cpu0's govenorment if disabled.
 !view
 
 !view
 view=edittext
-text=最大允许开启核心数：
+text=Maximum cores allowed to enable:
 @current
 cat /proc/hps/num_limit_thermal
 @current

@@ -3,7 +3,7 @@ class=io
 
 !view
 view=title
-text=Hugepage配置
+text=Hugepage Configurations
 @show
 echo true
 @show
@@ -11,7 +11,7 @@ echo true
 
 !view
 view=subtitle
-text=管理Transparent Hugepage的状态
+text=Manage the status of Transparent Hugepage
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=spinner
-text=启用状态
+text=Enabled
 @show
 if [ -e /sys/kernel/mm/transparent_hugepage/enabled ]
 then
@@ -30,7 +30,7 @@ core=true
 item_file_thp=/sys/kernel/mm/transparent_hugepage/enabled
 @done
 echo $label > /sys/kernel/mm/transparent_hugepage/enabled
-echo @toast=应用成功
+echo @toast=Successfully applied.
 @done
 @current
 echo "thp_label=`cat /sys/kernel/mm/transparent_hugepage/enabled`"
@@ -41,7 +41,7 @@ onboot=true
 
 !view
 view=spinner
-text=碎片整理
+text=Disk Defragment
 @show
 if [ -e /sys/kernel/mm/transparent_hugepage/defrag ]
 then
@@ -52,7 +52,7 @@ core=true
 item_file_thp=/sys/kernel/mm/transparent_hugepage/defrag
 @done
 echo $label > /sys/kernel/mm/transparent_hugepage/defrag
-echo @toast=应用成功
+echo @toast=Successfully applied.
 @done
 @current
 echo "thp_label=`cat /sys/kernel/mm/transparent_hugepage/defrag`"
@@ -63,7 +63,7 @@ onboot=true
 
 !view
 view=switch
-text=使用“零页面”
+text=use 'Zero Page'
 @show
 if [ -e /sys/kernel/mm/transparent_hugepage/use_zero_page ]
 then

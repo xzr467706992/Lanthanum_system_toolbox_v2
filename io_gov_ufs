@@ -3,7 +3,7 @@ class=io
 
 !view
 view=title
-text=(存储I/O)调整器
+text=(Storage I/O) I/O Scheduler
 @show
 echo true
 @show
@@ -11,7 +11,7 @@ echo true
 
 !view
 view=subtitle
-text=配置存储器I/O调整器(ufs)
+text=(UFS)Configure I/O Scheduler
 @show
 echo true
 @show
@@ -19,7 +19,7 @@ echo true
 
 !view
 view=spinner
-text=调整器
+text=Scheduler
 @show
 if [ -e /sys/block/sda/queue/scheduler ]
 then
@@ -30,7 +30,7 @@ core=true
 item_file_io=/sys/block/sda/queue/scheduler
 @done
 echo $label > /sys/block/sda/queue/scheduler
-echo @toast=应用成功
+echo @toast=Successfully applied.
 @done
 @current
 echo "io_label=`cat /sys/block/sda/queue/scheduler`"

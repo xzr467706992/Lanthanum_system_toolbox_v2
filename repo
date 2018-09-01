@@ -49,6 +49,14 @@ link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/
 !module
 
 !module
+title=启动系统界面调谐器
+subtitle=aosp自带的隐藏系统界面修改工具（例如你可以在里面打开耳机状态栏标识）（需要工具箱B7+)
+author=@xzr467706992
+name=systemui_turner
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/systemui_turner
+!module
+
+!module
 title=efs写入接口配置
 subtitle=配置用于写入efs分区的接口状态
 author=@永义王

@@ -1,0 +1,33 @@
+!module
+class=extra
+!view
+view=title
+text=系统界面调谐器
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=启动系统内置隐藏的系统界面调谐器
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+echo "@intent=com.android.systemui,com.android.systemui.DemoMode"
+@click
+
+!view
+
+
+!module

@@ -1,0 +1,313 @@
+!module
+class=extra
+!view
+view=title
+text=Dex优化编译配置(dex2oat)
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=配置ART虚拟机的dex2oat相关选项
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=场景编译模式配置：
+@show
+echo true
+@show
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=安装软件时：
+item=everything|speed|space|quicken|verify|extract|assume-verified
+@show
+if [ `getprop ro.build.version.sdk` -gt 25 ]
+then
+echo true
+fi
+@show
+@current
+echo label=`getprop pm.dexopt.install`
+@current
+@done
+setprop pm.dexopt.install $label
+
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.install=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.install=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=安装软件时：
+item=everything|speed|space|interpret-only|verify-at-runtime|verify-none
+@show
+if [ `getprop ro.build.version.sdk` -gt 23 ] && [ `getprop ro.build.version.sdk` -lt 26 ]
+then
+echo true
+fi
+@show
+@current
+echo label=`getprop pm.dexopt.install`
+@current
+@done
+setprop pm.dexopt.install $label
+
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.install=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.install=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=设备闲时：
+item=everything|speed|speed-profile|space|space-profile|quicken|verify|extract|assume-verified
+@show
+if [ `getprop ro.build.version.sdk` -gt 25 ]
+then
+echo true
+fi
+@show
+@current
+echo label=`getprop pm.dexopt.bg-dexopt`
+@current
+@done
+setprop pm.dexopt.bg-dexopt $label
+
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.bg-dexopt=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.bg-dexopt=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=设备闲时：
+item=everything|speed|speed-profile|space|space-profile|interpret-only|verify-profile|verify-at-runtime|verify-none
+@show
+if [ `getprop ro.build.version.sdk` -gt 23 ] && [ `getprop ro.build.version.sdk` -lt 26 ]
+then
+echo true
+fi
+@show
+@current
+echo label=`getprop pm.dexopt.bg-dexopt`
+@current
+@done
+setprop pm.dexopt.bg-dexopt $label
+
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.bg-dexopt=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.bg-dexopt=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=开机时：
+item=everything|speed|speed-profile|space|space-profile|quicken|verify|extract|assume-verified
+@show
+if [ `getprop ro.build.version.sdk` -gt 25 ]
+then
+echo true
+fi
+@show
+@current
+line=`grep "pm.dexopt.boot" "/system/build.prop"`
+result=${line#*=}
+if [ $result="" ]
+then
+echo label=`getprop pm.dexopt.boot`
+else
+echo label=$result
+fi
+@current
+@done
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.boot=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.boot=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=开机时：
+item=everything|speed|speed-profile|space|space-profile|interpret-only|verify-profile|verify-at-runtime|verify-none
+@show
+if [ `getprop ro.build.version.sdk` -gt 23 ] && [ `getprop ro.build.version.sdk` -lt 26 ]
+then
+echo true
+fi
+@show
+@current
+line=`grep "pm.dexopt.boot" "/system/build.prop"`
+result=${line#*=}
+if [ $result="" ]
+then
+echo label=`getprop pm.dexopt.boot`
+else
+echo label=$result
+fi
+@current
+@done
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.boot=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.boot=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=首次开机时：
+item=everything|speed|speed-profile|space|space-profile|quicken|verify|extract|assume-verified
+@show
+if [ `getprop ro.build.version.sdk` -gt 25 ]
+then
+echo true
+fi
+@show
+@current
+line=`grep "pm.dexopt.first-boot" "/system/build.prop"`
+result=${line#*=}
+if [ $result="" ]
+then
+echo label=`getprop pm.dexopt.first-boot`
+else
+echo label=$result
+fi
+@current
+@done
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.first-boot=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.first-boot=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=spinner
+core=true
+root=true
+text=首次开机时：
+item=everything|speed|speed-profile|space|space-profile|interpret-only|verify-profile|verify-at-runtime|verify-none
+@show
+if [ `getprop ro.build.version.sdk` -gt 23 ] && [ `getprop ro.build.version.sdk` -lt 26 ]
+then
+echo true
+fi
+@show
+@current
+line=`grep "pm.dexopt.first-boot" "/system/build.prop"`
+result=${line#*=}
+if [ $result="" ]
+then
+echo label=`getprop pm.dexopt.first-boot`
+else
+echo label=$result
+fi
+@current
+@done
+cache="/data/build.cache.prop"
+target="/system/build.prop"
+mount -o rw,remount /system
+sed '/pm.dexopt.first-boot=/'d $target > $cache
+cp $cache $target
+echo "pm.dexopt.first-boot=$label" >> $target
+rm -f $cache
+mount -o ro,remount /system
+@done
+!view
+
+!view
+view=subtitle
+text=其他操作：
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=立即运行闲时任务
+@show
+if [ `getprop ro.build.version.sdk` -gt 25 ]
+then
+echo true
+fi
+@show
+@click
+echo @sh=pm bg-dexpot-job
+@click
+
+!view
+
+!view
+view=button
+text=立即优化所有软件(Speed模式)
+@show
+echo true
+@show
+@click
+echo @sh=cmd package compile -m speed -a
+@click
+
+!view
+!module

@@ -1,5 +1,5 @@
 !module
-class=cpua
+class=extra
 !view
 view=title
 text=Wake up on double-tap

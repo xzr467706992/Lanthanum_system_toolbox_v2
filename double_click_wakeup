@@ -1,5 +1,5 @@
 !module
-class=cpua
+class=extra
 !view
 view=title
 text=双击唤醒

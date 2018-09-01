@@ -305,5 +305,8 @@
     <string name="add_to_screen">Add shortcut</string>
     <string name="onboot_preparing">Preparing to apply</string>
     <string name="lc">CPU core lock</string>
+    <string name="app_disabled">Disabled</string>
+    <string name="dexopt">Dexopt</string>
+    <string name="dexopt_compile">Compile this app(Speed mode)</string>
 
 </resources>

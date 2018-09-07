@@ -1,7 +1,7 @@
-id=template
-name=Template Module
+id=lanthanum_prevent_patch
+name=Lanthanum prevent patch
 version=v1
 versionCode=1
-author=topjohnwu
-description=A short description
+author=LibXZR(xzr467706992@coolapk)
+description=A magisk-ify prevent patch module
 minMagisk=17000

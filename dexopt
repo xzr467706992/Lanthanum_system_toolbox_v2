@@ -294,7 +294,7 @@ echo true
 fi
 @show
 @click
-echo @sh=echo 稍安勿躁...\ncmd package bg-dexpot-job
+echo "@sh=echo 稍安勿躁...;cmd package bg-dexpot-job"
 @click
 
 !view
@@ -306,7 +306,7 @@ text=立即优化所有软件(Speed模式)
 echo true
 @show
 @click
-echo @sh=echo 稍安勿躁...\ncmd package compile -m speed -a
+echo "@sh=echo 稍安勿躁...;cmd package compile -m speed -a"
 @click
 
 !view

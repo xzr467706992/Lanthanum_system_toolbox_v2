@@ -1,0 +1,33 @@
+!module
+class=extra
+!view
+view=title
+text=打开电池优化界面
+@show
+echo true
+@show
+!view
+!view
+view=subtitle
+text=打开电池优化界面。这个界面在某些设备上藏得很深或者根本就难以打开。
+@show
+echo true
+@show
+!view
+
+!view
+view=button
+text=执行！
+@show
+echo true
+@show
+core=true
+root=true
+@click
+echo "@intent=com.android.settings,com.android.settings.Settings\$HighPowerApplicationsActivity"
+@click
+
+!view
+
+
+!module

@@ -81,6 +81,14 @@ link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/
 !module
 
 !module
+title=电池优化界面
+subtitle=打开电池优化界面。这个界面在某些设备上藏得很深或者根本就难以打开。（需要工具箱B7+)
+author=@xzr467706992
+name=highpower_app_activity
+link=https://raw.githubusercontent.com/xzr467706992/Lanthanum_system_toolbox_v2/module_repo/highpower_app_activity
+!module
+
+!module
 title=【高级重启】9008模式
 subtitle=[适用于工具箱2.0.0B3+]为高通设备重启到9008（edl）模式提供接口
 author=@xzr467706992

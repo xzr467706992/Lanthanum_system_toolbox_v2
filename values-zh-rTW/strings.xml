@@ -23,6 +23,33 @@
 <string name="Uninstalled_apps">已卸載的應用</string>
 <string name="User_application">用户應用</string>
 <string name="User_application_backuped">用户應用（有備份）</string>
+<string name="abc_action_bar_home_description">瀏覽首頁</string>
+<string name="abc_action_bar_up_description">向上瀏覽</string>
+<string name="abc_action_menu_overflow_description">更多選項</string>
+<string name="abc_action_mode_done">完成</string>
+<string name="abc_activity_chooser_view_see_all">查看全部</string>
+<string name="abc_activitychooserview_choose_application">選擇應用程式</string>
+<string name="abc_capital_off">關閉</string>
+<string name="abc_capital_on">開啟</string>
+<string name="abc_menu_alt_shortcut_label">Alt +</string>
+<string name="abc_menu_ctrl_shortcut_label">Ctrl +</string>
+<string name="abc_menu_delete_shortcut_label">Delete 鍵</string>
+<string name="abc_menu_enter_shortcut_label">Enter 鍵</string>
+<string name="abc_menu_function_shortcut_label">Fn +</string>
+<string name="abc_menu_meta_shortcut_label">Meta +</string>
+<string name="abc_menu_shift_shortcut_label">Shift +</string>
+<string name="abc_menu_space_shortcut_label">空格鍵</string>
+<string name="abc_menu_sym_shortcut_label">Sym +</string>
+<string name="abc_prepend_shortcut_label">Menu +</string>
+<string name="abc_search_hint">搜尋…</string>
+<string name="abc_searchview_description_clear">清除查詢</string>
+<string name="abc_searchview_description_query">搜尋查詢</string>
+<string name="abc_searchview_description_search">搜尋</string>
+<string name="abc_searchview_description_submit">提交查詢</string>
+<string name="abc_searchview_description_voice">語音搜尋</string>
+<string name="abc_shareactionprovider_share_with">選擇分享對象</string>
+<string name="abc_shareactionprovider_share_with_application">與「%s」分享</string>
+<string name="abc_toolbar_collapse_description">收合</string>
 <string name="about">關於</string>
 <string name="act_fali">激活失敗</string>
 <string name="adb_sm">模擬adb</string>
@@ -30,10 +57,14 @@
 <string name="add_arg">增加参數</string>
 <string name="add_black_sc">黑色快捷方式</string>
 <string name="add_it_now_sc">增加快捷方式</string>
+<string name="add_profile">增加新的配置文件</string>
+<string name="add_to_screen">增加桌面快捷方式</string>
 <string name="add_white_sc">白色快捷方式</string>
 <string name="added_to_onboot">成功加入本次開機應用列表 【重新選擇】頂部開機應用開關來生效</string>
 <string name="address">地址</string>
 <string name="again_press">再按一次返回鍵來退出</string>
+<string name="aosp_dark">暗色原生</string>
+<string name="app_disabled">已凍结</string>
 <string name="app_list">應用管理</string>
 <string name="app_name">鑭·系统工具箱</string>
 <string name="apply">應用</string>
@@ -69,6 +100,7 @@
 <string name="charging">正在充電</string>
 <string name="check_ur_internet">檢查網路連接！</string>
 <string name="clean_part">清空所選分區</string>
+<string name="clear_pt">你確定要清空这個分區嗎？</string>
 <string name="confirm">確定</string>
 <string name="confirm_module_install">確認要繼續安装嗎？</string>
 <string name="copied">已複制！</string>
@@ -81,10 +113,13 @@
 <string name="debuglog_msg">這將會給開發者更多的信息来幫助解决問題</string>
 <string name="del">删除</string>
 <string name="del_build_msg">你確定要删除這一行嗎？</string>
+<string name="delete">刪除</string>
 <string name="delete_cur_backup">删除當前備份</string>
 <string name="deleted">已删除</string>
 <string name="developer">開發者</string>
 <string name="developer_2">酷安@xzr467706992</string>
+<string name="dexopt">Dex優化編譯</string>
+<string name="dexopt_compile">優化編譯這個app（Speed模式）</string>
 <string name="disable_root_check">禁用root檢查</string>
 <string name="do_u_want_to_remove_this_module">你想要移除模塊：</string>
 <string name="donate">捐增</string>
@@ -110,6 +145,8 @@
 <string name="error_input">錯誤的輸入</string>
 <string name="exe_part">對選定分區執行</string>
 <string name="exit">退出</string>
+<string name="export">導出</string>
+<string name="exported_to">導出到了：</string>
 <string name="extra">雜項配置</string>
 <string name="feedback">反饋</string>
 <string name="feedback_2">幫助改進應用</string>
@@ -121,6 +158,8 @@
 <string name="flashing">正在刷入/提取</string>
 <string name="forgot_pwd">忘記密碼</string>
 <string name="freeze">凍結</string>
+<string name="frm_profile_repo">從配置文件倉庫獲取</string>
+<string name="from_onboot">從當前開機應用的内容導入</string>
 <string name="fs_perfi">提升文件系統性能</string>
 <string name="get_key">獲取激活碼</string>
 <string name="governor">調整器：</string>
@@ -133,7 +172,9 @@
 <string name="in_out_img">刷入/導出鏡像</string>
 <string name="info">信息：</string>
 <string name="init_sm">模擬init.d</string>
+<string name="install">安裝</string>
 <string name="install_frm_net">從網路安装</string>
+<string name="install_frm_storage">從存儲器安装</string>
 <string name="install_from_repo">从模塊倉庫安装</string>
 <string name="installed_module_name">會將它命名為：</string>
 <string name="invalid_input">無效的輸入</string>
@@ -146,6 +187,7 @@
 <string name="join_group_msg">獲取更多信息、連系我們。</string>
 <string name="jump_root_check">跳過root檢查</string>
 <string name="jump_root_check_msg">這可以减少啟動時間，但是可能導致一些問題。</string>
+<string name="lc">處理器鎖核心</string>
 <string name="load">装載</string>
 <string name="load_externel_model">装載第三方模塊</string>
 <string name="load_externel_msg">使工具箱装載外部模塊</string>
@@ -153,10 +195,26 @@
 <string name="login_dep">登錄来使用更多功能</string>
 <string name="login_or_register">登錄/注册</string>
 <string name="logout">登出</string>
+<string name="magisk_current_status">當前狀態：</string>
+<string name="magisk_enabled">已啟用</string>
+<string name="magisk_enabled_newversion">已啟用但是有更新版本，建議安裝更新。</string>
+<string name="magisk_mode">Magisk 工作模式</string>
+<string name="magisk_mode_dep">使用Magisk來執行開機應用之類的操作。</string>
+<string name="magisk_not_enabled">未啟用</string>
+<string name="magisk_notice">"現在，您正在以magisk模式激活開機應用。請閱讀以下内容来確保您正在進行正確的操作。
+1.請在打開開機時應用按鈕前，先將你想要的配置設置好。
+2.打開開機時應用按鈕時，您的配置將被保存。
+3.您在開機時應用按鈕開啟後進行的任何修改都無法更改當時保存的配置。
+4.如果您想要修改開機時應用的内容，請先關閉開機時應用按鈕，然後修改你想要的配置，再將按鈕打開。
+5.在提交有關開機時應用的任何bug前，請先確保您的操作邏輯是正確的，否則不但您的問題無法得到解决，您可能還會被認為是個zz。
+6.Magisk開機應用將會在系统啟動後大約30秒後進行，應用成功並不會發出提示，請打開工具箱自行檢查配置狀態。
+7.Magisk開機應用可能不與FBE加密（系統設置里的加密）相兼容。假如这個問題存在，您應該在開機後立即解鎖手機来確保應用成功，或者等待magisk官方支持，也可以解密保平安。"</string>
+<string name="magisk_onboot_apply">Magisk開機應用</string>
 <string name="max_freq">最大頻率：</string>
 <string name="min_freq">最小頻率：</string>
 <string name="module_management">管理已安装的模塊</string>
 <string name="module_repo">模塊倉庫</string>
+<string name="name_none_null">名稱不能為空</string>
 <string name="name_saveonly">名稱（僅用来保存）</string>
 <string name="need_donate">需要捐贈版</string>
 <string name="need_overlay_permission">需要授權懸浮窗權限</string>
@@ -169,6 +227,7 @@
 <string name="no_backup_sf">没有備份過這个軟件..</string>
 <string name="no_emali">没有提供信箱地址</string>
 <string name="non_null">不能是空白的</string>
+<string name="none_chosed">你必需選擇一個選項</string>
 <string name="nothing_to_show">無可奉告</string>
 <string name="notice">必讀信息</string>
 <string name="obn_msg">"以下内容將會向您講述“開機時應用”按鈕的操作邏輯：
@@ -181,6 +240,8 @@
 <string name="ok">確定</string>
 <string name="old_pwd">舊密碼</string>
 <string name="on_boot_complered">開機應用完成</string>
+<string name="on_boot_list_is_empty">開機應用列表是空的</string>
+<string name="onboot_preparing">正在準備開機應用</string>
 <string name="one_key_lockscreen">一鍵鎖屏</string>
 <string name="output_log">輸出調試日誌</string>
 <string name="part_ad">分區高級配置</string>
@@ -194,6 +255,13 @@
 <string name="please_wait">請稍後</string>
 <string name="plz_wait">請稍候...</string>
 <string name="prevent_patch">黑域一鍵補丁</string>
+<string name="profile">配置文件</string>
+<string name="profile_added">配置增加成功</string>
+<string name="profile_applied">配置文件已经應用</string>
+<string name="profile_exist">配置文件已經存在，你想要更新它嗎？</string>
+<string name="profile_ins_msg">"你確定要安裝配置文件 "</string>
+<string name="profile_ins_title">安装配置文件</string>
+<string name="profile_repo">配置文件倉庫</string>
 <string name="pwd_tw">兩次輸入的密碼不一致</string>
 <string name="qq_group">加入官方QQ群</string>
 <string name="qq_group_2">官方QQ群歡迎光臨</string>
@@ -219,23 +287,31 @@
 <string name="result">結果</string>
 <string name="rom_packup_msg">打包你的當前ROM</string>
 <string name="rompackup">ROM打包</string>
+<string name="run">運行</string>
+<string name="running_settings">運行配置</string>
+<string name="running_settings_msg">你可以在這裡輸入運行時帶上的附加参數。【比如balance,fast,performance等可用於兼容適用于微工具箱的yc调度】</string>
 <string name="safe_mode_msg1">將重啟以通過安全模式進入軟件</string>
 <string name="safe_mode_msg2">不加載第三方模塊</string>
 <string name="saved_settings_density">保存的分辨率設定(長按刪除)：</string>
 <string name="screen_resolution">屏幕分辨率：</string>
 <string name="search">搜索</string>
+<string name="search_menu_title">搜尋</string>
 <string name="select_file">選擇文件</string>
 <string name="selinux">SELinux配置</string>
 <string name="set_governors_args">編輯調整器参數</string>
 <string name="settingsandabout">關於/設置</string>
 <string name="show_current_msg">充電時顯示電流信息</string>
+<string name="sky_blue">天空藍</string>
 <string name="small_tools">小工具</string>
 <string name="start">開始</string>
 <string name="start_file_msg">啟用文件管理器來選擇一個鏡像</string>
+<string name="status_bar_notification_info_overflow">999+</string>
 <string name="succeed_in_reset">重置完成，請檢查郵件！</string>
 <string name="suceed_in_login">登錄成功</string>
 <string name="suceed_in_register">注冊成功！</string>
 <string name="supported_part">設備支持此功能</string>
+<string name="sys_err_1">無法寫入/system分區</string>
+<string name="sys_err_1_msg">這可能導致軟件的部分功能無法正常使用。請檢查system鎖，或重啟設備嘗試解决。</string>
 <string name="system_applications">系统應用</string>
 <string name="system_applications_backuped">系統應用（有備份）</string>
 <string name="tap_to">點我前往</string>
@@ -244,6 +320,12 @@
 <string name="test_on_boot">測試開機應用</string>
 <string name="test_on_boot_2">触摸觸摸來模擬一次開機事件</string>
 <string name="test_on_boot_msg">測試開機應用是否能正常運行</string>
+<string name="th4">淺綠</string>
+<string name="th5">基佬紫</string>
+<string name="th6">RE管理器</string>
+<string name="th7">水鴨青</string>
+<string name="th8">粉色</string>
+<string name="th9">AICP</string>
 <string name="th_1">欽定橙</string>
 <string name="th_2">靛藍</string>
 <string name="theme">主題</string>
@@ -270,9 +352,11 @@
 <string name="version_name">版本名稱：</string>
 <string name="w_un_or_pwd">用户名或密碼錯誤</string>
 <string name="wait_info">請等待一小會兒...</string>
+<string name="whatuwant">你想要幹什么？</string>
 <string name="wrong_email">電子信箱信息無效</string>
 <string name="wrong_phonenum">手機號碼無效</string>
 <string name="wrong_pwd">無效的密碼</string>
 <string name="wrong_username">無效的用户名</string>
 <string name="yes">是的</string>
+<string name="yup">是</string>
 </resources>

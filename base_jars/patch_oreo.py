@@ -9,7 +9,7 @@ import sys
 import shutil
 
 
-oreo_flag = False
+plus_flag = False
 
 MESSAGE_ZH_TW = {
     '%s not exists%s': '無法找到檔案 %s%s',
@@ -159,6 +159,8 @@ class Patch(object):
 
     @staticmethod
     def get_method_arguments(line):
+        if line.strip().startswith("iget-object"):
+            return [a[:-1] for a in line.strip().split()[1:3]]
         # 获取smali的method参数
         start = line.index("{")
         end = line.index("}", start)
@@ -294,9 +296,8 @@ class ActivityManagerService(Patch):
             return True
 
         # 此处Patch仅用于killPackageProcessesLocked方法
-        # 在8.x中 有可能会给getPackageProcessState方法也打上补丁
-        # 这样做是多余的 而且可能会导致明显的系统卡顿
-        # 所以这里添加一个额外的条件判断
+        # 在8.x+中 有可能会给getPackageProcessState方法也打上补丁
+        # 这样做是多余的 所以这里添加一个额外的条件判断
         if self.method_name_sp == "killPackageProcessesLocked":
             if line_strip.startswith('iget-object'):
                 # self.pkg_deps用来设置一个flag 因为此行之后的一行需要重写
@@ -309,9 +310,9 @@ class ActivityManagerService(Patch):
     def get_patch_count(self):
         # 4.4 必打 8+0 处补丁
         # 5.x ~ 7.x 必打 8+1 处补丁
-        # 8.x 只打 7+1 处补丁 属于正常情况
-        global oreo_flag
-        if oreo_flag:
+        # 8.x+ 只打 7+1 处补丁 属于正常情况
+        global plus_flag
+        if plus_flag:
             return 7 + self.extra_count
         else:
             return 8 + self.extra_count
@@ -331,54 +332,132 @@ class ActivityStack(Patch):
     # 此类和IntentResolver类类似 不再详解
 
     patched = 0
+    method_name_sp = ""
+    arg_sp = ""
+    arg2_sp = ""
 
     def get_path(self):
         return "com/android/server/am/ActivityStack.smali"
 
     def patch(self, output, line):
-        if "Landroid/app/IApplicationThread;->scheduleResumeActivity(Landroid/os/IBinder;" in line:
-            output.write(line)
-            output.write(os.linesep)
-            # 父类定义的get_method_arguments方法: 获取smali的method参数 返回参数列表
-            # 取此列表的第一个参数赋值给argument变量
-            argument = self.get_method_arguments(line)[1]
-            output.write("    invoke-static/range {%s .. %s},"
-                         " Lcom/android/server/am/PreventRunningUtils;"
-                         "->onResumeActivity(Landroid/os/IBinder;)V" % (argument, argument))
-            output.write(os.linesep)
-            self.patched += 1
-            return True
-        elif "Landroid/app/IApplicationThread;->scheduleDestroyActivity(Landroid/os/IBinder;" in line:
-            output.write(line)
-            output.write(os.linesep)
-            argument = self.get_method_arguments(line)[1]
-            output.write("    invoke-static/range {%s .. %s},"
-                         " Lcom/android/server/am/PreventRunningUtils;"
-                         "->onDestroyActivity(Landroid/os/IBinder;)V" % (argument, argument))
-            output.write(os.linesep)
-            self.patched += 1
-            return True
-        elif "Landroid/app/IApplicationThread;->schedulePauseActivity(Landroid/os/IBinder;ZZ" in line:
-            output.write(line)
-            output.write(os.linesep)
-            arguments = self.get_method_arguments(line)
-            # 判断参数列表的第2~4个参数是否以同一字母开头
-            if arguments[1][0] == arguments[2][0] == arguments[3][0]:
+        # 写得非常不清真的代码
+        if line.startswith(".method"):
+            self.method_name_sp = self.find_method_name(line.strip())
+        if self.method_name_sp == "resumeTopActivityInnerLocked":
+            if "Landroid/app/IApplicationThread;->scheduleResumeActivity(Landroid/os/IBinder;" in line:
+                output.write(line)
+                output.write(os.linesep)
+                # 父类定义的get_method_arguments方法: 获取smali的method参数 返回参数列表
+                # 取此列表的第一个参数赋值给argument变量
+                argument = self.get_method_arguments(line)[1]
                 output.write("    invoke-static/range {%s .. %s},"
-                         " Lcom/android/server/am/PreventRunningUtils;"
-                         "->onUserLeavingActivity(Landroid/os/IBinder;ZZ)V" % (arguments[1], arguments[3]))
-            else:
-                # join函数: 以指定字符串连接序列中的元素
-                # 语法: str.join(sequence)
-                # 举例: str = "-"; seq = ("a", "b", "c"); strings = str.join(seq)
-                # 则 strings == "a-b-c"
-                output.write("    invoke-static {%s},"
-                         " Lcom/android/server/am/PreventRunningUtils;"
-                         "->onUserLeavingActivity(Landroid/os/IBinder;ZZ)V" % ', '.join(arguments[1:4]))
-                         # 注意: 此处切片[1:4]包含3个元素而不是4个！
-            output.write(os.linesep)
-            self.patched += 1
-            return True
+                             " Lcom/android/server/am/PreventRunningUtils;"
+                             "->onResumeActivity(Landroid/os/IBinder;)V" % (argument, argument))
+                output.write(os.linesep)
+                self.patched += 1
+                return True
+            if line.strip().startswith("invoke-virtual"):
+                if "Lcom/android/server/am/ActivityRecord;->clearOptionsLocked()V" in line:
+                    self.arg_sp = self.get_method_arguments(line)[0]
+            if "Lcom/android/server/am/ClientLifecycleManager;->scheduleTransaction" in line:
+                output.write(line)
+                output.write(os.linesep)
+                arguments = self.get_method_arguments(line)
+                assert self.arg_sp
+                output.write("    iget-object %s, %s, Lcom/android/server/am/ActivityRecord;"
+                             "->appToken:Landroid/view/IApplicationToken$Stub;"
+                             % (arguments[0], self.arg_sp))
+                output.write(os.linesep)
+                output.write(os.linesep)
+                output.write("    invoke-static {%s}, Lcom/android/server/am/PreventRunningUtils;"
+                             "->onResumeActivity(Landroid/os/IBinder;)V" % arguments[0])
+                output.write(os.linesep)
+                self.patched += 1
+                arg_sp = ""
+                arg2_sp = ""
+                return True
+        if self.method_name_sp == "destroyActivityLocked":
+            if "Landroid/app/IApplicationThread;->scheduleDestroyActivity(Landroid/os/IBinder;" in line:
+                output.write(line)
+                output.write(os.linesep)
+                argument = self.get_method_arguments(line)[1]
+                output.write("    invoke-static/range {%s .. %s},"
+                             " Lcom/android/server/am/PreventRunningUtils;"
+                             "->onDestroyActivity(Landroid/os/IBinder;)V" % (argument, argument))
+                output.write(os.linesep)
+                self.patched += 1
+                return True
+            if line.strip().startswith("iget-object"):
+                if "Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;" in line:
+                    self.arg_sp = self.get_method_arguments(line)[1]
+            if "Lcom/android/server/am/ClientLifecycleManager;->scheduleTransaction" in line:
+                output.write(line)
+                output.write(os.linesep)
+                arguments = self.get_method_arguments(line)
+                assert self.arg_sp
+                output.write("    iget-object %s, %s, Lcom/android/server/am/ActivityRecord;"
+                             "->appToken:Landroid/view/IApplicationToken$Stub;"
+                             % (arguments[0], self.arg_sp))
+                output.write(os.linesep)
+                output.write(os.linesep)
+                output.write("    invoke-static {%s}, Lcom/android/server/am/PreventRunningUtils;"
+                             "->onDestroyActivity(Landroid/os/IBinder;)V"
+                             % (arguments[0]))
+                output.write(os.linesep)
+                self.patched += 1
+                arg_sp = ""
+                arg2_sp = ""
+                return True
+        if self.method_name_sp == "startPausingLocked":
+            if "Landroid/app/IApplicationThread;->schedulePauseActivity(Landroid/os/IBinder;ZZ" in line:
+                output.write(line)
+                output.write(os.linesep)
+                arguments = self.get_method_arguments(line)
+                # 判断参数列表的第2~4个参数是否以同一字母开头
+                if arguments[1][0] == arguments[2][0] == arguments[3][0]:
+                    output.write("    invoke-static/range {%s .. %s},"
+                             " Lcom/android/server/am/PreventRunningUtils;"
+                             "->onUserLeavingActivity(Landroid/os/IBinder;ZZ)V" % (arguments[1], arguments[3]))
+                else:
+                    # join函数: 以指定字符串连接序列中的元素
+                    # 语法: str.join(sequence)
+                    # 举例: str = "-"; seq = ("a", "b", "c"); strings = str.join(seq)
+                    # 则 strings == "a-b-c"
+                    output.write("    invoke-static {%s},"
+                             " Lcom/android/server/am/PreventRunningUtils;"
+                             "->onUserLeavingActivity(Landroid/os/IBinder;ZZ)V" % ', '.join(arguments[1:4]))
+                             # 注意: 此处切片[1:4]包含3个元素而不是4个！
+                output.write(os.linesep)
+                self.patched += 1
+                return True
+            if line.strip().startswith("iget-object"):
+                if "Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;" in line:
+                    self.arg_sp = self.get_method_arguments(line)[0]
+            if "Landroid/app/servertransaction/PauseActivityItem" in line:
+                self.arg2_sp = self.get_method_arguments(line)[1]
+            if "Lcom/android/server/am/ClientLifecycleManager;->scheduleTransaction" in line:
+                output.write(line)
+                output.write(os.linesep)
+                arguments = self.get_method_arguments(line)
+                assert (self.arg_sp and self.arg2_sp)
+                output.write("    iget-object %s, %s, Lcom/android/server/am/ActivityRecord;"
+                             "->appToken:Landroid/view/IApplicationToken$Stub;"
+                             % (arguments[0], self.arg_sp))
+                output.write(os.linesep)
+                output.write(os.linesep)
+                output.write("    iget-boolean %s, %s, Lcom/android/server/am/ActivityRecord;->finishing:Z"
+                             % (arguments[1], self.arg_sp))
+                output.write(os.linesep)
+                output.write(os.linesep)
+                output.write("    invoke-static {%s, %s, %s}, Lcom/android/server/am/PreventRunningUtils;"
+                             "->onUserLeavingActivity(Landroid/os/IBinder;ZZ)V"
+                             % (arguments[0], arguments[1], self.arg2_sp))
+                output.write(os.linesep)
+                self.patched += 1
+                arg_sp = ""
+                arg2_sp = ""
+                return True
+                
 
     def get_patch_count(self):
         # 打补丁的次数可能会多于3次？
@@ -392,9 +471,11 @@ class ActivityStackSupervisor(Patch):
     # 同上 不再详解
 
     patched = 0
+    extra_count = 0
 
     methods = None
     fixing = {'cleanUpRemovedTaskLocked',}
+    arg_sp = ""
 
     def __init__(self, dir_services=None, dir_apk='apk'):
         if dir_services is None:
@@ -430,6 +511,7 @@ class ActivityStackSupervisor(Patch):
                     # 还要在前面加上"private " 将其转为私有方法
                     output.write(line.replace(method_name, "private %s$Pr" % method_name))
                     self.fixing.remove(method_name)
+                    self.extra_count += 1
                     self.patched += 1
                     return True
         
@@ -446,14 +528,18 @@ class ActivityStackSupervisor(Patch):
             return True
 
     def get_patch_count(self):
-        if self.patched > 1:
-            global oreo_flag
-            oreo_flag = True
-            # 生成一个flag文件 以帮助bat批处理判断是否是8.x的services.jar
+        if self.extra_count:
+            global plus_flag
+            plus_flag = True
+            # 生成一个flag文件 以帮助bat批处理判断是否是8.x+的services.jar
             # 事后删除
             # 若并非用于工具自带的批处理 可酌情将下方两行删掉或注释掉
-            with open("oreo_flag.txt", "w") as f:
-                f.write("oreo_flag")
+            with open("plus_flag.txt", "w") as f:
+                f.write("plus_flag")
+        # 7.x以及7.x之前: 1处或N处(加行xN, N>=1)
+        # 8.x: 1+1处或1+N处(方法Hook + 加行xN, N>=1)
+        # 9.0: 1处(方法Hook)
+        if self.patched > 1:
             return self.patched
         else:
             return 1

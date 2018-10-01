@@ -1,5 +1,5 @@
 # 黑域一键补丁windows服务端
-- 版本v0.2beta
+- 版本v0.3beta
 ## 搭建方法
 ### 原料
 - 一台windows服务器

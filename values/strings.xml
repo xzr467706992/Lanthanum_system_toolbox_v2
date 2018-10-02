@@ -318,5 +318,16 @@
     <string name="magisk_onboot_apply">Magisk on-boot-apply</string>
     <string name="magisk_notice">You are now activating the boot application in magisk mode. Please read the following to make sure you are doing the right thing. \n1. Please set the configuration you want before opening the application button. \n2. When you apply the button when you turn it on, your configuration will be saved. \n3. Any changes you make after applying the button on at startup will not change the configuration saved at that time. \n4. If you want to modify the content of the application at boot time, please turn off the Apply button at boot time, then modify the configuration you want, then open the button. \n5. Before submitting any bugs applied during boot, please make sure your operation logic is correct, otherwise your problem will not be solved, you may also be considered a zz. \n6.Magisk boot application will be executed about 30 seconds after the system is started. If the application is successful, it will not prompt. Please open the toolbox to check the configuration status. The \n7.Magisk boot application may not be compatible with FBE encryption (encryption in system settings). If this problem exists, you should unlock the phone immediately after booting to ensure the application is successful, or wait for the official support of magisk, you can also decrypt the security.</string>
     <string name="dismiss">Dismiss</string>
+    <string name="language_choose">Choose language</string>
+    <string name="auto">Auto</string>
+    <string name="powersave">Powersave</string>
+    <string name="balance">Balance</string>
+    <string name="performance">Performance</string>
+    <string name="fast">Fast</string>
+    <string name="tip1">(Wait for translation)</string>
+    <string name="tip2">(Wait for translation)</string>
+    <string name="tip3">(Wait for translation)</string>
+    <string name="tip4">(Wait for translation)</string>
+    <string name="tip5">(Wait for translation)</string>
 
 </resources>

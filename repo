@@ -28,7 +28,7 @@ link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vto
 title=【yc调度】骁龙810/808
 subtitle=适用于骁龙810/808的yc调度
 author=yc9559@github
-name=yc_sd810&808
+name=yc_sd810_808
 link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vtools-powercfg/20180603/sd_810_808/powercfg.apk
 !profile
 
@@ -36,7 +36,7 @@ link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vto
 title=【yc调度】骁龙800/801/805
 subtitle=适用于骁龙800/801/805的yc调度
 author=yc9559@github
-name=yc_sd800&801&805
+name=yc_sd800_801_805
 link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vtools-powercfg/20180603/sd_801_800_805/powercfg.apk
 !profile
 
@@ -52,7 +52,7 @@ link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vto
 title=【yc调度】骁龙652/650
 subtitle=适用于骁龙652/650的yc调度
 author=yc9559@github
-name=yc_sd652&650
+name=yc_sd652_650
 link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vtools-powercfg/20180603/sd_652_650/powercfg.apk
 !profile
 

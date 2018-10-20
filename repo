@@ -101,7 +101,7 @@ title=【yc调度】联发科x2x
 subtitle=适用于联发科x20/x25的yc调度
 author=yc9559@github
 name=yc_mtkx2x
-link=https://github.com/yc9559/cpufreq-interactive-opt/blob/master/vtools-powercfg/20180603/helio_x20_x25/powercfg.apk
+link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vtools-powercfg/20180603/helio_x20_x25/powercfg.apk
 !profile
 
 !profile
@@ -109,7 +109,7 @@ title=【yc调度】联发科x10
 subtitle=适用于联发科x10的yc调度
 author=yc9559@github
 name=yc_mtkx10
-link=https://github.com/yc9559/cpufreq-interactive-opt/blob/master/vtools-powercfg/20180603/helio_x10/powercfg.apk
+link=https://raw.githubusercontent.com/yc9559/cpufreq-interactive-opt/master/vtools-powercfg/20180603/helio_x10/powercfg.apk
 !profile
 
 !profile

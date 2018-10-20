@@ -329,5 +329,11 @@
     <string name="tip3">(Wait for translation)</string>
     <string name="tip4">(Wait for translation)</string>
     <string name="tip5">(Wait for translation)</string>
+    <string name="thermal_del_title">Thermal remover</string>
+    <string name="thermal_del_subtitle">Remove thermal engine as you like</string>
+    <string name="more">more</string>
+    <string name="thermals_found">Thermals found:</string>
+    <string name="remove_thermal">remove</string>
+    <string name="thermal_remove_tip">(Wait for translation)</string>
 
 </resources>

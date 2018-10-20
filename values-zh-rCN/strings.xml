@@ -329,4 +329,10 @@
     <string name="tip3">软件内容混乱/诡异？试试打开关于/设置中的兼容模式。</string>
     <string name="tip4">开机时应用无法生效？请给予软件完整的自启权限，或者，使用magisk工作模式。</string>
     <string name="tip5">在寻找优质的cpu调校？试试配置文件仓库中的内容吧。</string>
+    <string name="thermal_del_title">温控删除工具</string>
+    <string name="thermal_del_subtitle">移除温控引擎</string>
+    <string name="more">详情</string>
+    <string name="thermals_found">找到的温控：</string>
+    <string name="remove_thermal">移除温控</string>
+    <string name="thermal_remove_tip">本工具将会寻找任何温控相关内容并将其移除，如果你已经确定了要移除这些内容，请点击右下角“移除”按钮。建议在进行本操作前做好备份，很有可能会发生各种意外。</string>
 </resources>

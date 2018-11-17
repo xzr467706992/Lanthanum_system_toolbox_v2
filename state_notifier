@@ -1,0 +1,90 @@
+!module
+class=extra
+
+!view
+view=title
+text=State Notifier控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=State Notifier 是一个监测屏幕开关状态的驱动，部分内核的部分功能可能会用到它。
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+root=true
+core=true
+text=启用
+@show
+if [ -e /sys/module/state_notifier/parameters/enabled ]
+then
+echo true
+fi
+@show
+
+@current
+result=`cat /sys/module/state_notifier/parameters/enabled`
+
+if [ $result == Y ]
+then
+echo true
+fi
+@current
+
+@click
+if [ $switch == 1 ]
+then
+echo Y > /sys/module/state_notifier/parameters/enabled
+else
+echo N > /sys/module/state_notifier/parameters/enabled
+fi
+@click
+
+!view
+
+!view
+view=edittext
+root=true
+core=true
+text=调试等级：
+@show
+if [ -e /sys/module/state_notifier/parameters/debug_mask ]
+then
+echo true
+fi
+@show
+@current
+cat /sys/module/state_notifier/parameters/debug_mask
+@current
+@done
+echo $edittext > /sys/module/state_notifier/parameters/debug_mask
+@done
+!view
+
+!view
+view=edittext
+root=true
+core=true
+text=状态变化延迟(ms)：
+@show
+if [ -e /sys/module/state_notifier/parameters/suspend_defer_time ]
+then
+echo true
+fi
+@show
+@current
+cat /sys/module/state_notifier/parameters/suspend_defer_time
+@current
+@done
+echo $edittext > /sys/module/state_notifier/parameters/suspend_defer_time
+@done
+!view
+
+!module

@@ -1,0 +1,65 @@
+!module
+class=io
+
+!view
+view=title
+text=TCP Westwood 参数控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=这些参数对westwood调度器的效率有影响
+@show
+echo true
+@show
+!view
+
+!view
+view=edittext
+root=true
+core=true
+text=rtt_min
+@show
+if [ -e /sys/module/tcp_westwood/parameters/rtt_min ]
+then
+echo true
+fi
+@show
+
+@current
+cat /sys/module/tcp_westwood/parameters/rtt_min
+@current
+
+@done
+echo $edittext > /sys/module/tcp_westwood/parameters/rtt_min
+@done
+
+!view
+
+!view
+view=edittext
+root=true
+core=true
+text=init_rtt
+@show
+if [ -e /sys/module/tcp_westwood/parameters/init_rtt ]
+then
+echo true
+fi
+@show
+
+@current
+cat /sys/module/tcp_westwood/parameters/init_rtt
+@current
+
+@done
+echo $edittext > /sys/module/tcp_westwood/parameters/init_rtt
+@done
+
+!view
+
+
+!module

@@ -61,5 +61,27 @@ echo $edittext > /sys/module/tcp_westwood/parameters/init_rtt
 
 !view
 
+!view
+view=edittext
+root=true
+core=true
+text=init_rtt
+@show
+if [ -e /sys/module/tcp_westwood/parameters/rtt_init ]
+then
+echo true
+fi
+@show
+
+@current
+cat /sys/module/tcp_westwood/parameters/rtt_init
+@current
+
+@done
+echo $edittext > /sys/module/tcp_westwood/parameters/rtt_init
+@done
+
+!view
+
 
 !module

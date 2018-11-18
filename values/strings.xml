@@ -335,5 +335,10 @@
     <string name="thermals_found">Thermals found:</string>
     <string name="remove_thermal">remove</string>
     <string name="thermal_remove_tip">(Wait for translation)</string>
+    <string name="device_info">Device info</string>
+    <string name="device_name">Device:</string>
+    <string name="android_ver">Android version:</string>
+    <string name="kernel_ver">Kernel version:</string>
+    <string name="system_version">System version:</string>
 
 </resources>

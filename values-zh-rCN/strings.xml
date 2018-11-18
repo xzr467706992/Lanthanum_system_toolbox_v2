@@ -335,4 +335,9 @@
     <string name="thermals_found">找到的温控：</string>
     <string name="remove_thermal">移除温控</string>
     <string name="thermal_remove_tip">本工具将会寻找任何温控相关内容并将其移除，如果你已经确定了要移除这些内容，请点击右下角“移除”按钮。建议在进行本操作前做好备份，很有可能会发生各种意外。</string>
+    <string name="device_info">设备信息</string>
+    <string name="device_name">设备：</string>
+    <string name="android_ver">Android版本：</string>
+    <string name="kernel_ver">内核版本：</string>
+    <string name="system_version">版本号：</string>
 </resources>

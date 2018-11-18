@@ -1,0 +1,168 @@
+!module
+class=cpua
+!view
+view=title
+text=Sultanxda's cpu boost控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=控制Sultanxda的cpu升频驱动
+@show
+echo true
+@show
+!view
+
+!view
+view=switch
+text=启用CPU升频
+@show
+if [ -e /sys/module/boost_control/parameters/enable_cpu_boost ]
+then
+echo true
+fi
+@show
+core=true
+@current
+if [ `cat /sys/module/boost_control/parameters/enable_cpu_boost` == Y ]
+then
+echo true
+fi
+@current
+@click
+if [ $switch == 1 ]
+then
+echo Y > /sys/module/boost_control/parameters/enable_cpu_boost
+else
+echo N > /sys/module/boost_control/parameters/enable_cpu_boost
+fi
+@click
+root=true
+!view
+
+!view
+view=switch
+text=启用屏幕内容刷新时升频
+@show
+if [ -e /sys/module/boost_control/parameters/enable_fb_boost ]
+then
+echo true
+fi
+@show
+core=true
+@current
+if [ `cat /sys/module/boost_control/parameters/enable_fb_boost` == Y ]
+then
+echo true
+fi
+@current
+@click
+if [ $switch == 1 ]
+then
+echo Y > /sys/module/boost_control/parameters/enable_fb_boost
+else
+echo N > /sys/module/boost_control/parameters/enable_fb_boost
+fi
+@click
+root=true
+!view
+
+!view
+view=edittext
+@current
+cat /sys/module/boost_control/parameters/input_boost_freq_perf
+@current
+text=大核升频频率：
+@done
+echo $edittext > /sys/module/boost_control/parameters/input_boost_freq_perf
+@done
+core=true
+@show
+if [ -e /sys/module/boost_control/parameters/input_boost_freq_perf ]
+then
+echo true
+fi
+@show
+root=true
+!view
+
+!view
+view=edittext
+@current
+cat /sys/module/boost_control/parameters/input_boost_freq_lp
+@current
+text=小核升频频率：
+@done
+echo $edittext > /sys/module/boost_control/parameters/input_boost_freq_lp
+@done
+core=true
+@show
+if [ -e /sys/module/boost_control/parameters/input_boost_freq_lp ]
+then
+echo true
+fi
+@show
+root=true
+!view
+
+!view
+view=edittext
+@current
+cat /sys/module/boost_control/parameters/cpu_wake_boost_duration
+@current
+text=CPU唤醒时满频时间(ms)：
+@done
+echo $edittext > /sys/module/boost_control/parameters/cpu_wake_boost_duration
+@done
+core=true
+@show
+if [ -e /sys/module/boost_control/parameters/cpu_wake_boost_duration ]
+then
+echo true
+fi
+@show
+root=true
+!view
+
+!view
+view=edittext
+@current
+cat /sys/module/boost_control/parameters/cpubw_boost_freq
+@current
+text=内存升频频率：
+@done
+echo $edittext > /sys/module/boost_control/parameters/cpubw_boost_freq
+@done
+core=true
+@show
+if [ -e /sys/module/boost_control/parameters/cpubw_boost_freq ]
+then
+echo true
+fi
+@show
+root=true
+!view
+
+!view
+view=edittext
+@current
+cat /sys/module/boost_control/parameters/cpubw_wake_boost_duration
+@current
+text=内存唤醒满频时间(ms)：
+@done
+echo $edittext > /sys/module/boost_control/parameters/cpubw_wake_boost_duration
+@done
+core=true
+@show
+if [ -e /sys/module/boost_control/parameters/cpubw_wake_boost_duration ]
+then
+echo true
+fi
+@show
+root=true
+!view
+
+!module

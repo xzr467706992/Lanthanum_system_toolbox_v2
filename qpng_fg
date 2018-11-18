@@ -1,0 +1,44 @@
+!module
+class=charge
+
+!view
+view=title
+text=qpnp_fg周围参数控制
+@show
+echo true
+@show
+!view
+
+!view
+view=subtitle
+text=调整高通电量管理系统的周边参数
+@show
+echo true
+@show
+!view
+
+!view
+view=edittext
+root=true
+core=true
+text=电流信息刷新速度(ms)：
+@show
+if [ -e /sys/module/qpnp_fg/parameters/sram_update_period_ms ]
+then
+echo true
+fi
+@show
+
+@current
+cat /sys/module/qpnp_fg/parameters/sram_update_period_ms
+@current
+
+@done
+echo $edittext > /sys/module/qpnp_fg/parameters/sram_update_period_ms
+@done
+
+!view
+
+
+
+!module

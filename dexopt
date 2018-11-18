@@ -29,7 +29,7 @@ view=spinner
 core=true
 root=true
 text=安装软件时：
-item=everything|speed|space|quicken|verify|extract|assume-verified
+item=everything|speed|speed-profile|space|quicken|verify|extract|assume-verified
 @show
 if [ `getprop ro.build.version.sdk` -gt 25 ]
 then
@@ -58,7 +58,7 @@ view=spinner
 core=true
 root=true
 text=安装软件时：
-item=everything|speed|space|interpret-only|verify-at-runtime|verify-none
+item=everything|speed|speed-profile|space|interpret-only|verify-at-runtime|verify-none
 @show
 if [ `getprop ro.build.version.sdk` -gt 23 ] && [ `getprop ro.build.version.sdk` -lt 26 ]
 then

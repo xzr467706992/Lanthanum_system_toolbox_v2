@@ -252,6 +252,34 @@
     throw v0
 .end method
 
+.method private final handleAppDiedLocked(Lcom/android/server/am/ProcessRecord;ZZZ)V
+    .registers 5
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/ActivityManagerService;->handleAppDiedLocked$Pr(Lcom/android/server/am/ProcessRecord;ZZZ)V
+
+    if-nez p2, :cond_e
+
+    if-eqz p3, :cond_e
+
+    iget-boolean v0, p1, Lcom/android/server/am/ProcessRecord;->killedByAm:Z
+
+    if-nez v0, :cond_e
+
+    invoke-static {p1}, Lcom/android/server/am/PreventRunningUtils;->onAppDied(Lcom/android/server/am/ProcessRecord;)V
+
+    :cond_e
+    return-void
+.end method
+
+.method private final handleAppDiedLocked$Pr(Lcom/android/server/am/ProcessRecord;ZZZ)V
+    .registers 5
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
 
 # virtual methods
 .method public bindService(Landroid/app/IApplicationThread;Landroid/os/IBinder;Landroid/content/Intent;Ljava/lang/String;Landroid/app/IServiceConnection;II)I
@@ -584,6 +612,29 @@
     goto :goto_a
 .end method
 
+.method final startProcessLocked(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZZ)Lcom/android/server/am/ProcessRecord;
+    .registers 12
+
+    invoke-static/range {p1 .. p6}, Lcom/android/server/am/PreventRunningUtils;->hookStartProcessLocked(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    invoke-virtual/range {p0 .. p10}, Lcom/android/server/am/ActivityManagerService;->startProcessLocked$Pr(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZ)Lcom/android/server/am/ProcessRecord;
+
+    move-result-object v0
+
+    :goto_a
+    return-object v0
+
+    :cond_b
+    const/4 v0, 0x0
+
+    goto :goto_a
+.end method
+
+
 .method final startProcessLocked$Pr(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZIZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/Runnable;)Lcom/android/server/am/ProcessRecord;
     .registers 16
 
@@ -613,6 +664,17 @@
 
     throw v0
 .end method
+
+.method final startProcessLocked$Pr(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZZ)Lcom/android/server/am/ProcessRecord;
+    .registers 12
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
 
 .method public startService(Landroid/app/IApplicationThread;Landroid/content/Intent;Ljava/lang/String;I)Landroid/content/ComponentName;
     .registers 6

@@ -1,0 +1,3 @@
+@echo off
+echo Please wait...
+tools\dx.bat --dex --output=out.jar in.jar

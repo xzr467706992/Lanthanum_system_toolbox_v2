@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LModule.:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LModule_jar</output-path>
+    <root id="archive" name="LModule.jar">
+      <element id="module-output" name="LModule.main" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependence/appcompat.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependence/cardview.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependence/android.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
